@@ -3359,8 +3359,7 @@
           "ioValues": [
             {
               "name": "Number",
-              "ioValue": 4,
-              "currentEquation": "4"
+              "ioValue": 3
             },
             {
               "name": "Geometry",
@@ -3377,8 +3376,8 @@
             },
             {
               "name": "distZ",
-              "ioValue": 600,
-              "currentEquation": "600"
+              "ioValue": 900,
+              "currentEquation": "900"
             }
           ],
           "topLevel": false,
@@ -3530,7 +3529,7 @@
                 },
                 {
                   "name": "count",
-                  "ioValue": 4
+                  "ioValue": 3
                 },
                 {
                   "name": "distX",
@@ -3542,7 +3541,7 @@
                 },
                 {
                   "name": "distZ",
-                  "ioValue": 600
+                  "ioValue": 900
                 }
               ],
               "interpreterVersion": 1,
@@ -4070,8 +4069,8 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.8,
-          "y": 0.6,
+          "x": 0.7,
+          "y": 0.5,
           "uniqueID": "id-1906",
           "name": "Center_XY",
           "ioValues": [
@@ -4225,6 +4224,51 @@
           "unitsKey": "MM",
           "fileTypeVersion": 1,
           "lastReloadedFromGithubAt": 1790299566714
+        },
+        {
+          "atomType": "Move",
+          "x": 0.8,
+          "y": 0.4,
+          "uniqueID": "id-1932",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": -2050,
+              "currentEquation": "-2050"
+            },
+            {
+              "name": "yDist",
+              "ioValue": 0
+            },
+            {
+              "name": "zDist",
+              "ioValue": 0
+            }
+          ]
+        },
+        {
+          "atomType": "Assembly",
+          "x": 0.8,
+          "y": 0.3,
+          "uniqueID": "id-1938",
+          "ioValues": [
+            {
+              "name": "Shape 1",
+              "ioValue": null
+            },
+            {
+              "name": "Shape 2",
+              "ioValue": null
+            },
+            {
+              "name": "Shape 3",
+              "ioValue": null
+            }
+          ]
         },
         {
           "atomType": "Output",
@@ -7138,9 +7182,9 @@
           "ap2ID": "id-1030"
         },
         {
-          "ap2Name": "number or geometry",
+          "ap2Name": "Shape 1",
           "ap1ID": "id-1030",
-          "ap2ID": "id-387"
+          "ap2ID": "id-1938"
         },
         {
           "ap2Name": "geometry",
@@ -7168,6 +7212,11 @@
           "ap2ID": "id-1848"
         },
         {
+          "ap2Name": "Shape 2",
+          "ap1ID": "id-1772",
+          "ap2ID": "id-1938"
+        },
+        {
           "ap2Name": "geometry",
           "ap1ID": "id-1778",
           "ap2ID": "id-1836"
@@ -7191,6 +7240,21 @@
           "ap2Name": "geometry",
           "ap1ID": "id-1906",
           "ap2ID": "id-1772"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-1906",
+          "ap2ID": "id-1932"
+        },
+        {
+          "ap2Name": "Shape 3",
+          "ap1ID": "id-1932",
+          "ap2ID": "id-1938"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-1938",
+          "ap2ID": "id-387"
         }
       ],
       "fileTypeVersion": 1
