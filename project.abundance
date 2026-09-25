@@ -1902,7 +1902,7 @@
             {
               "atomType": "GitHubMolecule",
               "x": 0.3,
-              "y": 0.7,
+              "y": 0.8,
               "uniqueID": "id-1374",
               "name": "Offset_2D",
               "ioValues": [
@@ -6737,6 +6737,92 @@
               "lastReloadedFromGithubAt": 1790298405778
             },
             {
+              "atomType": "Molecule",
+              "x": 0.8,
+              "y": 0.8,
+              "uniqueID": "id-4600",
+              "name": "Edge Corrugator",
+              "ioValues": [
+                {
+                  "name": "Geometry_Select",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ],
+              "topLevel": false,
+              "allAtoms": [
+                {
+                  "atomType": "Output",
+                  "x": 1,
+                  "y": 0.5,
+                  "uniqueID": "id-4601",
+                  "ioValues": [
+                    {
+                      "name": "number or geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Input",
+                  "x": 0,
+                  "y": 0.2,
+                  "uniqueID": "id-4602",
+                  "name": "Geometry_Select",
+                  "type": "edgeselect",
+                  "options": [],
+                  "selectedEdgeData": {
+                    "0": [
+                      18,
+                      15,
+                      12,
+                      9,
+                      6
+                    ]
+                  }
+                },
+                {
+                  "atomType": "Code",
+                  "x": 0.4,
+                  "y": 0.4,
+                  "uniqueID": "id-4603",
+                  "ioValues": [
+                    {
+                      "name": "shape",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "wavelength",
+                      "ioValue": 76
+                    },
+                    {
+                      "name": "depth",
+                      "ioValue": 18
+                    },
+                    {
+                      "name": "flipSide",
+                      "ioValue": false
+                    }
+                  ],
+                  "interpreterVersion": 1,
+                  "code": "function run(\n  shape: Assembly,\n  wavelength: number = 10,\n  depth: number = 2,\n  flipSide: boolean = false,\n) {\n  const EPS = 0.01; // how far the cutting tool extends outside the part\n  const TOL = 1e-4; // distance at which edge endpoints count as touching\n  const MAX_TURN = Math.PI / 8; // max direction change covered by one Bezier on a curved edge\n  const k = (2 * Math.PI) / wavelength;\n  // Depth into the material at arc length u along a chain: the wave, or just outside the part\n  const wave = {\n    at: (u: number) => (depth * (1 - Math.cos(k * u))) / 2,\n    slope: (u: number) => (depth * k * Math.sin(k * u)) / 2,\n  };\n  const outside = { at: (u: number) => -EPS, slope: (u: number) => 0 };\n\n  // Arc length -> normalized edge parameter lookup, plus total turning angle\n  function prepEdge(edge: replicad.Edge) {\n    const len = edge.length;\n    let toParam = (s: number) => s / len;\n    let turn = 0;\n    if (edge.geomType !== \"LINE\") {\n      const N = 32;\n      const params = [0];\n      const lengths = [0];\n      let prevP = edge.pointAt(0);\n      let prevT = edge.tangentAt(0).normalize();\n      for (let i = 1; i <= N; i++) {\n        const p = edge.pointAt(i / N);\n        const t = edge.tangentAt(i / N).normalize();\n        lengths.push(lengths[i - 1] + p.sub(prevP).Length);\n        params.push(i / N);\n        turn += Math.acos(Math.min(1, Math.max(-1, t.dot(prevT))));\n        prevP = p;\n        prevT = t;\n      }\n      if (edge.geomType !== \"CIRCLE\") {\n        const scale = len / lengths[N];\n        toParam = (s: number) => {\n          let i = 1;\n          while (i < N && lengths[i] * scale < s) i++;\n          const a = lengths[i - 1] * scale;\n          const b = lengths[i] * scale;\n          return params[i - 1] + ((s - a) / (b - a)) * (params[i] - params[i - 1]);\n        };\n      }\n    }\n    return { edge, len, toParam, turn, start: edge.startPoint, end: edge.endPoint };\n  }\n\n  // An edge traversed in chain direction; s runs 0..len along it\n  function orient(info: any, reversed: boolean) {\n    const param = (s: number) => info.toParam(reversed ? info.len - s : s);\n    return {\n      info,\n      len: info.len,\n      start: reversed ? info.end : info.start,\n      end: reversed ? info.start : info.end,\n      point: (s: number) => info.edge.pointAt(param(s)),\n      tangent: (s: number) =>\n        info.edge.tangentAt(param(s)).normalize().multiply(reversed ? -1 : 1),\n      u0: 0, // arc length along the chain where this edge starts\n      inSign: 1, // which side of the edge (within face B) the material is on\n    };\n  }\n\n  return shape.onLeafs((leaf) => {\n    if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n      return leaf;\n    }\n    const body = leaf.geometry;\n\n    // Gather the selected edges: edges of any selected faces, plus directly selected edges\n    let selectedEdges: replicad.Edge[] = [];\n    if (leaf.selection?.faces) {\n      leaf.selection.faces.forEach((faceIndex) => {\n        selectedEdges.push(...body.faces[faceIndex].edges);\n      });\n    }\n    if (leaf.selection?.edges) {\n      selectedEdges.push(...leaf.selection.edges.map((index) => body.edges[index]));\n    }\n    selectedEdges = selectedEdges.filter((e) => e != null);\n    // Faces share edges, so drop duplicates\n    selectedEdges = selectedEdges.filter(\n      (e, i) => selectedEdges.findIndex((other) => other.isSame(e)) === i,\n    );\n    if (selectedEdges.length === 0) {\n      return leaf;\n    }\n\n    const faces = body.faces;\n    const faceEdges = faces.map((f) => f.edges);\n    const adjacentFaces = (edge: replicad.Edge) =>\n      faces.map((f, i) => i).filter((i) => faceEdges[i].some((e) => e.isSame(edge)));\n\n    // Link touching edges into chains so the wave phase continues across them\n    const infos = selectedEdges.map(prepEdge);\n    const near = (a: replicad.Vector, b: replicad.Vector) => a.sub(b).Length < TOL;\n    const degree = (p: replicad.Vector) =>\n      infos.reduce((n, inf) => n + (near(inf.start, p) ? 1 : 0) + (near(inf.end, p) ? 1 : 0), 0);\n    const used = new Set<any>();\n    const chains: any[] = [];\n    while (used.size < infos.length) {\n      const remaining = infos.filter((inf) => !used.has(inf));\n      // Prefer starting at a free end so open chains are traversed end to end\n      let first = remaining.find((inf) => degree(inf.start) === 1);\n      let chain = [];\n      if (first) {\n        chain.push(orient(first, false));\n      } else {\n        first = remaining.find((inf) => degree(inf.end) === 1) ?? remaining[0];\n        chain.push(orient(first, degree(first.end) === 1));\n      }\n      used.add(first);\n      let next;\n      do {\n        const tip = chain[chain.length - 1].end;\n        next = infos.find((inf) => !used.has(inf) && (near(inf.start, tip) || near(inf.end, tip)));\n        if (next) {\n          chain.push(orient(next, !near(next.start, tip)));\n          used.add(next);\n        }\n      } while (next);\n      chains.push(chain);\n    }\n\n    const [bMin, bMax] = body.boundingBox.bounds;\n    const throughDist =\n      Math.hypot(bMax[0] - bMin[0], bMax[1] - bMin[1], bMax[2] - bMin[2]) + 2 * EPS;\n    const smooth = (a: any, b: any) => a.tangent(a.len).dot(b.tangent(0)) > Math.cos(Math.PI / 180);\n\n    let tools: replicad.Shape3D | null = null;\n    const addTool = (tool: replicad.Shape3D) => {\n      tools = tools ? tools.fuse(tool) : tool;\n    };\n\n    chains.forEach((chain) => {\n      const closed = near(chain[chain.length - 1].end, chain[0].start);\n\n      // The wave is drawn in a flat face shared by every edge in the chain\n      let common = adjacentFaces(chain[0].info.edge);\n      chain.forEach((oe: any) => {\n        const adj = adjacentFaces(oe.info.edge);\n        common = common.filter((i) => adj.includes(i));\n      });\n      common = common.filter((i) => faces[i].geomType === \"PLANE\");\n      if (common.length === 0) {\n        console.warn(\"Sine edge: touching edges must share a flat face, skipping\");\n        return;\n      }\n      // Default to the larger face (e.g. the top of a plate) so the side becomes wavy\n      common.sort((a, b) => replicad.measureArea(faces[b]) - replicad.measureArea(faces[a]));\n      const faceB = common[flipSide && common.length > 1 ? 1 : 0];\n      const nB = faces[faceB].normalAt(chain[0].start);\n\n      // A closed loop with a sharp corner starts at that corner so every smooth run is open\n      if (closed) {\n        const corner = chain.findIndex((oe: any, i: number) => !smooth(chain[(i + chain.length - 1) % chain.length], oe));\n        if (corner > 0) chain = chain.slice(corner).concat(chain.slice(0, corner));\n      }\n\n      let u = 0;\n      for (const oe of chain) {\n        oe.u0 = u;\n        u += oe.len;\n        // Material is on the side away from the other adjacent face's normal\n        const faceA = adjacentFaces(oe.info.edge).find((i) => i !== faceB);\n        if (faceA === undefined) {\n          console.warn(\"Sine edge: edge does not border two faces, skipping\");\n          return;\n        }\n        const mid = oe.point(oe.len / 2);\n        const side = nB.cross(oe.tangent(oe.len / 2));\n        oe.inSign = side.dot(faces[faceA].normalAt(mid)) > 0 ? -1 : 1;\n      }\n\n      const plane = new replicad.Plane(chain[0].start.add(nB.multiply(EPS)), chain[0].tangent(0), nB);\n      const to2D = (v: replicad.Vector) => {\n        const d = v.sub(plane.origin);\n        return [d.dot(plane.xDir), d.dot(plane.yDir)];\n      };\n\n      // Point offset into the material by offset.at(u), and its derivative along s\n      const offsetPoint = (oe: any, s: number, offset: any) =>\n        oe.point(s).add(nB.cross(oe.tangent(s)).multiply(oe.inSign * offset.at(oe.u0 + s)));\n      const offsetDeriv = (oe: any, s: number, offset: any) => {\n        const t = oe.tangent(s);\n        const u = oe.u0 + s;\n        let result = t.add(nB.cross(t).multiply(oe.inSign * offset.slope(u)));\n        if (oe.info.edge.geomType !== \"LINE\") {\n          // Rate at which the edge direction turns, from a small central difference\n          const h = oe.len * 1e-4;\n          const a = Math.max(0, s - h);\n          const b = Math.min(oe.len, s + h);\n          const dt = oe.tangent(b).sub(oe.tangent(a)).multiply(1 / (b - a));\n          result = result.add(nB.cross(dt).multiply(oe.inSign * offset.at(u)));\n        }\n        return result;\n      };\n\n      // Bezier segments (Hermite: matching position and slope at both ends) along a run\n      function segments(run: any[], offset: any, isWave: boolean) {\n        const segs: any[] = [];\n        for (const oe of run) {\n          if (!isWave && oe.info.edge.geomType === \"LINE\") {\n            segs.push({ p0: to2D(offsetPoint(oe, 0, offset)), p1: to2D(offsetPoint(oe, oe.len, offset)) });\n            continue;\n          }\n          const breaks = [0];\n          if (isWave) {\n            const quarter = wavelength / 4;\n            for (let m = Math.ceil(oe.u0 / quarter); m * quarter < oe.u0 + oe.len; m++) {\n              const s = m * quarter - oe.u0;\n              if (s > 1e-6 && s < oe.len - 1e-6) breaks.push(s);\n            }\n          }\n          breaks.push(oe.len);\n          for (let i = 0; i + 1 < breaks.length; i++) {\n            // On curved edges a single Bezier per quarter wave drifts, so use at least two\n            const minPieces = isWave && oe.info.edge.geomType !== \"LINE\" ? 2 : 1;\n            const n = Math.max(minPieces, Math.ceil(((breaks[i + 1] - breaks[i]) / oe.len) * oe.info.turn / MAX_TURN));\n            for (let j = 0; j < n; j++) {\n              const s0 = breaks[i] + ((breaks[i + 1] - breaks[i]) * j) / n;\n              const s1 = breaks[i] + ((breaks[i + 1] - breaks[i]) * (j + 1)) / n;\n              const h = (s1 - s0) / 3;\n              const p0 = offsetPoint(oe, s0, offset);\n              const p1 = offsetPoint(oe, s1, offset);\n              segs.push({\n                p0: to2D(p0),\n                p1: to2D(p1),\n                c1: to2D(p0.add(offsetDeriv(oe, s0, offset).multiply(h))),\n                c2: to2D(p1.sub(offsetDeriv(oe, s1, offset).multiply(h))),\n              });\n            }\n          }\n        }\n        return segs;\n      }\n      const reverse = (segs: any[]) =>\n        segs.slice().reverse().map((g) => ({ p0: g.p1, p1: g.p0, c1: g.c2, c2: g.c1 }));\n      const trace = (pen: any, segs: any[]) => {\n        segs.forEach((g) => {\n          pen = g.c1 ? pen.cubicBezierCurveTo(g.p1, g.c1, g.c2) : pen.lineTo(g.p1);\n        });\n        return pen;\n      };\n      const loop = (segs: any[]) => {\n        const last = segs[segs.length - 1];\n        const first = segs[0].p0;\n        if (Math.hypot(last.p1[0] - first[0], last.p1[1] - first[1]) < 1e-6) last.p1 = first;\n        return trace(replicad.draw(first), segs).close();\n      };\n      const extrude = (drawing: any) =>\n        drawing.sketchOnPlane(plane).extrude(throughDist, { extrusionDirection: nB.multiply(-1) });\n\n      // Split into smooth runs; sharp corners get separate tools but the phase continues\n      const runs: any[][] = [[chain[0]]];\n      for (let i = 1; i < chain.length; i++) {\n        if (smooth(chain[i - 1], chain[i])) runs[runs.length - 1].push(chain[i]);\n        else runs.push([chain[i]]);\n      }\n\n      if (closed && runs.length === 1) {\n        // Smooth closed loop: tool is the band between the wave loop and a loop just outside\n        const waveSolid = extrude(loop(segments(chain, wave, true)));\n        const outerSolid = extrude(loop(segments(chain, outside, false)));\n        addTool(\n          replicad.measureVolume(waveSolid) > replicad.measureVolume(outerSolid)\n            ? waveSolid.cut(outerSolid)\n            : outerSolid.cut(waveSolid),\n        );\n        return;\n      }\n      runs.forEach((run) => {\n        const waveSegs = segments(run, wave, true);\n        const outerSegs = reverse(segments(run, outside, false));\n        let pen = replicad.draw(outerSegs[outerSegs.length - 1].p1).lineTo(waveSegs[0].p0);\n        pen = trace(pen, waveSegs).lineTo(outerSegs[0].p0);\n        addTool(extrude(trace(pen, outerSegs).close()));\n      });\n    });\n\n    if (tools) {\n      leaf.geometry = body.cut(tools);\n    }\n    return leaf;\n  });\n}",
+                  "compiledCode": "\"use strict\";\nfunction run(shape, wavelength = 10, depth = 2, flipSide = false) {\n    const EPS = 0.01; // how far the cutting tool extends outside the part\n    const TOL = 1e-4; // distance at which edge endpoints count as touching\n    const MAX_TURN = Math.PI / 8; // max direction change covered by one Bezier on a curved edge\n    const k = (2 * Math.PI) / wavelength;\n    // Depth into the material at arc length u along a chain: the wave, or just outside the part\n    const wave = {\n        at: (u) => (depth * (1 - Math.cos(k * u))) / 2,\n        slope: (u) => (depth * k * Math.sin(k * u)) / 2,\n    };\n    const outside = { at: (u) => -EPS, slope: (u) => 0 };\n    // Arc length -> normalized edge parameter lookup, plus total turning angle\n    function prepEdge(edge) {\n        const len = edge.length;\n        let toParam = (s) => s / len;\n        let turn = 0;\n        if (edge.geomType !== \"LINE\") {\n            const N = 32;\n            const params = [0];\n            const lengths = [0];\n            let prevP = edge.pointAt(0);\n            let prevT = edge.tangentAt(0).normalize();\n            for (let i = 1; i <= N; i++) {\n                const p = edge.pointAt(i / N);\n                const t = edge.tangentAt(i / N).normalize();\n                lengths.push(lengths[i - 1] + p.sub(prevP).Length);\n                params.push(i / N);\n                turn += Math.acos(Math.min(1, Math.max(-1, t.dot(prevT))));\n                prevP = p;\n                prevT = t;\n            }\n            if (edge.geomType !== \"CIRCLE\") {\n                const scale = len / lengths[N];\n                toParam = (s) => {\n                    let i = 1;\n                    while (i < N && lengths[i] * scale < s)\n                        i++;\n                    const a = lengths[i - 1] * scale;\n                    const b = lengths[i] * scale;\n                    return params[i - 1] + ((s - a) / (b - a)) * (params[i] - params[i - 1]);\n                };\n            }\n        }\n        return { edge, len, toParam, turn, start: edge.startPoint, end: edge.endPoint };\n    }\n    // An edge traversed in chain direction; s runs 0..len along it\n    function orient(info, reversed) {\n        const param = (s) => info.toParam(reversed ? info.len - s : s);\n        return {\n            info,\n            len: info.len,\n            start: reversed ? info.end : info.start,\n            end: reversed ? info.start : info.end,\n            point: (s) => info.edge.pointAt(param(s)),\n            tangent: (s) => info.edge.tangentAt(param(s)).normalize().multiply(reversed ? -1 : 1),\n            u0: 0, // arc length along the chain where this edge starts\n            inSign: 1, // which side of the edge (within face B) the material is on\n        };\n    }\n    return shape.onLeafs((leaf) => {\n        if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n            return leaf;\n        }\n        const body = leaf.geometry;\n        // Gather the selected edges: edges of any selected faces, plus directly selected edges\n        let selectedEdges = [];\n        if (leaf.selection?.faces) {\n            leaf.selection.faces.forEach((faceIndex) => {\n                selectedEdges.push(...body.faces[faceIndex].edges);\n            });\n        }\n        if (leaf.selection?.edges) {\n            selectedEdges.push(...leaf.selection.edges.map((index) => body.edges[index]));\n        }\n        selectedEdges = selectedEdges.filter((e) => e != null);\n        // Faces share edges, so drop duplicates\n        selectedEdges = selectedEdges.filter((e, i) => selectedEdges.findIndex((other) => other.isSame(e)) === i);\n        if (selectedEdges.length === 0) {\n            return leaf;\n        }\n        const faces = body.faces;\n        const faceEdges = faces.map((f) => f.edges);\n        const adjacentFaces = (edge) => faces.map((f, i) => i).filter((i) => faceEdges[i].some((e) => e.isSame(edge)));\n        // Link touching edges into chains so the wave phase continues across them\n        const infos = selectedEdges.map(prepEdge);\n        const near = (a, b) => a.sub(b).Length < TOL;\n        const degree = (p) => infos.reduce((n, inf) => n + (near(inf.start, p) ? 1 : 0) + (near(inf.end, p) ? 1 : 0), 0);\n        const used = new Set();\n        const chains = [];\n        while (used.size < infos.length) {\n            const remaining = infos.filter((inf) => !used.has(inf));\n            // Prefer starting at a free end so open chains are traversed end to end\n            let first = remaining.find((inf) => degree(inf.start) === 1);\n            let chain = [];\n            if (first) {\n                chain.push(orient(first, false));\n            }\n            else {\n                first = remaining.find((inf) => degree(inf.end) === 1) ?? remaining[0];\n                chain.push(orient(first, degree(first.end) === 1));\n            }\n            used.add(first);\n            let next;\n            do {\n                const tip = chain[chain.length - 1].end;\n                next = infos.find((inf) => !used.has(inf) && (near(inf.start, tip) || near(inf.end, tip)));\n                if (next) {\n                    chain.push(orient(next, !near(next.start, tip)));\n                    used.add(next);\n                }\n            } while (next);\n            chains.push(chain);\n        }\n        const [bMin, bMax] = body.boundingBox.bounds;\n        const throughDist = Math.hypot(bMax[0] - bMin[0], bMax[1] - bMin[1], bMax[2] - bMin[2]) + 2 * EPS;\n        const smooth = (a, b) => a.tangent(a.len).dot(b.tangent(0)) > Math.cos(Math.PI / 180);\n        let tools = null;\n        const addTool = (tool) => {\n            tools = tools ? tools.fuse(tool) : tool;\n        };\n        chains.forEach((chain) => {\n            const closed = near(chain[chain.length - 1].end, chain[0].start);\n            // The wave is drawn in a flat face shared by every edge in the chain\n            let common = adjacentFaces(chain[0].info.edge);\n            chain.forEach((oe) => {\n                const adj = adjacentFaces(oe.info.edge);\n                common = common.filter((i) => adj.includes(i));\n            });\n            common = common.filter((i) => faces[i].geomType === \"PLANE\");\n            if (common.length === 0) {\n                console.warn(\"Sine edge: touching edges must share a flat face, skipping\");\n                return;\n            }\n            // Default to the larger face (e.g. the top of a plate) so the side becomes wavy\n            common.sort((a, b) => replicad.measureArea(faces[b]) - replicad.measureArea(faces[a]));\n            const faceB = common[flipSide && common.length > 1 ? 1 : 0];\n            const nB = faces[faceB].normalAt(chain[0].start);\n            // A closed loop with a sharp corner starts at that corner so every smooth run is open\n            if (closed) {\n                const corner = chain.findIndex((oe, i) => !smooth(chain[(i + chain.length - 1) % chain.length], oe));\n                if (corner > 0)\n                    chain = chain.slice(corner).concat(chain.slice(0, corner));\n            }\n            let u = 0;\n            for (const oe of chain) {\n                oe.u0 = u;\n                u += oe.len;\n                // Material is on the side away from the other adjacent face's normal\n                const faceA = adjacentFaces(oe.info.edge).find((i) => i !== faceB);\n                if (faceA === undefined) {\n                    console.warn(\"Sine edge: edge does not border two faces, skipping\");\n                    return;\n                }\n                const mid = oe.point(oe.len / 2);\n                const side = nB.cross(oe.tangent(oe.len / 2));\n                oe.inSign = side.dot(faces[faceA].normalAt(mid)) > 0 ? -1 : 1;\n            }\n            const plane = new replicad.Plane(chain[0].start.add(nB.multiply(EPS)), chain[0].tangent(0), nB);\n            const to2D = (v) => {\n                const d = v.sub(plane.origin);\n                return [d.dot(plane.xDir), d.dot(plane.yDir)];\n            };\n            // Point offset into the material by offset.at(u), and its derivative along s\n            const offsetPoint = (oe, s, offset) => oe.point(s).add(nB.cross(oe.tangent(s)).multiply(oe.inSign * offset.at(oe.u0 + s)));\n            const offsetDeriv = (oe, s, offset) => {\n                const t = oe.tangent(s);\n                const u = oe.u0 + s;\n                let result = t.add(nB.cross(t).multiply(oe.inSign * offset.slope(u)));\n                if (oe.info.edge.geomType !== \"LINE\") {\n                    // Rate at which the edge direction turns, from a small central difference\n                    const h = oe.len * 1e-4;\n                    const a = Math.max(0, s - h);\n                    const b = Math.min(oe.len, s + h);\n                    const dt = oe.tangent(b).sub(oe.tangent(a)).multiply(1 / (b - a));\n                    result = result.add(nB.cross(dt).multiply(oe.inSign * offset.at(u)));\n                }\n                return result;\n            };\n            // Bezier segments (Hermite: matching position and slope at both ends) along a run\n            function segments(run, offset, isWave) {\n                const segs = [];\n                for (const oe of run) {\n                    if (!isWave && oe.info.edge.geomType === \"LINE\") {\n                        segs.push({ p0: to2D(offsetPoint(oe, 0, offset)), p1: to2D(offsetPoint(oe, oe.len, offset)) });\n                        continue;\n                    }\n                    const breaks = [0];\n                    if (isWave) {\n                        const quarter = wavelength / 4;\n                        for (let m = Math.ceil(oe.u0 / quarter); m * quarter < oe.u0 + oe.len; m++) {\n                            const s = m * quarter - oe.u0;\n                            if (s > 1e-6 && s < oe.len - 1e-6)\n                                breaks.push(s);\n                        }\n                    }\n                    breaks.push(oe.len);\n                    for (let i = 0; i + 1 < breaks.length; i++) {\n                        // On curved edges a single Bezier per quarter wave drifts, so use at least two\n                        const minPieces = isWave && oe.info.edge.geomType !== \"LINE\" ? 2 : 1;\n                        const n = Math.max(minPieces, Math.ceil(((breaks[i + 1] - breaks[i]) / oe.len) * oe.info.turn / MAX_TURN));\n                        for (let j = 0; j < n; j++) {\n                            const s0 = breaks[i] + ((breaks[i + 1] - breaks[i]) * j) / n;\n                            const s1 = breaks[i] + ((breaks[i + 1] - breaks[i]) * (j + 1)) / n;\n                            const h = (s1 - s0) / 3;\n                            const p0 = offsetPoint(oe, s0, offset);\n                            const p1 = offsetPoint(oe, s1, offset);\n                            segs.push({\n                                p0: to2D(p0),\n                                p1: to2D(p1),\n                                c1: to2D(p0.add(offsetDeriv(oe, s0, offset).multiply(h))),\n                                c2: to2D(p1.sub(offsetDeriv(oe, s1, offset).multiply(h))),\n                            });\n                        }\n                    }\n                }\n                return segs;\n            }\n            const reverse = (segs) => segs.slice().reverse().map((g) => ({ p0: g.p1, p1: g.p0, c1: g.c2, c2: g.c1 }));\n            const trace = (pen, segs) => {\n                segs.forEach((g) => {\n                    pen = g.c1 ? pen.cubicBezierCurveTo(g.p1, g.c1, g.c2) : pen.lineTo(g.p1);\n                });\n                return pen;\n            };\n            const loop = (segs) => {\n                const last = segs[segs.length - 1];\n                const first = segs[0].p0;\n                if (Math.hypot(last.p1[0] - first[0], last.p1[1] - first[1]) < 1e-6)\n                    last.p1 = first;\n                return trace(replicad.draw(first), segs).close();\n            };\n            const extrude = (drawing) => drawing.sketchOnPlane(plane).extrude(throughDist, { extrusionDirection: nB.multiply(-1) });\n            // Split into smooth runs; sharp corners get separate tools but the phase continues\n            const runs = [[chain[0]]];\n            for (let i = 1; i < chain.length; i++) {\n                if (smooth(chain[i - 1], chain[i]))\n                    runs[runs.length - 1].push(chain[i]);\n                else\n                    runs.push([chain[i]]);\n            }\n            if (closed && runs.length === 1) {\n                // Smooth closed loop: tool is the band between the wave loop and a loop just outside\n                const waveSolid = extrude(loop(segments(chain, wave, true)));\n                const outerSolid = extrude(loop(segments(chain, outside, false)));\n                addTool(replicad.measureVolume(waveSolid) > replicad.measureVolume(outerSolid)\n                    ? waveSolid.cut(outerSolid)\n                    : outerSolid.cut(waveSolid));\n                return;\n            }\n            runs.forEach((run) => {\n                const waveSegs = segments(run, wave, true);\n                const outerSegs = reverse(segments(run, outside, false));\n                let pen = replicad.draw(outerSegs[outerSegs.length - 1].p1).lineTo(waveSegs[0].p0);\n                pen = trace(pen, waveSegs).lineTo(outerSegs[0].p0);\n                addTool(extrude(trace(pen, outerSegs).close()));\n            });\n        });\n        if (tools) {\n            leaf.geometry = body.cut(tools);\n        }\n        return leaf;\n    });\n}\n"
+                }
+              ],
+              "allConnectors": [
+                {
+                  "ap2Name": "shape",
+                  "ap1ID": "id-4602",
+                  "ap2ID": "id-4603"
+                },
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-4603",
+                  "ap2ID": "id-4601"
+                }
+              ],
+              "fileTypeVersion": 1
+            },
+            {
               "atomType": "GitHubMolecule",
               "x": 0.2,
               "y": 0.5,
@@ -6868,8 +6954,8 @@
             },
             {
               "atomType": "Extrude",
-              "x": 0.7,
-              "y": 0.7,
+              "x": 0.6,
+              "y": 0.6,
               "uniqueID": "id-472",
               "ioValues": [
                 {
@@ -7044,6 +7130,11 @@
               "ap2Name": "number or geometry",
               "ap1ID": "id-472",
               "ap2ID": "id-477"
+            },
+            {
+              "ap2Name": "Geometry_Select",
+              "ap1ID": "id-472",
+              "ap2ID": "id-4600"
             },
             {
               "ap2Name": "height",
@@ -7985,7 +8076,7 @@
         {
           "atomType": "Input",
           "x": 0,
-          "y": 0.2,
+          "y": 0.4,
           "uniqueID": "id-1103",
           "name": "Width_(X)",
           "type": "number",
@@ -7993,8 +8084,8 @@
         },
         {
           "atomType": "Extrude",
-          "x": 0.4,
-          "y": 0.3,
+          "x": 0.3,
+          "y": 0.2,
           "uniqueID": "id-12",
           "ioValues": [
             {
@@ -8542,7 +8633,7 @@
         },
         {
           "atomType": "Rectangle",
-          "x": 0.1,
+          "x": 0,
           "y": 0.8,
           "uniqueID": "id-3228",
           "ioValues": [
@@ -8558,7 +8649,7 @@
         },
         {
           "atomType": "Extrude",
-          "x": 0.3,
+          "x": 0.2,
           "y": 0.8,
           "uniqueID": "id-3232",
           "ioValues": [
@@ -8574,7 +8665,7 @@
         },
         {
           "atomType": "Move",
-          "x": 0.4,
+          "x": 0.3,
           "y": 0.6,
           "uniqueID": "id-3236",
           "ioValues": [
@@ -9013,8 +9104,8 @@
         },
         {
           "atomType": "Move",
-          "x": 0.4,
-          "y": 0.8,
+          "x": 0.3,
+          "y": 0.9,
           "uniqueID": "id-3319",
           "ioValues": [
             {
@@ -9076,7 +9167,7 @@
             {
               "atomType": "Extrude",
               "x": 0.3,
-              "y": 0.3,
+              "y": 0.5,
               "uniqueID": "id-4552",
               "ioValues": [
                 {
@@ -9092,7 +9183,7 @@
             },
             {
               "atomType": "Molecule",
-              "x": 0.5,
+              "x": 0.6,
               "y": 0.5,
               "uniqueID": "id-4556",
               "name": "Edge Corrugator",
@@ -9176,7 +9267,7 @@
             },
             {
               "atomType": "GitHubMolecule",
-              "x": 0.2,
+              "x": 0.1,
               "y": 0.7,
               "uniqueID": "id-4585",
               "name": "Rounded_Rectangle",
@@ -9341,7 +9432,7 @@
         {
           "atomType": "Rectangle",
           "x": 0.2,
-          "y": 0.5,
+          "y": 0.3,
           "uniqueID": "id-8",
           "ioValues": [
             {
