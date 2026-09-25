@@ -3338,6 +3338,64 @@
       "topLevel": false,
       "allAtoms": [
         {
+          "atomType": "Assembly",
+          "x": 0.4,
+          "y": 0.5,
+          "uniqueID": "id-1004",
+          "ioValues": [
+            {
+              "name": "Shape 1",
+              "ioValue": null
+            },
+            {
+              "name": "Shape 2",
+              "ioValue": null
+            }
+          ]
+        },
+        {
+          "atomType": "Move",
+          "x": 0.5,
+          "y": 0.7,
+          "uniqueID": "id-1009",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": -600,
+              "currentEquation": "-600"
+            },
+            {
+              "name": "yDist",
+              "ioValue": 350,
+              "currentEquation": "350"
+            },
+            {
+              "name": "zDist",
+              "ioValue": 0
+            }
+          ]
+        },
+        {
+          "atomType": "Intersection",
+          "x": 0.3,
+          "y": 0.8,
+          "uniqueID": "id-1015",
+          "ioValues": [
+            {
+              "name": "geometry1",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "geometry2",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
           "atomType": "Output",
           "x": 1,
           "y": 0.5,
@@ -3361,7 +3419,7 @@
         {
           "atomType": "GitHubMolecule",
           "x": 0.1,
-          "y": 0.6,
+          "y": 0.5,
           "uniqueID": "id-881",
           "name": "Plywood Sheet",
           "ioValues": [
@@ -3535,33 +3593,9 @@
           "lastReloadedFromGithubAt": 1790298971953
         },
         {
-          "atomType": "Move",
-          "x": 0.4,
-          "y": 0.6,
-          "uniqueID": "id-908",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "xDist",
-              "ioValue": 0
-            },
-            {
-              "name": "yDist",
-              "ioValue": 0
-            },
-            {
-              "name": "zDist",
-              "ioValue": 0
-            }
-          ]
-        },
-        {
           "atomType": "GitHubMolecule",
           "x": 0.2,
-          "y": 0.5,
+          "y": 0.4,
           "uniqueID": "id-933",
           "name": "Linear-Pattern",
           "ioValues": [
@@ -3897,8 +3931,8 @@
         },
         {
           "atomType": "Rotate",
-          "x": 0.2,
-          "y": 0.9,
+          "x": 0.1,
+          "y": 0.7,
           "uniqueID": "id-977",
           "ioValues": [
             {
@@ -3923,7 +3957,7 @@
         {
           "atomType": "GitHubMolecule",
           "x": 0.3,
-          "y": 0.8,
+          "y": 0.6,
           "uniqueID": "id-992",
           "name": "To the Right",
           "ioValues": [
@@ -4052,18 +4086,38 @@
           "ap2ID": "id-977"
         },
         {
-          "ap2Name": "geometry",
-          "ap1ID": "id-933",
-          "ap2ID": "id-908"
-        },
-        {
           "ap2Name": "B",
           "ap1ID": "id-933",
           "ap2ID": "id-992"
         },
         {
-          "ap2Name": "A",
+          "ap2Name": "Shape 1",
+          "ap1ID": "id-933",
+          "ap2ID": "id-1004"
+        },
+        {
+          "ap2Name": "geometry2",
+          "ap1ID": "id-933",
+          "ap2ID": "id-1015"
+        },
+        {
+          "ap2Name": "geometry1",
           "ap1ID": "id-977",
+          "ap2ID": "id-1015"
+        },
+        {
+          "ap2Name": "Shape 2",
+          "ap1ID": "id-992",
+          "ap2ID": "id-1004"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-1004",
+          "ap2ID": "id-1009"
+        },
+        {
+          "ap2Name": "A",
+          "ap1ID": "id-1015",
           "ap2ID": "id-992"
         }
       ],
