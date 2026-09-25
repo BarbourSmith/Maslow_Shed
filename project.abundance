@@ -2895,14 +2895,14 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.4,
-          "y": 0.7,
+          "x": 0.3,
+          "y": 0.8,
           "uniqueID": "id-1719",
           "name": "Tabbed Panel",
           "ioValues": [
             {
               "name": "X",
-              "ioValue": 500
+              "ioValue": 304.79999999999995
             },
             {
               "name": "Y",
@@ -2966,7 +2966,7 @@
               "ioValues": [
                 {
                   "name": "x length",
-                  "ioValue": 500
+                  "ioValue": 304.79999999999995
                 },
                 {
                   "name": "y length",
@@ -3007,7 +3007,7 @@
               "ioValues": [
                 {
                   "name": "x length",
-                  "ioValue": 520
+                  "ioValue": 324.79999999999995
                 },
                 {
                   "name": "y length",
@@ -3046,7 +3046,7 @@
                 {
                   "name": "Shape 2",
                   "ioValue": {
-                    "geometry": "rectangle-500-200",
+                    "geometry": "rectangle-304.79999999999995-200",
                     "dimension": "2D",
                     "plane": {
                       "origin": [
@@ -3073,7 +3073,7 @@
                 {
                   "name": "Shape 3",
                   "ioValue": {
-                    "geometry": "move-rectangle-520-40-0-40-0",
+                    "geometry": "move-rectangle-324.79999999999995-40-0-40-0",
                     "dimension": "2D",
                     "plane": {
                       "origin": [
@@ -3100,7 +3100,7 @@
                 {
                   "name": "Shape 4",
                   "ioValue": {
-                    "geometry": "move-rectangle-520-40-0--40-0",
+                    "geometry": "move-rectangle-324.79999999999995-40-0--40-0",
                     "dimension": "2D",
                     "plane": {
                       "origin": [
@@ -3323,6 +3323,14 @@
           "uniqueID": "id-1766",
           "name": "304.79999999999995",
           "currentEquation": "304.79999999999995"
+        },
+        {
+          "atomType": "Equation",
+          "x": 0.2,
+          "y": 0.5,
+          "uniqueID": "id-1770",
+          "name": "-1*(48/7)*25.4",
+          "currentEquation": "-1*(48/7)*25.4"
         },
         {
           "atomType": "Output",
@@ -6201,6 +6209,16 @@
           "ap2ID": "id-740"
         },
         {
+          "ap2Name": "Tab Length",
+          "ap1ID": "id-392",
+          "ap2ID": "id-1719"
+        },
+        {
+          "ap2Name": "Wood Thickness",
+          "ap1ID": "id-392",
+          "ap2ID": "id-1719"
+        },
+        {
           "ap2Name": "geometry",
           "ap1ID": "id-395",
           "ap2ID": "id-715"
@@ -6234,6 +6252,11 @@
           "ap2Name": "distY",
           "ap1ID": "id-1766",
           "ap2ID": "id-784"
+        },
+        {
+          "ap2Name": "X",
+          "ap1ID": "id-1766",
+          "ap2ID": "id-1719"
         }
       ],
       "fileTypeVersion": 1
