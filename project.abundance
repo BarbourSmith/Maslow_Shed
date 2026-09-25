@@ -8,10 +8,34 @@
     {
       "name": "Wood_Thickness",
       "ioValue": 10
+    },
+    {
+      "name": "Length_(Y)",
+      "ioValue": 10
+    },
+    {
+      "name": "Width_(X)",
+      "ioValue": 10
     }
   ],
   "topLevel": true,
   "allAtoms": [
+    {
+      "atomType": "Input",
+      "x": 0,
+      "y": 0.5,
+      "uniqueID": "id-1094",
+      "name": "Length_(Y)",
+      "options": []
+    },
+    {
+      "atomType": "Input",
+      "x": 0,
+      "y": 0.8,
+      "uniqueID": "id-1097",
+      "name": "Width_(X)",
+      "options": []
+    },
     {
       "atomType": "Output",
       "x": 1,
@@ -50,6 +74,164 @@
       ],
       "topLevel": false,
       "allAtoms": [
+        {
+          "atomType": "GitHubMolecule",
+          "x": 0.7,
+          "y": 0.3,
+          "uniqueID": "id-1030",
+          "name": "Center_XY",
+          "ioValues": [
+            {
+              "name": "Geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-1024",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Code",
+              "x": 0.4,
+              "y": 0.3,
+              "uniqueID": "id-1025",
+              "ioValues": [
+                {
+                  "name": "A",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ],
+              "interpreterVersion": 0,
+              "code": "/**\n Inputs for this Code Atom:\n - Takes a single geometry input \"A\" and recenters it in the XY plane based on its bounding box.\n*/\nInputs = [\n  { inputName: \"A\", type: \"geometry\", defaultValue: null }\n]\n\nif (!A) {\n  // Nothing to do if no input provided\n  return null\n}\n\n// Get bounding box of A\nlet boundsA = await GetBounds(A);\n// boundsA.min and boundsA.max are arrays [x,y,z]\nlet min = boundsA.min\nlet max = boundsA.max\n\n// Compute the center of the bounding box in X and Y\nlet centerX = (min[0] + max[0]) / 2.0\nlet centerY = (min[1] + max[1]) / 2.0\n\n// Translation to move the bounding box center to the origin (0,0) in XY,\n// leaving Z unchanged.\nlet translationX = -centerX\nlet translationY = -centerY\nlet translationZ = 0\n\n// Move the shape. Move takes the input ID and translations (x,y,z)\nlet movedOutput = await Move(A, translationX, translationY, translationZ)\n\n// Return the moved shape. Move typically returns a replicad object suitable for return.\nreturn movedOutput"
+            },
+            {
+              "atomType": "Rectangle",
+              "x": 0.2,
+              "y": 0.6,
+              "uniqueID": "id-1026",
+              "ioValues": [
+                {
+                  "name": "x length",
+                  "ioValue": 10
+                },
+                {
+                  "name": "y length",
+                  "ioValue": 10
+                }
+              ]
+            },
+            {
+              "atomType": "Extrude",
+              "x": 0.3,
+              "y": 0.6,
+              "uniqueID": "id-1027",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "height",
+                  "ioValue": 10
+                }
+              ]
+            },
+            {
+              "atomType": "Move",
+              "x": 0.5,
+              "y": 0.6,
+              "uniqueID": "id-1028",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "xDist",
+                  "ioValue": 50
+                },
+                {
+                  "name": "yDist",
+                  "ioValue": 30
+                },
+                {
+                  "name": "zDist",
+                  "ioValue": 0
+                }
+              ]
+            },
+            {
+              "atomType": "Input",
+              "x": 0,
+              "y": 0.2,
+              "uniqueID": "id-1029",
+              "name": "Geometry",
+              "type": "geometry",
+              "options": []
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-1025",
+              "ap2ID": "id-1024"
+            },
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-1026",
+              "ap2ID": "id-1027"
+            },
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-1027",
+              "ap2ID": "id-1028"
+            },
+            {
+              "ap2Name": "A",
+              "ap1ID": "id-1029",
+              "ap2ID": "id-1025"
+            }
+          ],
+          "parentRepo": {
+            "lastFoundGit": "2026-09-20T02:23:39.099Z",
+            "privateRepo": false,
+            "repoName": "Center_XY",
+            "dateCreated": "2025-12-04T19:44:27Z",
+            "likes": 0,
+            "pngURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/project.png?sanitize=true",
+            "readme": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/README.md?sanitize=true",
+            "yyyy": 2025,
+            "topMoleculeID": "",
+            "userRanking": 0,
+            "userSetAsThumbnail": false,
+            "githubMoleculesUsed": [],
+            "html_url": "https://github.com/BarbourSmith/Center_XY",
+            "topics": [],
+            "pullRequests": [],
+            "forks": 0,
+            "dateModified": "2025-12-04T19:48:48Z",
+            "ranking": 1,
+            "searchField": "center_xy barboursmith this takes an input shape and moves it to be centered on the xy plane ",
+            "owner": "BarbourSmith",
+            "description": "This takes an input shape and moves it to be centered on the XY plane",
+            "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/project.abundance?sanitize=true",
+            "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/project.svg?sanitize=true",
+            "isLocal": false
+          },
+          "unitsKey": "MM",
+          "fileTypeVersion": 1,
+          "lastReloadedFromGithubAt": 1790299566714
+        },
         {
           "atomType": "Output",
           "x": 1,
@@ -2942,8 +3124,13 @@
           "ap2ID": "id-784"
         },
         {
-          "ap2Name": "number or geometry",
+          "ap2Name": "Geometry",
           "ap1ID": "id-784",
+          "ap2ID": "id-1030"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-1030",
           "ap2ID": "id-387"
         }
       ],
@@ -3325,21 +3512,29 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.5,
-      "y": 0.7,
+      "x": 0.4,
+      "y": 0.6,
       "uniqueID": "id-874",
       "name": "Floor",
       "ioValues": [
         {
           "name": "input",
           "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Floor_X",
+          "ioValue": 10
+        },
+        {
+          "name": "Floor_Y",
+          "ioValue": 10
         }
       ],
       "topLevel": false,
       "allAtoms": [
         {
           "atomType": "Assembly",
-          "x": 0.4,
+          "x": 0.6,
           "y": 0.5,
           "uniqueID": "id-1004",
           "ioValues": [
@@ -3355,7 +3550,7 @@
         },
         {
           "atomType": "Move",
-          "x": 0.5,
+          "x": 0.8,
           "y": 0.7,
           "uniqueID": "id-1009",
           "ioValues": [
@@ -3381,7 +3576,7 @@
         },
         {
           "atomType": "Intersection",
-          "x": 0.3,
+          "x": 0.4,
           "y": 0.8,
           "uniqueID": "id-1015",
           "ioValues": [
@@ -3394,6 +3589,22 @@
               "ioValue": "__GEOMETRY_INPUT__"
             }
           ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0,
+          "y": 0.4,
+          "uniqueID": "id-1088",
+          "name": "Floor_X",
+          "options": []
+        },
+        {
+          "atomType": "Input",
+          "x": 0,
+          "y": 0.7,
+          "uniqueID": "id-1091",
+          "name": "Floor_Y",
+          "options": []
         },
         {
           "atomType": "Output",
@@ -3418,8 +3629,8 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.1,
-          "y": 0.5,
+          "x": 0.2,
+          "y": 0.6,
           "uniqueID": "id-881",
           "name": "Plywood Sheet",
           "ioValues": [
@@ -3594,7 +3805,7 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.2,
+          "x": 0.3,
           "y": 0.4,
           "uniqueID": "id-933",
           "name": "Linear-Pattern",
@@ -3931,8 +4142,8 @@
         },
         {
           "atomType": "Rotate",
-          "x": 0.1,
-          "y": 0.7,
+          "x": 0.3,
+          "y": 0.8,
           "uniqueID": "id-977",
           "ioValues": [
             {
@@ -3956,7 +4167,7 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.3,
+          "x": 0.5,
           "y": 0.6,
           "uniqueID": "id-992",
           "name": "To the Right",
