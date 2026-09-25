@@ -11,11 +11,12 @@
     },
     {
       "name": "Length_(Y)",
-      "ioValue": 10
+      "ioValue": 3657.6
     },
     {
       "name": "Width_(X)",
-      "ioValue": 10
+      "ioValue": 4267.2,
+      "currentEquation": "14*12*25.4"
     }
   ],
   "topLevel": true,
@@ -35,6 +36,34 @@
       "uniqueID": "id-1097",
       "name": "Width_(X)",
       "options": []
+    },
+    {
+      "atomType": "Equation",
+      "x": 0.2,
+      "y": 0.8,
+      "uniqueID": "id-1106",
+      "name": "X-12*25.4",
+      "ioValues": [
+        {
+          "name": "X",
+          "ioValue": 4267.2
+        }
+      ],
+      "currentEquation": "X-12*25.4"
+    },
+    {
+      "atomType": "Equation",
+      "x": 0.2,
+      "y": 0.6,
+      "uniqueID": "id-1111",
+      "name": "Y-12*25.4",
+      "ioValues": [
+        {
+          "name": "Y",
+          "ioValue": 3657.6
+        }
+      ],
+      "currentEquation": "Y-12*25.4"
     },
     {
       "atomType": "Output",
@@ -2217,7 +2246,7 @@
                 {
                   "name": "Shape 1",
                   "ioValue": {
-                    "geometry": "move-6b7e8bb8-0-0-400-0",
+                    "geometry": "move-fa1dcf58-0-0-400-0",
                     "color": "#aad7f2",
                     "tags": [],
                     "bom": [],
@@ -2251,7 +2280,7 @@
                 {
                   "name": "Shape 2",
                   "ioValue": {
-                    "geometry": "6b7e8bb8-0",
+                    "geometry": "fa1dcf58-0",
                     "color": "#aad7f2",
                     "tags": [],
                     "bom": [],
@@ -3139,11 +3168,39 @@
     {
       "atomType": "Molecule",
       "x": 0.2,
-      "y": 0.6,
+      "y": 0.4,
       "uniqueID": "id-4",
       "name": "Outline",
+      "ioValues": [
+        {
+          "name": "Length_(Y)",
+          "ioValue": 3657.6
+        },
+        {
+          "name": "Width_(X)",
+          "ioValue": 4267.2
+        }
+      ],
       "topLevel": false,
       "allAtoms": [
+        {
+          "atomType": "Input",
+          "x": 0,
+          "y": 0.5,
+          "uniqueID": "id-1100",
+          "name": "Length_(Y)",
+          "type": "number",
+          "options": []
+        },
+        {
+          "atomType": "Input",
+          "x": 0,
+          "y": 0.8,
+          "uniqueID": "id-1103",
+          "name": "Width_(X)",
+          "type": "number",
+          "options": []
+        },
         {
           "atomType": "Extrude",
           "x": 0.3,
@@ -3304,12 +3361,12 @@
           "ioValues": [
             {
               "name": "x length",
-              "ioValue": 3657.6,
+              "ioValue": 4267.2,
               "currentEquation": "12*12*25.4"
             },
             {
               "name": "y length",
-              "ioValue": 4267.2,
+              "ioValue": 3657.6,
               "currentEquation": "14*12*25.4"
             }
           ]
@@ -3330,6 +3387,16 @@
           "ap2Name": "number or geometry",
           "ap1ID": "id-25",
           "ap2ID": "id-6"
+        },
+        {
+          "ap2Name": "y length",
+          "ap1ID": "id-1100",
+          "ap2ID": "id-8"
+        },
+        {
+          "ap2Name": "x length",
+          "ap1ID": "id-1103",
+          "ap2ID": "id-8"
         }
       ],
       "fileTypeVersion": 1
@@ -3512,8 +3579,8 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.4,
-      "y": 0.6,
+      "x": 0.3,
+      "y": 0.8,
       "uniqueID": "id-874",
       "name": "Floor",
       "ioValues": [
@@ -3523,11 +3590,11 @@
         },
         {
           "name": "Floor_X",
-          "ioValue": 10
+          "ioValue": 3962.3999999999996
         },
         {
           "name": "Floor_Y",
-          "ioValue": 10
+          "ioValue": 3352.8
         }
       ],
       "topLevel": false,
@@ -3540,10 +3607,6 @@
           "ioValues": [
             {
               "name": "Shape 1",
-              "ioValue": null
-            },
-            {
-              "name": "Shape 2",
               "ioValue": null
             }
           ]
@@ -3575,22 +3638,6 @@
           ]
         },
         {
-          "atomType": "Intersection",
-          "x": 0.4,
-          "y": 0.8,
-          "uniqueID": "id-1015",
-          "ioValues": [
-            {
-              "name": "geometry1",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "geometry2",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ]
-        },
-        {
           "atomType": "Input",
           "x": 0,
           "y": 0.4,
@@ -3605,6 +3652,47 @@
           "uniqueID": "id-1091",
           "name": "Floor_Y",
           "options": []
+        },
+        {
+          "atomType": "Move",
+          "x": 0.3,
+          "y": 0.9,
+          "uniqueID": "id-1115",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 0
+            },
+            {
+              "name": "yDist",
+              "ioValue": 2438.3999999999996,
+              "currentEquation": "96*25.4"
+            },
+            {
+              "name": "zDist",
+              "ioValue": 0
+            }
+          ]
+        },
+        {
+          "atomType": "Assembly",
+          "x": 0.4,
+          "y": 0.7,
+          "uniqueID": "id-1121",
+          "ioValues": [
+            {
+              "name": "Shape 1",
+              "ioValue": null
+            },
+            {
+              "name": "Shape 2",
+              "ioValue": null
+            }
+          ]
         },
         {
           "atomType": "Output",
@@ -4143,7 +4231,7 @@
         {
           "atomType": "Rotate",
           "x": 0.3,
-          "y": 0.8,
+          "y": 0.7,
           "uniqueID": "id-977",
           "ioValues": [
             {
@@ -4164,120 +4252,6 @@
               "currentEquation": "90"
             }
           ]
-        },
-        {
-          "atomType": "GitHubMolecule",
-          "x": 0.5,
-          "y": 0.6,
-          "uniqueID": "id-992",
-          "name": "To the Right",
-          "ioValues": [
-            {
-              "name": "A",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "B",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ],
-          "topLevel": false,
-          "allAtoms": [
-            {
-              "atomType": "Output",
-              "x": 1,
-              "y": 0.5,
-              "uniqueID": "id-988",
-              "ioValues": [
-                {
-                  "name": "number or geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                }
-              ]
-            },
-            {
-              "atomType": "Code",
-              "x": 0.6,
-              "y": 0.4,
-              "uniqueID": "id-989",
-              "ioValues": [
-                {
-                  "name": "A",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "B",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                }
-              ],
-              "interpreterVersion": 0,
-              "code": "\n      Inputs = [\n       {inputName: \"A\", type: \"geometry\", defaultValue: null},\n        {inputName: \"B\", type: \"geometry\", defaultValue: null}\n      ]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n\n      //Takes the address and gets the shape from the library\n      let importedShapeA = library[A]\n\n      let boundsA = await GetBounds(A);\n      let A_minX = boundsA.min[0];\n\n      let B_maxX = 0;\n      if(B){\n          let boundsB = await GetBounds(B);\n          console.log(\"Bounding Box B:  \");\n          console.log(boundsB);\n          B_maxX  = boundsB.max[0];\n      }\n\n     let translationX = B_maxX - A_minX;\n     \n      let movedOutput = await Move(A, translationX, 0, 0);\n\n      return movedOutput;\n\n      // //We can also create a new shape from scratch\n      // let createdRectangle = replicad.drawRectangle(5,7)\n      // //This is the plane we are going to put our new shape on\n      // const newPlane = new replicad.Plane().pivot(0, 'Y');\n      // //And we extrude the shape to make it 3D\n      // let createdShape = createdRectangle.sketchOnPlane(newPlane).extrude(height)\n\n      // //For our new geometry we need to define the tags, color, plane, etc\n      // let shape2 = {\n      //     geometry: [createdShape],\n      //     tags: [\"aTag\"],\n      //     color: '#A3CE5B',\n      //     plane: newPlane,\n      //     bom: []\n      // }\n\n      // //Then we can return our created shape in just the same way\n      // //return shape2\n\n      // //If we want to return both shapes at once, we can create an assembly with them\n      // let anAssembly = {\n      //   geometry: [shape1, shape2],\n      //   tags: [\"aNewTag\"],\n      //   color: '#A3CF5B',\n      //   plane: newPlane,\n      //   bom: []\n      // }\n\n      // //And we can return that in the same way\n      // return anAssembly\n\n      /**\n      To Use the Code Atom, enter your inputs to the input list as an object array:\n      Inputs = [\n        {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n        {inputName: \"dist\", type: \"number\", defaultValue: 5},\n        {inputName: \"height\", type: \"number\", defaultValue: 10}\n      ]\n      If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0]\n      Use any replicad available methods to modify your geometry. Learn more about all of the available methods at\n      https://replicad.xyz/docs/introapp/UserGuide.html\n      Return a replicad object that includes geometry, color, tags and plane.\n\n      Example Code Atom:\n        Inputs = [\n          {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n          {inputName: \"x\", type: \"number\", defaultValue: 5}\n        ]\n        let finalShape = library[shape].geometry[0].clone().translate([x,0,0])\n        return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n      */\n      "
-            },
-            {
-              "atomType": "Input",
-              "x": 0,
-              "y": 0.2,
-              "uniqueID": "id-990",
-              "name": "A",
-              "type": "geometry",
-              "options": []
-            },
-            {
-              "atomType": "Input",
-              "x": 0,
-              "y": 0.2,
-              "uniqueID": "id-991",
-              "name": "B",
-              "type": "geometry",
-              "options": []
-            }
-          ],
-          "allConnectors": [
-            {
-              "ap2Name": "number or geometry",
-              "ap1ID": "id-989",
-              "ap2ID": "id-988"
-            },
-            {
-              "ap2Name": "A",
-              "ap1ID": "id-990",
-              "ap2ID": "id-989"
-            },
-            {
-              "ap2Name": "B",
-              "ap1ID": "id-991",
-              "ap2ID": "id-989"
-            }
-          ],
-          "parentRepo": {
-            "lastFoundGit": "2026-09-20T02:23:39.099Z",
-            "privateRepo": false,
-            "repoName": "To-the-Right",
-            "dateCreated": "2025-09-24T18:31:43Z",
-            "likes": 0,
-            "pngURL": "https://raw.githubusercontent.com/BarbourSmith/To-the-Right/master/project.png?sanitize=true",
-            "readme": "https://raw.githubusercontent.com/BarbourSmith/To-the-Right/master/README.md?sanitize=true",
-            "yyyy": 2025,
-            "topMoleculeID": "",
-            "userRanking": 0,
-            "userSetAsThumbnail": false,
-            "githubMoleculesUsed": [],
-            "html_url": "https://github.com/BarbourSmith/To-the-Right",
-            "topics": [],
-            "pullRequests": [],
-            "forks": 0,
-            "dateModified": "2025-09-24T18:36:23Z",
-            "ranking": 2,
-            "searchField": "to-the-right barboursmith takes input a and moves it to the right of input b as defined by their bounding boxes ",
-            "owner": "BarbourSmith",
-            "description": "Takes input A and moves it to the right of input B as defined by their bounding boxes",
-            "contentURL": "https://raw.githubusercontent.com/BarbourSmith/To-the-Right/master/project.abundance?sanitize=true",
-            "svgURL": "https://raw.githubusercontent.com/BarbourSmith/To-the-Right/master/project.svg?sanitize=true",
-            "isLocal": false
-          },
-          "unitsKey": "MM",
-          "fileTypeVersion": 1,
-          "lastReloadedFromGithubAt": 1790299153074
         }
       ],
       "allConnectors": [
@@ -4297,29 +4271,19 @@
           "ap2ID": "id-977"
         },
         {
-          "ap2Name": "B",
-          "ap1ID": "id-933",
-          "ap2ID": "id-992"
-        },
-        {
           "ap2Name": "Shape 1",
           "ap1ID": "id-933",
           "ap2ID": "id-1004"
         },
         {
-          "ap2Name": "geometry2",
-          "ap1ID": "id-933",
-          "ap2ID": "id-1015"
-        },
-        {
-          "ap2Name": "geometry1",
+          "ap2Name": "geometry",
           "ap1ID": "id-977",
-          "ap2ID": "id-1015"
+          "ap2ID": "id-1115"
         },
         {
           "ap2Name": "Shape 2",
-          "ap1ID": "id-992",
-          "ap2ID": "id-1004"
+          "ap1ID": "id-977",
+          "ap2ID": "id-1121"
         },
         {
           "ap2Name": "geometry",
@@ -4327,9 +4291,9 @@
           "ap2ID": "id-1009"
         },
         {
-          "ap2Name": "A",
-          "ap1ID": "id-1015",
-          "ap2ID": "id-992"
+          "ap2Name": "Shape 1",
+          "ap1ID": "id-1115",
+          "ap2ID": "id-1121"
         }
       ],
       "fileTypeVersion": 1
@@ -4354,6 +4318,36 @@
     {
       "ap2Name": "input",
       "ap1ID": "id-385",
+      "ap2ID": "id-874"
+    },
+    {
+      "ap2Name": "Length_(Y)",
+      "ap1ID": "id-1094",
+      "ap2ID": "id-4"
+    },
+    {
+      "ap2Name": "Y",
+      "ap1ID": "id-1094",
+      "ap2ID": "id-1111"
+    },
+    {
+      "ap2Name": "Width_(X)",
+      "ap1ID": "id-1097",
+      "ap2ID": "id-4"
+    },
+    {
+      "ap2Name": "X",
+      "ap1ID": "id-1097",
+      "ap2ID": "id-1106"
+    },
+    {
+      "ap2Name": "Floor_X",
+      "ap1ID": "id-1106",
+      "ap2ID": "id-874"
+    },
+    {
+      "ap2Name": "Floor_Y",
+      "ap1ID": "id-1111",
       "ap2ID": "id-874"
     }
   ],
