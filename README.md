@@ -6,9 +6,9 @@
 
 ## Inputs
 
-- **Wood_Thickness** (number)
 - **Length_(Y)** (number)
 - **Width_(X)** (number)
+- **Wood_Thickness** (number)
 
 
 
