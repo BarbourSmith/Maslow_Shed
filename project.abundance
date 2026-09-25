@@ -9036,6 +9036,123 @@
           ]
         },
         {
+          "atomType": "Molecule",
+          "x": 0.7,
+          "y": 0.5,
+          "uniqueID": "id-4529",
+          "name": "Molecule",
+          "ioValues": [
+            {
+              "name": "Input",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-4531",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Rectangle",
+              "x": 0.2,
+              "y": 0.3,
+              "uniqueID": "id-4533",
+              "ioValues": [
+                {
+                  "name": "x length",
+                  "ioValue": 60,
+                  "currentEquation": "60"
+                },
+                {
+                  "name": "y length",
+                  "ioValue": 20,
+                  "currentEquation": "20"
+                }
+              ]
+            },
+            {
+              "atomType": "Code",
+              "x": 0.5,
+              "y": 0.7,
+              "uniqueID": "id-4537",
+              "ioValues": [
+                {
+                  "name": "depth",
+                  "ioValue": 30
+                },
+                {
+                  "name": "shape",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "wavelength",
+                  "ioValue": 10
+                },
+                {
+                  "name": "flipSide",
+                  "ioValue": false
+                }
+              ],
+              "interpreterVersion": 1,
+              "code": "function run(\n  shape: Assembly,\n  wavelength: number = 10,\n  depth: number = 2,\n  flipSide: boolean = false,\n) {\n  const EPS = 0.01;\n\n  // Builds the wave profile from cubic Bezier curves, 4 per period, placed at the\n  // peaks, valleys and zero crossings. Each curve matches the height and slope of\n  // y = -s * depth * (1 - cos(2πx/λ)) / 2 at both of its ends.\n  function waveDrawing(length: number, s: number) {\n    const periods = Math.max(1, Math.round(length / wavelength));\n    const lambda = length / periods;\n    const k = (2 * Math.PI) / lambda;\n    const f = (x: number) => -s * depth * (1 - Math.cos(k * x)) / 2;\n    const df = (x: number) => -s * depth * k * Math.sin(k * x) / 2;\n    const h = lambda / 4;\n    let pen = replicad.draw([0, s * EPS]).lineTo([0, 0]);\n    for (let i = 0; i < periods * 4; i++) {\n      const x0 = i * h;\n      const x1 = x0 + h;\n      pen = pen.cubicBezierCurveTo(\n        [x1, f(x1)],\n        [x0 + h / 3, f(x0) + (h / 3) * df(x0)],\n        [x1 - h / 3, f(x1) - (h / 3) * df(x1)],\n      );\n    }\n    return pen.lineTo([length, s * EPS]).close();\n  }\n\n  return new Assembly(shape).onLeafs((leaf) => {\n    if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n      return leaf;\n    }\n    const body = leaf.geometry;\n    const edges = (leaf.selection?.edges ?? [])\n      .map((i) => body.edges[i])\n      .filter((e) => e != null);\n    if (edges.length === 0) return leaf;\n\n    const [bMin, bMax] = body.boundingBox.bounds;\n    const throughDist =\n      Math.hypot(bMax[0] - bMin[0], bMax[1] - bMin[1], bMax[2] - bMin[2]) + 2 * EPS;\n\n    let tools: replicad.Shape3D | null = null;\n    edges.forEach((edge) => {\n      if (edge.geomType !== \"LINE\") {\n        console.warn(\"Sine edge: only straight edges are supported, skipping\");\n        return;\n      }\n      const p0 = edge.startPoint;\n      const p1 = edge.endPoint;\n      const length = p1.sub(p0).Length;\n      const t = p1.sub(p0).normalize();\n      const mid = p0.add(p1).multiply(0.5);\n\n      const adjacent = body.faces.filter((face) => face.edges.some((e) => e.isSame(edge)));\n      if (adjacent.length !== 2) {\n        console.warn(\"Sine edge: edge does not border exactly two faces, skipping\");\n        return;\n      }\n      // Wave is drawn in the plane of face B and cut straight through along -nB.\n      // Default B = the larger face (e.g. the top of a plate) so the side becomes wavy.\n      adjacent.sort((a, b) => replicad.measureArea(b) - replicad.measureArea(a));\n      const [faceB, faceA] = flipSide ? [adjacent[1], adjacent[0]] : adjacent;\n      const nA = faceA.normalAt(mid);\n      const nB = faceB.normalAt(mid);\n\n      const plane = new replicad.Plane(p0.add(nB.multiply(EPS)), t, nB);\n      // Sign so that drawing -y points into the material (away from face A).\n      const s = plane.yDir.dot(nA) > 0 ? 1 : -1;\n\n      const tool = waveDrawing(length, s)\n        .sketchOnPlane(plane)\n        .extrude(throughDist, { extrusionDirection: nB.multiply(-1) });\n      tools = tools ? tools.fuse(tool) : tool;\n    });\n\n    if (tools) leaf.geometry = body.cut(tools);\n    return leaf;\n  });\n}",
+              "compiledCode": "\"use strict\";\nfunction run(shape, wavelength = 10, depth = 2, flipSide = false) {\n    const EPS = 0.01;\n    // Builds the wave profile from cubic Bezier curves, 4 per period, placed at the\n    // peaks, valleys and zero crossings. Each curve matches the height and slope of\n    // y = -s * depth * (1 - cos(2πx/λ)) / 2 at both of its ends.\n    function waveDrawing(length, s) {\n        const periods = Math.max(1, Math.round(length / wavelength));\n        const lambda = length / periods;\n        const k = (2 * Math.PI) / lambda;\n        const f = (x) => -s * depth * (1 - Math.cos(k * x)) / 2;\n        const df = (x) => -s * depth * k * Math.sin(k * x) / 2;\n        const h = lambda / 4;\n        let pen = replicad.draw([0, s * EPS]).lineTo([0, 0]);\n        for (let i = 0; i < periods * 4; i++) {\n            const x0 = i * h;\n            const x1 = x0 + h;\n            pen = pen.cubicBezierCurveTo([x1, f(x1)], [x0 + h / 3, f(x0) + (h / 3) * df(x0)], [x1 - h / 3, f(x1) - (h / 3) * df(x1)]);\n        }\n        return pen.lineTo([length, s * EPS]).close();\n    }\n    return new Assembly(shape).onLeafs((leaf) => {\n        if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n            return leaf;\n        }\n        const body = leaf.geometry;\n        const edges = (leaf.selection?.edges ?? [])\n            .map((i) => body.edges[i])\n            .filter((e) => e != null);\n        if (edges.length === 0)\n            return leaf;\n        const [bMin, bMax] = body.boundingBox.bounds;\n        const throughDist = Math.hypot(bMax[0] - bMin[0], bMax[1] - bMin[1], bMax[2] - bMin[2]) + 2 * EPS;\n        let tools = null;\n        edges.forEach((edge) => {\n            if (edge.geomType !== \"LINE\") {\n                console.warn(\"Sine edge: only straight edges are supported, skipping\");\n                return;\n            }\n            const p0 = edge.startPoint;\n            const p1 = edge.endPoint;\n            const length = p1.sub(p0).Length;\n            const t = p1.sub(p0).normalize();\n            const mid = p0.add(p1).multiply(0.5);\n            const adjacent = body.faces.filter((face) => face.edges.some((e) => e.isSame(edge)));\n            if (adjacent.length !== 2) {\n                console.warn(\"Sine edge: edge does not border exactly two faces, skipping\");\n                return;\n            }\n            // Wave is drawn in the plane of face B and cut straight through along -nB.\n            // Default B = the larger face (e.g. the top of a plate) so the side becomes wavy.\n            adjacent.sort((a, b) => replicad.measureArea(b) - replicad.measureArea(a));\n            const [faceB, faceA] = flipSide ? [adjacent[1], adjacent[0]] : adjacent;\n            const nA = faceA.normalAt(mid);\n            const nB = faceB.normalAt(mid);\n            const plane = new replicad.Plane(p0.add(nB.multiply(EPS)), t, nB);\n            // Sign so that drawing -y points into the material (away from face A).\n            const s = plane.yDir.dot(nA) > 0 ? 1 : -1;\n            const tool = waveDrawing(length, s)\n                .sketchOnPlane(plane)\n                .extrude(throughDist, { extrusionDirection: nB.multiply(-1) });\n            tools = tools ? tools.fuse(tool) : tool;\n        });\n        if (tools)\n            leaf.geometry = body.cut(tools);\n        return leaf;\n    });\n}\n"
+            },
+            {
+              "atomType": "Input",
+              "x": 0,
+              "y": 0.6,
+              "uniqueID": "id-4549",
+              "type": "edgeselect",
+              "options": [],
+              "selectedEdgeData": {}
+            },
+            {
+              "atomType": "Extrude",
+              "x": 0.3,
+              "y": 0.3,
+              "uniqueID": "id-4552",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "height",
+                  "ioValue": 5,
+                  "currentEquation": "5"
+                }
+              ]
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-4533",
+              "ap2ID": "id-4552"
+            },
+            {
+              "ap2Name": "flipSide",
+              "ap1ID": "id-4549",
+              "ap2ID": "id-4537"
+            },
+            {
+              "ap2Name": "shape",
+              "ap1ID": "id-4552",
+              "ap2ID": "id-4537"
+            }
+          ],
+          "fileTypeVersion": 1
+        },
+        {
           "atomType": "Output",
           "x": 1,
           "y": 0.5,
