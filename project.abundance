@@ -2088,7 +2088,7 @@
                 {
                   "name": "Shape 1",
                   "ioValue": {
-                    "geometry": "move-8f731e1e-0-0-400-0",
+                    "geometry": "move-5467d177-0-0-400-0",
                     "color": "#aad7f2",
                     "tags": [],
                     "bom": [],
@@ -2116,7 +2116,7 @@
                 {
                   "name": "Shape 2",
                   "ioValue": {
-                    "geometry": "8f731e1e-0",
+                    "geometry": "5467d177-0",
                     "color": "#aad7f2",
                     "tags": [],
                     "bom": [],
@@ -6933,7 +6933,7 @@
                 {
                   "name": "Shape 1",
                   "ioValue": {
-                    "geometry": "move-b0c59a4f-0-0-400-0",
+                    "geometry": "move-18fa70f8-0-0-400-0",
                     "color": "#aad7f2",
                     "tags": [],
                     "bom": [],
@@ -6961,7 +6961,7 @@
                 {
                   "name": "Shape 2",
                   "ioValue": {
-                    "geometry": "b0c59a4f-0",
+                    "geometry": "18fa70f8-0",
                     "color": "#aad7f2",
                     "tags": [],
                     "bom": [],
@@ -8589,12 +8589,12 @@
             },
             {
               "name": "xDist",
-              "ioValue": 0
+              "ioValue": 5000,
+              "currentEquation": "5000"
             },
             {
               "name": "yDist",
-              "ioValue": 5000,
-              "currentEquation": "5000"
+              "ioValue": 0
             },
             {
               "name": "zDist",
@@ -9030,12 +9030,13 @@
             },
             {
               "name": "xDist",
-              "ioValue": 0
+              "ioValue": -5000,
+              "currentEquation": "-5000"
             },
             {
               "name": "yDist",
-              "ioValue": -5000,
-              "currentEquation": "-5000"
+              "ioValue": 0,
+              "currentEquation": "0"
             },
             {
               "name": "zDist",
