@@ -7,8 +7,7 @@
   "ioValues": [
     {
       "name": "Length_(Y)",
-      "ioValue": 3657.6,
-      "currentEquation": "3657.6"
+      "ioValue": 3657.6
     },
     {
       "name": "Width_(X)",
@@ -8139,8 +8138,7 @@
             },
             {
               "name": "Radius",
-              "ioValue": 600,
-              "currentEquation": "600"
+              "ioValue": 600
             },
             {
               "name": "Selection",
@@ -8550,13 +8548,11 @@
           "ioValues": [
             {
               "name": "x length",
-              "ioValue": 10000,
-              "currentEquation": "10000"
+              "ioValue": 10000
             },
             {
               "name": "y length",
-              "ioValue": 10000,
-              "currentEquation": "10000"
+              "ioValue": 10000
             }
           ]
         },
@@ -8572,8 +8568,7 @@
             },
             {
               "name": "height",
-              "ioValue": 10000,
-              "currentEquation": "10000"
+              "ioValue": 10000
             }
           ]
         },
@@ -8589,8 +8584,7 @@
             },
             {
               "name": "xDist",
-              "ioValue": 5000,
-              "currentEquation": "5000"
+              "ioValue": 5000
             },
             {
               "name": "yDist",
@@ -8598,8 +8592,7 @@
             },
             {
               "name": "zDist",
-              "ioValue": 2000,
-              "currentEquation": "2000"
+              "ioValue": 2000
             }
           ]
         },
@@ -9030,18 +9023,15 @@
             },
             {
               "name": "xDist",
-              "ioValue": -5000,
-              "currentEquation": "-5000"
+              "ioValue": -5000
             },
             {
               "name": "yDist",
-              "ioValue": 0,
-              "currentEquation": "0"
+              "ioValue": 0
             },
             {
               "name": "zDist",
-              "ioValue": 2000,
-              "currentEquation": "2000"
+              "ioValue": 2000
             }
           ]
         },
@@ -9099,16 +9089,6 @@
         },
         {
           "ap2Name": "geometry",
-          "ap1ID": "id-8",
-          "ap2ID": "id-12"
-        },
-        {
-          "ap2Name": "Shape",
-          "ap1ID": "id-3176",
-          "ap2ID": "id-3242"
-        },
-        {
-          "ap2Name": "geometry",
           "ap1ID": "id-3228",
           "ap2ID": "id-3232"
         },
@@ -9128,14 +9108,24 @@
           "ap2ID": "id-3176"
         },
         {
-          "ap2Name": "number or geometry",
-          "ap1ID": "id-3242",
-          "ap2ID": "id-6"
-        },
-        {
           "ap2Name": "Selection",
           "ap1ID": "id-3319",
           "ap2ID": "id-3242"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-8",
+          "ap2ID": "id-12"
+        },
+        {
+          "ap2Name": "Shape",
+          "ap1ID": "id-3176",
+          "ap2ID": "id-3242"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-3242",
+          "ap2ID": "id-6"
         }
       ],
       "fileTypeVersion": 1
@@ -10308,6 +10298,11 @@
       "ap2ID": "id-385"
     },
     {
+      "ap2Name": "geometry",
+      "ap1ID": "id-874",
+      "ap2ID": "id-1285"
+    },
+    {
       "ap2Name": "input",
       "ap1ID": "id-4",
       "ap2ID": "id-385"
@@ -10316,11 +10311,6 @@
       "ap2Name": "input",
       "ap1ID": "id-4",
       "ap2ID": "id-1296"
-    },
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-874",
-      "ap2ID": "id-1285"
     },
     {
       "ap2Name": "Shape 3",
