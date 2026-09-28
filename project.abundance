@@ -14255,8 +14255,8 @@
           "allAtoms": [
             {
               "atomType": "GitHubMolecule",
-              "x": 0.3,
-              "y": 0.4,
+              "x": 0.2,
+              "y": 0.2,
               "uniqueID": "id-396",
               "name": "2D_Slice",
               "ioValues": [
@@ -15996,8 +15996,8 @@
             },
             {
               "atomType": "Molecule",
-              "x": 0.8,
-              "y": 0.8,
+              "x": 0.9,
+              "y": 0.4,
               "uniqueID": "id-4600",
               "name": "Edge Corrugator",
               "ioValues": [
@@ -16484,7 +16484,7 @@
             },
             {
               "atomType": "GitHubMolecule",
-              "x": 0.2,
+              "x": 0.3,
               "y": 0.5,
               "uniqueID": "id-466",
               "name": "Offset_2D",
@@ -16598,8 +16598,8 @@
             },
             {
               "atomType": "Difference",
-              "x": 0.5,
-              "y": 0.2,
+              "x": 0.7,
+              "y": 0.3,
               "uniqueID": "id-471",
               "ioValues": [
                 {
@@ -16614,8 +16614,8 @@
             },
             {
               "atomType": "Extrude",
-              "x": 0.6,
-              "y": 0.3,
+              "x": 0.7,
+              "y": 0.9,
               "uniqueID": "id-472",
               "ioValues": [
                 {
@@ -16631,7 +16631,7 @@
             {
               "atomType": "Input",
               "x": 0,
-              "y": 0.2,
+              "y": 0.9,
               "uniqueID": "id-473",
               "name": "Wood_Thickness",
               "type": "number",
@@ -16640,15 +16640,15 @@
             {
               "atomType": "Equation",
               "x": 0.1,
-              "y": 0.5,
+              "y": 0.6,
               "uniqueID": "id-474",
               "name": "-1*(48/7)*25.4",
               "currentEquation": "-1*(48/7)*25.4"
             },
             {
               "atomType": "Move",
-              "x": 0.3,
-              "y": 0.6,
+              "x": 0.4,
+              "y": 0.8,
               "uniqueID": "id-475",
               "ioValues": [
                 {
@@ -16671,8 +16671,8 @@
             },
             {
               "atomType": "Fusion",
-              "x": 0.4,
-              "y": 0.6,
+              "x": 0.5,
+              "y": 0.4,
               "uniqueID": "id-476",
               "ioValues": [
                 {
@@ -16749,7 +16749,7 @@
             {
               "atomType": "Input",
               "x": 0,
-              "y": 0.2,
+              "y": 0.4,
               "uniqueID": "id-478",
               "name": "input",
               "type": "geometry",
@@ -16757,8 +16757,8 @@
             },
             {
               "atomType": "Rotate",
-              "x": 0.2,
-              "y": 0.2,
+              "x": 0.1,
+              "y": 0.3,
               "uniqueID": "id-479",
               "ioValues": [
                 {
@@ -16781,7 +16781,7 @@
             },
             {
               "atomType": "GitHubMolecule",
-              "x": 0.6,
+              "x": 0.9,
               "y": 0.7,
               "uniqueID": "id-5928",
               "name": "Cross-Section",
