@@ -13208,6 +13208,47 @@
                           "ioValue": "__GEOMETRY_INPUT__"
                         }
                       ]
+                    },
+                    {
+                      "atomType": "Equation",
+                      "x": 0.3,
+                      "y": 0.9,
+                      "uniqueID": "id-31376",
+                      "name": "(10*12*25.4) - 300",
+                      "currentEquation": "(10*12*25.4) - 300"
+                    },
+                    {
+                      "atomType": "Equation",
+                      "x": 0.3,
+                      "y": 0.8,
+                      "uniqueID": "id-31378",
+                      "name": "(7*12*25.4) - 300",
+                      "currentEquation": "(7*12*25.4) - 300"
+                    },
+                    {
+                      "atomType": "Move",
+                      "x": 0.4,
+                      "y": 0.8,
+                      "uniqueID": "id-31380",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "xDist",
+                          "ioValue": 1833.6
+                        },
+                        {
+                          "name": "yDist",
+                          "ioValue": -390,
+                          "currentEquation": "-390"
+                        },
+                        {
+                          "name": "zDist",
+                          "ioValue": 0
+                        }
+                      ]
                     }
                   ],
                   "allConnectors": [
@@ -13220,6 +13261,11 @@
                       "ap2Name": "geometry",
                       "ap1ID": "id-25857",
                       "ap2ID": "id-25863"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-25857",
+                      "ap2ID": "id-31380"
                     },
                     {
                       "ap2Name": "Geometry",
@@ -13280,6 +13326,11 @@
                       "ap2Name": "geometry",
                       "ap1ID": "id-31366",
                       "ap2ID": "id-25857"
+                    },
+                    {
+                      "ap2Name": "xDist",
+                      "ap1ID": "id-31378",
+                      "ap2ID": "id-31380"
                     }
                   ],
                   "fileTypeVersion": 1
@@ -20320,6 +20371,14 @@
           "unitsKey": "Unitless",
           "fileTypeVersion": 1,
           "lastReloadedFromGithubAt": 1790298308367
+        },
+        {
+          "atomType": "Equation",
+          "x": 0.7,
+          "y": 0.8,
+          "uniqueID": "id-31372",
+          "name": "(10*12*25.4) - 300",
+          "currentEquation": "(10*12*25.4) - 300"
         },
         {
           "atomType": "GitHubMolecule",
