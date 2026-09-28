@@ -2881,8 +2881,8 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.3,
-          "y": 0.8,
+          "x": 0.2,
+          "y": 0.9,
           "uniqueID": "id-1719",
           "name": "Tabbed Panel",
           "ioValues": [
@@ -3279,8 +3279,8 @@
         },
         {
           "atomType": "Rotate",
-          "x": 0.4,
-          "y": 0.5,
+          "x": 0.3,
+          "y": 0.9,
           "uniqueID": "id-1760",
           "ioValues": [
             {
@@ -3303,8 +3303,8 @@
         },
         {
           "atomType": "Equation",
-          "x": 0.2,
-          "y": 0.4,
+          "x": 0.1,
+          "y": 0.5,
           "uniqueID": "id-1766",
           "name": "304.79999999999995",
           "currentEquation": "304.79999999999995"
@@ -3312,7 +3312,7 @@
         {
           "atomType": "Move",
           "x": 0.8,
-          "y": 0.8,
+          "y": 0.6,
           "uniqueID": "id-1772",
           "ioValues": [
             {
@@ -3336,7 +3336,7 @@
         {
           "atomType": "GitHubMolecule",
           "x": 0.4,
-          "y": 0.7,
+          "y": 0.9,
           "uniqueID": "id-1778",
           "name": "Linear-Pattern",
           "ioValues": [
@@ -3668,33 +3668,9 @@
           "lastReloadedFromGithubAt": 1790298714784
         },
         {
-          "atomType": "Move",
-          "x": 0.5,
-          "y": 0.7,
-          "uniqueID": "id-1836",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "xDist",
-              "ioValue": 0
-            },
-            {
-              "name": "yDist",
-              "ioValue": 0
-            },
-            {
-              "name": "zDist",
-              "ioValue": 600
-            }
-          ]
-        },
-        {
           "atomType": "Equation",
-          "x": 0.3,
-          "y": 0.6,
+          "x": 0.1,
+          "y": 0.9,
           "uniqueID": "id-1842",
           "name": "X-3*T",
           "ioValues": [
@@ -3708,498 +3684,6 @@
             }
           ],
           "currentEquation": "X-3*T"
-        },
-        {
-          "atomType": "GitHubMolecule",
-          "x": 0.6,
-          "y": 0.5,
-          "uniqueID": "id-1848",
-          "name": "Linear-Pattern",
-          "ioValues": [
-            {
-              "name": "Number",
-              "ioValue": 11
-            },
-            {
-              "name": "Geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "distX",
-              "ioValue": 0
-            },
-            {
-              "name": "distY",
-              "ioValue": 304.79999999999995
-            },
-            {
-              "name": "distZ",
-              "ioValue": 0
-            }
-          ],
-          "topLevel": false,
-          "allAtoms": [
-            {
-              "atomType": "Output",
-              "x": 1,
-              "y": 0.5,
-              "uniqueID": "id-1849",
-              "ioValues": [
-                {
-                  "name": "number or geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                }
-              ]
-            },
-            {
-              "atomType": "Rectangle",
-              "x": 0.3,
-              "y": 0.2,
-              "uniqueID": "id-1850",
-              "ioValues": [
-                {
-                  "name": "x length",
-                  "ioValue": 10
-                },
-                {
-                  "name": "y length",
-                  "ioValue": 10
-                }
-              ]
-            },
-            {
-              "atomType": "Input",
-              "x": 0,
-              "y": 0.2,
-              "uniqueID": "id-1851",
-              "name": "Number",
-              "type": "number",
-              "options": []
-            },
-            {
-              "atomType": "Input",
-              "x": 0,
-              "y": 0.2,
-              "uniqueID": "id-1852",
-              "name": "Geometry",
-              "type": "geometry",
-              "options": []
-            },
-            {
-              "atomType": "Input",
-              "x": 0,
-              "y": 0.3,
-              "uniqueID": "id-1853",
-              "name": "distX",
-              "type": "number",
-              "options": []
-            },
-            {
-              "atomType": "Input",
-              "x": 0,
-              "y": 0.4,
-              "uniqueID": "id-1854",
-              "name": "distY",
-              "type": "number",
-              "options": []
-            },
-            {
-              "atomType": "Input",
-              "x": 0,
-              "y": 0.5,
-              "uniqueID": "id-1855",
-              "name": "distZ",
-              "type": "number",
-              "options": []
-            },
-            {
-              "atomType": "Readme",
-              "x": 0.8,
-              "y": 0.3,
-              "uniqueID": "id-1856",
-              "name": "README",
-              "ioValues": [
-                {
-                  "name": "value",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                }
-              ],
-              "readMeText": "Readme text here",
-              "global": true
-            },
-            {
-              "atomType": "Extrude",
-              "x": 0.4,
-              "y": 0.3,
-              "uniqueID": "id-1857",
-              "ioValues": [
-                {
-                  "name": "geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "height",
-                  "ioValue": 10
-                }
-              ]
-            },
-            {
-              "atomType": "Code",
-              "x": 0.6,
-              "y": 0.2,
-              "uniqueID": "id-1858",
-              "ioValues": [
-                {
-                  "name": "shape",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "count",
-                  "ioValue": 5
-                },
-                {
-                  "name": "distX",
-                  "ioValue": 20
-                },
-                {
-                  "name": "distY",
-                  "ioValue": 0
-                },
-                {
-                  "name": "distZ",
-                  "ioValue": 0
-                }
-              ],
-              "interpreterVersion": 1,
-              "code": "\n/**\n * =========================================================================\n *  ABUNDANCE CODE ATOM — Quick Reference\n * =========================================================================\n *\n *  HOW INPUTS WORK\n *  ---------------\n *  Every parameter of run() becomes an input port on this atom.\n *  Four types are supported:\n *\n *    number   -> numeric input / slider\n *    string   -> text input  (great for hex color codes, labels, etc.)\n *    boolean  -> true/false toggle\n *    Assembly -> geometry -- wire this to the output of another atom\n *\n *  Give a parameter a default value ( = x ) to make it optional.\n *  Mark it with ? (name?: Assembly) to make it optional with no default.\n *  Parameters without a default must be connected before the atom runs.\n *\n *  RETURN VALUE\n *  ------------\n *  Return an Assembly, an Assembly[], or a primitive (number/string/boolean).\n *  Returning an Assembly[] lets downstream atoms (BOM, cut layout...)\n *  see each piece independently.\n *\n *  GEOMETRY API  (replicad is available as a global)\n *  -------------------------------------------------\n *  Create 2-D sketches\n *    replicad.drawCircle(radius)\n *    replicad.drawRectangle(width, height)\n *    replicad.drawRoundedRectangle(width, height, cornerRadius)\n *\n *  Turn a 2-D sketch into a 3-D solid\n *    sketch.sketchOnPlane().extrude(distance)\n *    sketch.sketchOnPlane().revolve()          // rotate 360 deg around Z\n *\n *  Create 3-D primitives directly\n *    replicad.makeBaseBox(width, depth, height)\n *    replicad.makeSphere(radius)\n *    replicad.makeCylinder(radius, height)\n *\n *  Boolean operations\n *    solidA.fuse(solidB)                       // union\n *    solidA.cut(solidB)                        // difference (cut a hole)\n *    solidA.intersect(solidB)                  // intersection\n *\n *  Post-processing\n *    solid.fillet(radius)                      // round ALL edges\n *    solid.fillet(r, e => e.inPlane(\"XY\", z))  // round only top-face edges\n *    solid.chamfer(distance)                   // bevel ALL edges\n *    solid.translate(x, y, z)                  // move the solid\n *    solid.rotate(angle, [0, 0, 1])            // rotate around Z axis\n *\n *  ASSEMBLY CLASS\n *  --------------\n *  Wrap any replicad solid in an Assembly to attach display metadata:\n *    new Assembly({ geometry, color, tags, bom })\n *      geometry -> replicad solid / drawing returned by the API above\n *      color    -> hex string shown in the 3-D viewport  (\"#A3CE5B\")\n *      tags     -> string[] used for filtering in cut layout / BOM\n *      bom      -> string[] lines added to the Bill of Materials panel\n *\n *  AI PROMPT TIP\n *  -------------\n *  Copy the code in this editor into ChatGPT / Claude and say something like:\n *    \"Modify this Abundance Code Atom to create a gear with 12 teeth\"\n *    \"Change this to make a hexagonal nut instead of a round plate\"\n *  The comments above give the AI all the context it needs to produce\n *  valid, working Abundance TypeScript code.\n * =========================================================================\n */\n\n/**\n * A rectangular mounting plate with a circular hole in the centre.\n * All parameters have defaults so the atom produces geometry immediately\n * after creation — no connections required to get started.\n */\nfunction run(\n  shape: Assembly,\n  count: number = 5,\n  distX: number = 10,\n  distY: number = 0,\n  distZ: number = 0           \n) {\n  let shapesArray = [];\n  for (let i = 0; i < count; i++) {\n    const offsetAssembly = new Assembly(shape).onLeafs((leaf) => {\n      if (leaf.is2D()) {\n        leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i)\n        leaf.plane = leaf.plane.translateZ(distZ * i)\n      } else {\n        leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i, distZ * i)\n      }\n      return leaf;\n    })\n    shapesArray.push(offsetAssembly)\n  }\n  return shapesArray;\n}\n",
-              "compiledCode": "\"use strict\";\n/**\n * =========================================================================\n *  ABUNDANCE CODE ATOM — Quick Reference\n * =========================================================================\n *\n *  HOW INPUTS WORK\n *  ---------------\n *  Every parameter of run() becomes an input port on this atom.\n *  Four types are supported:\n *\n *    number   -> numeric input / slider\n *    string   -> text input  (great for hex color codes, labels, etc.)\n *    boolean  -> true/false toggle\n *    Assembly -> geometry -- wire this to the output of another atom\n *\n *  Give a parameter a default value ( = x ) to make it optional.\n *  Mark it with ? (name?: Assembly) to make it optional with no default.\n *  Parameters without a default must be connected before the atom runs.\n *\n *  RETURN VALUE\n *  ------------\n *  Return an Assembly, an Assembly[], or a primitive (number/string/boolean).\n *  Returning an Assembly[] lets downstream atoms (BOM, cut layout...)\n *  see each piece independently.\n *\n *  GEOMETRY API  (replicad is available as a global)\n *  -------------------------------------------------\n *  Create 2-D sketches\n *    replicad.drawCircle(radius)\n *    replicad.drawRectangle(width, height)\n *    replicad.drawRoundedRectangle(width, height, cornerRadius)\n *\n *  Turn a 2-D sketch into a 3-D solid\n *    sketch.sketchOnPlane().extrude(distance)\n *    sketch.sketchOnPlane().revolve()          // rotate 360 deg around Z\n *\n *  Create 3-D primitives directly\n *    replicad.makeBaseBox(width, depth, height)\n *    replicad.makeSphere(radius)\n *    replicad.makeCylinder(radius, height)\n *\n *  Boolean operations\n *    solidA.fuse(solidB)                       // union\n *    solidA.cut(solidB)                        // difference (cut a hole)\n *    solidA.intersect(solidB)                  // intersection\n *\n *  Post-processing\n *    solid.fillet(radius)                      // round ALL edges\n *    solid.fillet(r, e => e.inPlane(\"XY\", z))  // round only top-face edges\n *    solid.chamfer(distance)                   // bevel ALL edges\n *    solid.translate(x, y, z)                  // move the solid\n *    solid.rotate(angle, [0, 0, 1])            // rotate around Z axis\n *\n *  ASSEMBLY CLASS\n *  --------------\n *  Wrap any replicad solid in an Assembly to attach display metadata:\n *    new Assembly({ geometry, color, tags, bom })\n *      geometry -> replicad solid / drawing returned by the API above\n *      color    -> hex string shown in the 3-D viewport  (\"#A3CE5B\")\n *      tags     -> string[] used for filtering in cut layout / BOM\n *      bom      -> string[] lines added to the Bill of Materials panel\n *\n *  AI PROMPT TIP\n *  -------------\n *  Copy the code in this editor into ChatGPT / Claude and say something like:\n *    \"Modify this Abundance Code Atom to create a gear with 12 teeth\"\n *    \"Change this to make a hexagonal nut instead of a round plate\"\n *  The comments above give the AI all the context it needs to produce\n *  valid, working Abundance TypeScript code.\n * =========================================================================\n */\n/**\n * A rectangular mounting plate with a circular hole in the centre.\n * All parameters have defaults so the atom produces geometry immediately\n * after creation — no connections required to get started.\n */\nfunction run(shape, count = 5, distX = 10, distY = 0, distZ = 0) {\n    let shapesArray = [];\n    for (let i = 0; i < count; i++) {\n        const offsetAssembly = new Assembly(shape).onLeafs((leaf) => {\n            if (leaf.is2D()) {\n                leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i);\n                leaf.plane = leaf.plane.translateZ(distZ * i);\n            }\n            else {\n                leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i, distZ * i);\n            }\n            return leaf;\n        });\n        shapesArray.push(offsetAssembly);\n    }\n    return shapesArray;\n}\n"
-            },
-            {
-              "atomType": "Code",
-              "x": 0.4,
-              "y": 0.7,
-              "uniqueID": "id-1859",
-              "ioValues": [
-                {
-                  "name": "shape",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "count",
-                  "ioValue": 11
-                },
-                {
-                  "name": "distX",
-                  "ioValue": 0
-                },
-                {
-                  "name": "distY",
-                  "ioValue": 304.79999999999995
-                },
-                {
-                  "name": "distZ",
-                  "ioValue": 0
-                }
-              ],
-              "interpreterVersion": 1,
-              "code": "\n/**\n * =========================================================================\n *  ABUNDANCE CODE ATOM — Quick Reference\n * =========================================================================\n *\n *  HOW INPUTS WORK\n *  ---------------\n *  Every parameter of run() becomes an input port on this atom.\n *  Four types are supported:\n *\n *    number   -> numeric input / slider\n *    string   -> text input  (great for hex color codes, labels, etc.)\n *    boolean  -> true/false toggle\n *    Assembly -> geometry -- wire this to the output of another atom\n *\n *  Give a parameter a default value ( = x ) to make it optional.\n *  Mark it with ? (name?: Assembly) to make it optional with no default.\n *  Parameters without a default must be connected before the atom runs.\n *\n *  RETURN VALUE\n *  ------------\n *  Return an Assembly, an Assembly[], or a primitive (number/string/boolean).\n *  Returning an Assembly[] lets downstream atoms (BOM, cut layout...)\n *  see each piece independently.\n *\n *  GEOMETRY API  (replicad is available as a global)\n *  -------------------------------------------------\n *  Create 2-D sketches\n *    replicad.drawCircle(radius)\n *    replicad.drawRectangle(width, height)\n *    replicad.drawRoundedRectangle(width, height, cornerRadius)\n *\n *  Turn a 2-D sketch into a 3-D solid\n *    sketch.sketchOnPlane().extrude(distance)\n *    sketch.sketchOnPlane().revolve()          // rotate 360 deg around Z\n *\n *  Create 3-D primitives directly\n *    replicad.makeBaseBox(width, depth, height)\n *    replicad.makeSphere(radius)\n *    replicad.makeCylinder(radius, height)\n *\n *  Boolean operations\n *    solidA.fuse(solidB)                       // union\n *    solidA.cut(solidB)                        // difference (cut a hole)\n *    solidA.intersect(solidB)                  // intersection\n *\n *  Post-processing\n *    solid.fillet(radius)                      // round ALL edges\n *    solid.fillet(r, e => e.inPlane(\"XY\", z))  // round only top-face edges\n *    solid.chamfer(distance)                   // bevel ALL edges\n *    solid.translate(x, y, z)                  // move the solid\n *    solid.rotate(angle, [0, 0, 1])            // rotate around Z axis\n *\n *  ASSEMBLY CLASS\n *  --------------\n *  Wrap any replicad solid in an Assembly to attach display metadata:\n *    new Assembly({ geometry, color, tags, bom })\n *      geometry -> replicad solid / drawing returned by the API above\n *      color    -> hex string shown in the 3-D viewport  (\"#A3CE5B\")\n *      tags     -> string[] used for filtering in cut layout / BOM\n *      bom      -> string[] lines added to the Bill of Materials panel\n *\n *  AI PROMPT TIP\n *  -------------\n *  Copy the code in this editor into ChatGPT / Claude and say something like:\n *    \"Modify this Abundance Code Atom to create a gear with 12 teeth\"\n *    \"Change this to make a hexagonal nut instead of a round plate\"\n *  The comments above give the AI all the context it needs to produce\n *  valid, working Abundance TypeScript code.\n * =========================================================================\n */\n\n/**\n * A rectangular mounting plate with a circular hole in the centre.\n * All parameters have defaults so the atom produces geometry immediately\n * after creation — no connections required to get started.\n */\nfunction run(\n  shape: Assembly,\n  count: number = 5,\n  distX: number = 10,\n  distY: number = 0,\n  distZ: number = 0\n) {\n  let shapesArray = [];\n  for (let i = 0; i < count; i++) {\n    const offsetAssembly = new Assembly(shape).onLeafs((leaf) => {\n      if (leaf.is2D()) {\n        leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i)\n        leaf.plane = leaf.plane.translateZ(distZ * i)\n      } else {\n        leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i, distZ * i)\n      }\n      return leaf;\n    })\n    shapesArray.push(offsetAssembly)\n  }\n  return shapesArray;\n}\n",
-              "compiledCode": "\"use strict\";\n/**\n * =========================================================================\n *  ABUNDANCE CODE ATOM — Quick Reference\n * =========================================================================\n *\n *  HOW INPUTS WORK\n *  ---------------\n *  Every parameter of run() becomes an input port on this atom.\n *  Four types are supported:\n *\n *    number   -> numeric input / slider\n *    string   -> text input  (great for hex color codes, labels, etc.)\n *    boolean  -> true/false toggle\n *    Assembly -> geometry -- wire this to the output of another atom\n *\n *  Give a parameter a default value ( = x ) to make it optional.\n *  Mark it with ? (name?: Assembly) to make it optional with no default.\n *  Parameters without a default must be connected before the atom runs.\n *\n *  RETURN VALUE\n *  ------------\n *  Return an Assembly, an Assembly[], or a primitive (number/string/boolean).\n *  Returning an Assembly[] lets downstream atoms (BOM, cut layout...)\n *  see each piece independently.\n *\n *  GEOMETRY API  (replicad is available as a global)\n *  -------------------------------------------------\n *  Create 2-D sketches\n *    replicad.drawCircle(radius)\n *    replicad.drawRectangle(width, height)\n *    replicad.drawRoundedRectangle(width, height, cornerRadius)\n *\n *  Turn a 2-D sketch into a 3-D solid\n *    sketch.sketchOnPlane().extrude(distance)\n *    sketch.sketchOnPlane().revolve()          // rotate 360 deg around Z\n *\n *  Create 3-D primitives directly\n *    replicad.makeBaseBox(width, depth, height)\n *    replicad.makeSphere(radius)\n *    replicad.makeCylinder(radius, height)\n *\n *  Boolean operations\n *    solidA.fuse(solidB)                       // union\n *    solidA.cut(solidB)                        // difference (cut a hole)\n *    solidA.intersect(solidB)                  // intersection\n *\n *  Post-processing\n *    solid.fillet(radius)                      // round ALL edges\n *    solid.fillet(r, e => e.inPlane(\"XY\", z))  // round only top-face edges\n *    solid.chamfer(distance)                   // bevel ALL edges\n *    solid.translate(x, y, z)                  // move the solid\n *    solid.rotate(angle, [0, 0, 1])            // rotate around Z axis\n *\n *  ASSEMBLY CLASS\n *  --------------\n *  Wrap any replicad solid in an Assembly to attach display metadata:\n *    new Assembly({ geometry, color, tags, bom })\n *      geometry -> replicad solid / drawing returned by the API above\n *      color    -> hex string shown in the 3-D viewport  (\"#A3CE5B\")\n *      tags     -> string[] used for filtering in cut layout / BOM\n *      bom      -> string[] lines added to the Bill of Materials panel\n *\n *  AI PROMPT TIP\n *  -------------\n *  Copy the code in this editor into ChatGPT / Claude and say something like:\n *    \"Modify this Abundance Code Atom to create a gear with 12 teeth\"\n *    \"Change this to make a hexagonal nut instead of a round plate\"\n *  The comments above give the AI all the context it needs to produce\n *  valid, working Abundance TypeScript code.\n * =========================================================================\n */\n/**\n * A rectangular mounting plate with a circular hole in the centre.\n * All parameters have defaults so the atom produces geometry immediately\n * after creation — no connections required to get started.\n */\nfunction run(shape, count = 5, distX = 10, distY = 0, distZ = 0) {\n    let shapesArray = [];\n    for (let i = 0; i < count; i++) {\n        const offsetAssembly = new Assembly(shape).onLeafs((leaf) => {\n            if (leaf.is2D()) {\n                leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i);\n                leaf.plane = leaf.plane.translateZ(distZ * i);\n            }\n            else {\n                leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i, distZ * i);\n            }\n            return leaf;\n        });\n        shapesArray.push(offsetAssembly);\n    }\n    return shapesArray;\n}\n"
-            },
-            {
-              "atomType": "Move",
-              "x": 0.5,
-              "y": 0.4,
-              "uniqueID": "id-1860",
-              "ioValues": [
-                {
-                  "name": "geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "xDist",
-                  "ioValue": 3
-                },
-                {
-                  "name": "yDist",
-                  "ioValue": 0
-                },
-                {
-                  "name": "zDist",
-                  "ioValue": 9
-                }
-              ]
-            },
-            {
-              "atomType": "Assembly",
-              "x": 0.5,
-              "y": 0.5,
-              "uniqueID": "id-1861",
-              "ioValues": [
-                {
-                  "name": "Shape 1",
-                  "ioValue": null
-                },
-                {
-                  "name": "Shape 2",
-                  "ioValue": null
-                }
-              ]
-            },
-            {
-              "atomType": "Code",
-              "x": 0.7,
-              "y": 0.2,
-              "uniqueID": "id-1862",
-              "interpreterVersion": 1,
-              "code": "// Example Code\nconst Inputs = [\n  { inputName: \"Shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"Number\", type: \"number\", defaultValue: 5 },\n  { inputName: \"distX\", type: \"number\", defaultValue: 10 },\n    { inputName: \"distY\", type: \"number\", defaultValue: 0 },\n    { inputName: \"distZ\", type: \"number\", defaultValue: 0 }\n];\n\nlet shapesArray = [];\nfor (let i = 0; i < Number; i++) {\n    let rotatedShape = await Move(Shape, distX * i, distY * i,distZ * i);\n    shapesArray.push(rotatedShape);\n}\n\nlet assembledShape = await Assembly(shapesArray)\n\nreturn assembledShape;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /**\n    To Use the Code Atom, enter your inputs to the input list a.e Inputs:[shape, height]\n    If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0] \n    Use any replicad available methods to modify your geometry. Learn more about all of the available methods at \n    https://replicad.xyz/docs/introapp/UserGuide.html \n    Return a replicad object that includes geometry, color, tags and plane. \n\n\n    Example Code Atom:\n\n      Inputs:[shape, x];\n\n      let finalShape = library[shape].geometry[0].clone.translate[x,0,0]\n\n      return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n\n      - See more examples at _______ \n\n\n    */\n"
-            }
-          ],
-          "allConnectors": [
-            {
-              "ap2Name": "geometry",
-              "ap1ID": "id-1850",
-              "ap2ID": "id-1857"
-            },
-            {
-              "ap2Name": "count",
-              "ap1ID": "id-1851",
-              "ap2ID": "id-1859"
-            },
-            {
-              "ap2Name": "shape",
-              "ap1ID": "id-1852",
-              "ap2ID": "id-1859"
-            },
-            {
-              "ap2Name": "distX",
-              "ap1ID": "id-1853",
-              "ap2ID": "id-1859"
-            },
-            {
-              "ap2Name": "distY",
-              "ap1ID": "id-1854",
-              "ap2ID": "id-1859"
-            },
-            {
-              "ap2Name": "distZ",
-              "ap1ID": "id-1855",
-              "ap2ID": "id-1859"
-            },
-            {
-              "ap2Name": "geometry",
-              "ap1ID": "id-1857",
-              "ap2ID": "id-1860"
-            },
-            {
-              "ap2Name": "Shape 2",
-              "ap1ID": "id-1857",
-              "ap2ID": "id-1861"
-            },
-            {
-              "ap2Name": "number or geometry",
-              "ap1ID": "id-1859",
-              "ap2ID": "id-1849"
-            },
-            {
-              "ap2Name": "Shape 1",
-              "ap1ID": "id-1860",
-              "ap2ID": "id-1861"
-            },
-            {
-              "ap2Name": "shape",
-              "ap1ID": "id-1861",
-              "ap2ID": "id-1858"
-            }
-          ],
-          "parentRepo": {
-            "lastFoundGit": "2026-09-20T02:23:39.099Z",
-            "privateRepo": false,
-            "repoName": "Linear-Pattern",
-            "dateCreated": "2025-01-02T21:47:44Z",
-            "likes": 0,
-            "pngURL": "https://raw.githubusercontent.com/alzatin/Linear-Pattern/master/project.png?sanitize=true",
-            "readme": "https://raw.githubusercontent.com/alzatin/Linear-Pattern/master/README.md?sanitize=true",
-            "yyyy": 2025,
-            "topMoleculeID": "",
-            "userRanking": 0.2,
-            "userSetAsThumbnail": false,
-            "githubMoleculesUsed": [],
-            "html_url": "https://github.com/alzatin/Linear-Pattern",
-            "topics": [
-              "abundance-tool"
-            ],
-            "pullRequests": [],
-            "forks": 1,
-            "dateModified": "2026-06-03T16:57:00Z",
-            "ranking": 2,
-            "searchField": "linear-pattern alzatin  abundance-tool",
-            "owner": "alzatin",
-            "description": "",
-            "contentURL": "https://raw.githubusercontent.com/alzatin/Linear-Pattern/master/project.abundance?sanitize=true",
-            "svgURL": "https://raw.githubusercontent.com/alzatin/Linear-Pattern/master/project.svg?sanitize=true",
-            "isLocal": false
-          },
-          "unitsKey": "MM",
-          "fileTypeVersion": 1,
-          "lastReloadedFromGithubAt": 1790298714784
-        },
-        {
-          "atomType": "GitHubMolecule",
-          "x": 0.7,
-          "y": 0.6,
-          "uniqueID": "id-1906",
-          "name": "Center_XY",
-          "ioValues": [
-            {
-              "name": "Geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ],
-          "topLevel": false,
-          "allAtoms": [
-            {
-              "atomType": "Output",
-              "x": 1,
-              "y": 0.5,
-              "uniqueID": "id-1907",
-              "ioValues": [
-                {
-                  "name": "number or geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                }
-              ]
-            },
-            {
-              "atomType": "Code",
-              "x": 0.4,
-              "y": 0.3,
-              "uniqueID": "id-1908",
-              "ioValues": [
-                {
-                  "name": "A",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                }
-              ],
-              "interpreterVersion": 0,
-              "code": "/**\n Inputs for this Code Atom:\n - Takes a single geometry input \"A\" and recenters it in the XY plane based on its bounding box.\n*/\nInputs = [\n  { inputName: \"A\", type: \"geometry\", defaultValue: null }\n]\n\nif (!A) {\n  // Nothing to do if no input provided\n  return null\n}\n\n// Get bounding box of A\nlet boundsA = await GetBounds(A);\n// boundsA.min and boundsA.max are arrays [x,y,z]\nlet min = boundsA.min\nlet max = boundsA.max\n\n// Compute the center of the bounding box in X and Y\nlet centerX = (min[0] + max[0]) / 2.0\nlet centerY = (min[1] + max[1]) / 2.0\n\n// Translation to move the bounding box center to the origin (0,0) in XY,\n// leaving Z unchanged.\nlet translationX = -centerX\nlet translationY = -centerY\nlet translationZ = 0\n\n// Move the shape. Move takes the input ID and translations (x,y,z)\nlet movedOutput = await Move(A, translationX, translationY, translationZ)\n\n// Return the moved shape. Move typically returns a replicad object suitable for return.\nreturn movedOutput"
-            },
-            {
-              "atomType": "Rectangle",
-              "x": 0.2,
-              "y": 0.6,
-              "uniqueID": "id-1909",
-              "ioValues": [
-                {
-                  "name": "x length",
-                  "ioValue": 10
-                },
-                {
-                  "name": "y length",
-                  "ioValue": 10
-                }
-              ]
-            },
-            {
-              "atomType": "Extrude",
-              "x": 0.3,
-              "y": 0.6,
-              "uniqueID": "id-1910",
-              "ioValues": [
-                {
-                  "name": "geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "height",
-                  "ioValue": 10
-                }
-              ]
-            },
-            {
-              "atomType": "Move",
-              "x": 0.5,
-              "y": 0.6,
-              "uniqueID": "id-1911",
-              "ioValues": [
-                {
-                  "name": "geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "xDist",
-                  "ioValue": 50
-                },
-                {
-                  "name": "yDist",
-                  "ioValue": 30
-                },
-                {
-                  "name": "zDist",
-                  "ioValue": 0
-                }
-              ]
-            },
-            {
-              "atomType": "Input",
-              "x": 0,
-              "y": 0.2,
-              "uniqueID": "id-1912",
-              "name": "Geometry",
-              "type": "geometry",
-              "options": []
-            }
-          ],
-          "allConnectors": [
-            {
-              "ap2Name": "number or geometry",
-              "ap1ID": "id-1908",
-              "ap2ID": "id-1907"
-            },
-            {
-              "ap2Name": "geometry",
-              "ap1ID": "id-1909",
-              "ap2ID": "id-1910"
-            },
-            {
-              "ap2Name": "geometry",
-              "ap1ID": "id-1910",
-              "ap2ID": "id-1911"
-            },
-            {
-              "ap2Name": "A",
-              "ap1ID": "id-1912",
-              "ap2ID": "id-1908"
-            }
-          ],
-          "parentRepo": {
-            "lastFoundGit": "2026-09-20T02:23:39.099Z",
-            "privateRepo": false,
-            "repoName": "Center_XY",
-            "dateCreated": "2025-12-04T19:44:27Z",
-            "likes": 0,
-            "pngURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/project.png?sanitize=true",
-            "readme": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/README.md?sanitize=true",
-            "yyyy": 2025,
-            "topMoleculeID": "",
-            "userRanking": 0,
-            "userSetAsThumbnail": false,
-            "githubMoleculesUsed": [],
-            "html_url": "https://github.com/BarbourSmith/Center_XY",
-            "topics": [],
-            "pullRequests": [],
-            "forks": 0,
-            "dateModified": "2025-12-04T19:48:48Z",
-            "ranking": 1,
-            "searchField": "center_xy barboursmith this takes an input shape and moves it to be centered on the xy plane ",
-            "owner": "BarbourSmith",
-            "description": "This takes an input shape and moves it to be centered on the XY plane",
-            "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/project.abundance?sanitize=true",
-            "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/project.svg?sanitize=true",
-            "isLocal": false
-          },
-          "unitsKey": "MM",
-          "fileTypeVersion": 1,
-          "lastReloadedFromGithubAt": 1790299566714
         },
         {
           "atomType": "Move",
@@ -4227,8 +3711,8 @@
         },
         {
           "atomType": "Assembly",
-          "x": 0.8,
-          "y": 0.3,
+          "x": 0.9,
+          "y": 0.2,
           "uniqueID": "id-1938",
           "ioValues": [
             {
@@ -4251,7 +3735,7 @@
         },
         {
           "atomType": "Rotate",
-          "x": 0.6,
+          "x": 0.5,
           "y": 0.9,
           "uniqueID": "id-1944",
           "ioValues": [
@@ -4276,7 +3760,7 @@
         {
           "atomType": "GitHubMolecule",
           "x": 0.6,
-          "y": 0.9,
+          "y": 0.8,
           "uniqueID": "id-1950",
           "name": "Center_XY",
           "ioValues": [
@@ -4926,7 +4410,7 @@
         {
           "atomType": "Move",
           "x": 0.9,
-          "y": 0.7,
+          "y": 0.6,
           "uniqueID": "id-2060",
           "ioValues": [
             {
@@ -6808,6 +6292,383 @@
                   "interpreterVersion": 1,
                   "code": "function run(\n  shape: Assembly,\n  wavelength: number = 10,\n  depth: number = 2,\n  flipSide: boolean = false,\n  reverseStart: boolean = false,\n) {\n  let EPS = 0.01; // how far the cutting tool extends outside the part (grows with part size)\n  const TOL = 1e-4; // distance at which edge endpoints count as touching\n  const MAX_TURN = Math.PI / 8; // max direction change covered by one Bezier on a curved edge\n  const k = (2 * Math.PI) / wavelength;\n  // Depth into the material at arc length u along a chain: the wave, or just outside the part\n  const wave = {\n    at: (u: number) => (depth * (1 - Math.cos(k * u))) / 2,\n    slope: (u: number) => (depth * k * Math.sin(k * u)) / 2,\n  };\n  const outside = { at: (u: number) => -EPS, slope: (u: number) => 0 };\n\n  // Arc length -> normalized edge parameter lookup, plus total turning angle\n  function prepEdge(edge: replicad.Edge) {\n    const len = edge.length;\n    let toParam = (s: number) => s / len;\n    let turn = 0;\n    if (edge.geomType !== \"LINE\") {\n      const N = 32;\n      const params = [0];\n      const lengths = [0];\n      let prevP = edge.pointAt(0);\n      let prevT = edge.tangentAt(0).normalize();\n      for (let i = 1; i <= N; i++) {\n        const p = edge.pointAt(i / N);\n        const t = edge.tangentAt(i / N).normalize();\n        lengths.push(lengths[i - 1] + p.sub(prevP).Length);\n        params.push(i / N);\n        turn += Math.acos(Math.min(1, Math.max(-1, t.dot(prevT))));\n        prevP = p;\n        prevT = t;\n      }\n      if (edge.geomType !== \"CIRCLE\") {\n        const scale = len / lengths[N];\n        toParam = (s: number) => {\n          let i = 1;\n          while (i < N && lengths[i] * scale < s) i++;\n          const a = lengths[i - 1] * scale;\n          const b = lengths[i] * scale;\n          return params[i - 1] + ((s - a) / (b - a)) * (params[i] - params[i - 1]);\n        };\n      }\n    }\n    return { edge, len, toParam, turn, start: edge.startPoint, end: edge.endPoint };\n  }\n\n  // An edge traversed in chain direction; s runs 0..len along it\n  function orient(info: any, reversed: boolean) {\n    const param = (s: number) => info.toParam(reversed ? info.len - s : s);\n    return {\n      info,\n      reversed,\n      len: info.len,\n      start: reversed ? info.end : info.start,\n      end: reversed ? info.start : info.end,\n      point: (s: number) => info.edge.pointAt(param(s)),\n      tangent: (s: number) =>\n        info.edge.tangentAt(param(s)).normalize().multiply(reversed ? -1 : 1),\n      u0: 0, // arc length along the chain where this edge starts\n      inSign: 1, // which side of the edge (within face B) the material is on\n    };\n  }\n\n  return shape.onLeafs((leaf) => {\n    if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n      return leaf;\n    }\n    const body = leaf.geometry;\n\n    // Gather the selected edges: directly selected edges first, in the order they were clicked,\n    // then the edges of any selected faces\n    let selectedEdges: replicad.Edge[] = [];\n    if (leaf.selection?.edges) {\n      selectedEdges.push(...leaf.selection.edges.map((index) => body.edges[index]));\n    }\n    selectedEdges = selectedEdges.filter((e) => e != null);\n    const clickedCount = selectedEdges.length;\n    if (leaf.selection?.faces) {\n      leaf.selection.faces.forEach((faceIndex) => {\n        selectedEdges.push(...body.faces[faceIndex].edges);\n      });\n    }\n    selectedEdges = selectedEdges.filter((e) => e != null);\n    // Faces share edges, so drop duplicates\n    selectedEdges = selectedEdges.filter(\n      (e, i) => selectedEdges.findIndex((other) => other.isSame(e)) === i,\n    );\n    if (selectedEdges.length === 0) {\n      return leaf;\n    }\n\n    const faces = body.faces;\n    const faceEdges = faces.map((f) => f.edges);\n    const adjacentFaces = (edge: replicad.Edge) =>\n      faces.map((f, i) => i).filter((i) => faceEdges[i].some((e) => e.isSame(edge)));\n\n    // Link touching edges into chains so the wave phase continues across them\n    const infos = selectedEdges.map((edge, rank) => ({ ...prepEdge(edge), rank, clicked: rank < clickedCount }));\n    const near = (a: replicad.Vector, b: replicad.Vector) => a.sub(b).Length < TOL;\n    const degree = (p: replicad.Vector) =>\n      infos.reduce((n, inf) => n + (near(inf.start, p) ? 1 : 0) + (near(inf.end, p) ? 1 : 0), 0);\n    const used = new Set<any>();\n    const chains: any[] = [];\n    while (used.size < infos.length) {\n      const remaining = infos.filter((inf) => !used.has(inf));\n      // Prefer starting at a free end so open chains are traversed end to end\n      let first = remaining.find((inf) => degree(inf.start) === 1);\n      let chain = [];\n      if (first) {\n        chain.push(orient(first, false));\n      } else {\n        first = remaining.find((inf) => degree(inf.end) === 1) ?? remaining[0];\n        chain.push(orient(first, degree(first.end) === 1));\n      }\n      used.add(first);\n      let next;\n      do {\n        const tip = chain[chain.length - 1].end;\n        next = infos.find((inf) => !used.has(inf) && (near(inf.start, tip) || near(inf.end, tip)));\n        if (next) {\n          chain.push(orient(next, !near(next.start, tip)));\n          used.add(next);\n        }\n      } while (next);\n      chains.push(chain);\n    }\n\n    const [bMin, bMax] = body.boundingBox.bounds;\n    const diagonal = Math.hypot(bMax[0] - bMin[0], bMax[1] - bMin[1], bMax[2] - bMin[2]);\n    EPS = Math.max(0.01, diagonal * 1e-5);\n    const throughDist = diagonal + 2 * EPS;\n    const smooth = (a: any, b: any) => a.tangent(a.len).dot(b.tangent(0)) > Math.cos(Math.PI / 180);\n\n    let tools: replicad.Shape3D | null = null;\n    const addTool = (tool: replicad.Shape3D) => {\n      tools = tools ? tools.fuse(tool) : tool;\n    };\n\n    const reverseChain = (chain: any[]) =>\n      chain\n        .slice()\n        .reverse()\n        .map((oe: any) => orient(oe.info, !oe.reversed));\n\n    chains.forEach((chain) => {\n      const closed = near(chain[chain.length - 1].end, chain[0].start);\n\n      // Pick where the wave starts: at the edge that was clicked first\n      const clicked = chain\n        .map((oe: any, i: number) => ({ i, rank: oe.info.rank, clicked: oe.info.clicked }))\n        .filter((c: any) => c.clicked)\n        .sort((a: any, b: any) => a.rank - b.rank);\n      if (!closed) {\n        // Open chain: start from whichever free end is nearer the first-clicked edge\n        if (clicked.length > 0) {\n          const total = chain.reduce((sum: number, oe: any) => sum + oe.len, 0);\n          let before = 0;\n          for (let i = 0; i < clicked[0].i; i++) before += chain[i].len;\n          if (before + chain[clicked[0].i].len / 2 > total / 2) chain = reverseChain(chain);\n        }\n      } else if (clicked.length > 0) {\n        // Closed loop: start where the first-clicked edge begins, heading toward the second one\n        const first = clicked[0].i;\n        chain = chain.slice(first).concat(chain.slice(0, first));\n        const second = clicked.length > 1 ? (clicked[1].i - first + chain.length) % chain.length : 1;\n        if (second === chain.length - 1 && chain.length > 2) {\n          chain = reverseChain(chain);\n          chain = [chain[chain.length - 1], ...chain.slice(0, -1)];\n        }\n      } else {\n        // Loop from a face selection has no click order: start at a sharp corner to hide the seam\n        // where the phase restarts\n        const corner = chain.findIndex((oe: any, i: number) => !smooth(chain[(i + chain.length - 1) % chain.length], oe));\n        if (corner > 0) chain = chain.slice(corner).concat(chain.slice(0, corner));\n      }\n      if (reverseStart) chain = reverseChain(chain);\n\n      // The wave is drawn in a flat face shared by every edge in the chain\n      let common = adjacentFaces(chain[0].info.edge);\n      chain.forEach((oe: any) => {\n        const adj = adjacentFaces(oe.info.edge);\n        common = common.filter((i) => adj.includes(i));\n      });\n      common = common.filter((i) => faces[i].geomType === \"PLANE\");\n      if (common.length === 0) {\n        console.warn(\"Sine edge: touching edges must share a flat face, skipping\");\n        return;\n      }\n      // Default to the larger face (e.g. the top of a plate) so the side becomes wavy\n      common.sort((a, b) => replicad.measureArea(faces[b]) - replicad.measureArea(faces[a]));\n      const faceB = common[flipSide && common.length > 1 ? 1 : 0];\n      const nB = faces[faceB].normalAt(chain[0].start);\n\n      let u = 0;\n      for (const oe of chain) {\n        oe.u0 = u;\n        u += oe.len;\n        // Material is on the side away from the other adjacent face's normal\n        const faceA = adjacentFaces(oe.info.edge).find((i) => i !== faceB);\n        if (faceA === undefined) {\n          console.warn(\"Sine edge: edge does not border two faces, skipping\");\n          return;\n        }\n        const mid = oe.point(oe.len / 2);\n        const side = nB.cross(oe.tangent(oe.len / 2));\n        oe.inSign = side.dot(faces[faceA].normalAt(mid)) > 0 ? -1 : 1;\n      }\n\n      const plane = new replicad.Plane(chain[0].start.add(nB.multiply(EPS)), chain[0].tangent(0), nB);\n      const to2D = (v: replicad.Vector) => {\n        const d = v.sub(plane.origin);\n        return [d.dot(plane.xDir), d.dot(plane.yDir)];\n      };\n\n      // Unit direction into the material, and the point offset by offset.at(u) along it\n      const inward = (oe: any, s: number) => nB.cross(oe.tangent(s)).multiply(oe.inSign);\n      const offsetPoint = (oe: any, s: number, offset: any) =>\n        oe.point(s).add(inward(oe, s).multiply(offset.at(oe.u0 + s)));\n      // Derivative of offsetPoint along s\n      const offsetDeriv = (oe: any, s: number, offset: any) => {\n        const t = oe.tangent(s);\n        const u = oe.u0 + s;\n        let result = t.add(inward(oe, s).multiply(offset.slope(u)));\n        if (oe.info.edge.geomType !== \"LINE\") {\n          // Rate at which the edge direction turns, from a small central difference\n          const h = oe.len * 1e-4;\n          const a = Math.max(0, s - h);\n          const b = Math.min(oe.len, s + h);\n          const dt = oe.tangent(b).sub(oe.tangent(a)).multiply(1 / (b - a));\n          result = result.add(nB.cross(dt).multiply(oe.inSign * offset.at(u)));\n        }\n        return result;\n      };\n\n      // Hermite Bezier (matching position and slope at both ends) of an offset curve over [s0, s1].\n      // Handles use the circular-arc length (4/3)tan(θ/4) instead of the plain 1/3, which keeps\n      // curved edges accurate at any scale; on straight edges the two are identical.\n      const bezier = (oe: any, s0: number, s1: number, offset: any) => {\n        const cosTurn = Math.min(1, Math.max(-1, oe.tangent(s0).dot(oe.tangent(s1))));\n        const turn = Math.acos(cosTurn);\n        const h = turn > 1e-9 ? ((s1 - s0) * (4 / 3) * Math.tan(turn / 4)) / turn : (s1 - s0) / 3;\n        const p0 = offsetPoint(oe, s0, offset);\n        const p1 = offsetPoint(oe, s1, offset);\n        return {\n          p0: to2D(p0),\n          p1: to2D(p1),\n          c1: to2D(p0.add(offsetDeriv(oe, s0, offset).multiply(h))),\n          c2: to2D(p1.sub(offsetDeriv(oe, s1, offset).multiply(h))),\n        };\n      };\n      // Number of Beziers needed so each one turns by at most MAX_TURN\n      const turnPieces = (oe: any, span: number) => Math.ceil((span / oe.len) * oe.info.turn / MAX_TURN);\n\n      // Wave segments along one edge between s = sA and s = sB, split at every quarter wave\n      function waveSegs(oe: any, sA: number, sB: number) {\n        const segs: any[] = [];\n        if (sB - sA < 1e-9) return segs;\n        const breaks = [sA];\n        const quarter = wavelength / 4;\n        for (let m = Math.ceil((oe.u0 + sA) / quarter); m * quarter < oe.u0 + sB; m++) {\n          const s = m * quarter - oe.u0;\n          if (s > sA + 1e-6 && s < sB - 1e-6) breaks.push(s);\n        }\n        breaks.push(sB);\n        // A trimmed end can leave a sliver next to a quarter break; merge it and split in two instead\n        const sliver = quarter / 4;\n        const merged = new Set<number>();\n        if (breaks.length > 2 && breaks[1] - breaks[0] < sliver) {\n          breaks.splice(1, 1);\n          merged.add(0);\n        }\n        if (breaks.length > 2 && breaks[breaks.length - 1] - breaks[breaks.length - 2] < sliver) {\n          breaks.splice(breaks.length - 2, 1);\n          merged.add(breaks.length - 2);\n        }\n        // On curved edges a single Bezier per quarter wave drifts, so use at least two\n        const minPieces = oe.info.edge.geomType !== \"LINE\" ? 2 : 1;\n        for (let i = 0; i + 1 < breaks.length; i++) {\n          const n = Math.max(merged.has(i) ? 2 : minPieces, turnPieces(oe, breaks[i + 1] - breaks[i]));\n          for (let j = 0; j < n; j++) {\n            const s0 = breaks[i] + ((breaks[i + 1] - breaks[i]) * j) / n;\n            const s1 = breaks[i] + ((breaks[i + 1] - breaks[i]) * (j + 1)) / n;\n            segs.push(bezier(oe, s0, s1, wave));\n          }\n        }\n        return segs;\n      }\n\n      // Segments just outside one edge, with the ends moved to the given corner points\n      function outerSegs(oe: any, startPt: number[] | null, endPt: number[] | null) {\n        let segs: any[];\n        if (oe.info.edge.geomType === \"LINE\") {\n          segs = [{ p0: to2D(offsetPoint(oe, 0, outside)), p1: to2D(offsetPoint(oe, oe.len, outside)) }];\n        } else {\n          const n = Math.max(1, turnPieces(oe, oe.len));\n          segs = [];\n          for (let j = 0; j < n; j++) segs.push(bezier(oe, (oe.len * j) / n, (oe.len * (j + 1)) / n, outside));\n        }\n        if (startPt) segs[0].p0 = startPt;\n        if (endPt) segs[segs.length - 1].p1 = endPt;\n        return segs;\n      }\n\n      // Classify each joint between consecutive edges (including the closing joint of a loop)\n      const joints: any[] = [];\n      const jointCount = closed ? chain.length : chain.length - 1;\n      for (let i = 0; i < jointCount; i++) {\n        const a = chain[i];\n        const b = chain[(i + 1) % chain.length];\n        const joint: any = { a, b, kind: smooth(a, b) ? \"smooth\" : \"sharp\" };\n        if (joint.kind === \"sharp\") {\n          const corner = a.end;\n          const n1 = inward(a, a.len);\n          const n2 = inward(b, 0);\n          // Convex when the next edge heads into the material, so the wave curves overlap\n          joint.convex = b.tangent(0).dot(n1) > 0;\n          // Mitered corner of the outline just outside the part\n          joint.outer = to2D(corner.sub(n1.add(n2).multiply(EPS / (1 + n1.dot(n2)))));\n          joint.corner = corner;\n          joint.n1 = n1;\n          joint.n2 = n2;\n        }\n        joints.push(joint);\n      }\n\n      // At convex corners, trim both wave curves back to where they cross the corner bisector\n      const sStart = chain.map(() => 0);\n      const sEnd = chain.map((oe: any) => oe.len);\n      const across = (joint: any, oe: any, s: number) => {\n        const m = joint.a.tangent(joint.a.len).add(joint.b.tangent(0)).normalize();\n        return offsetPoint(oe, s, wave).sub(joint.corner).dot(m);\n      };\n      const findCrossing = (f: (s: number) => number, lo: number, hi: number) => {\n        for (let i = 0; i < 40; i++) {\n          const mid = (lo + hi) / 2;\n          if (f(mid) > 0) hi = mid;\n          else lo = mid;\n        }\n        return (lo + hi) / 2;\n      };\n      joints.forEach((joint, i) => {\n        if (joint.kind !== \"sharp\" || !joint.convex) return;\n        const ia = i;\n        const ib = (i + 1) % chain.length;\n        const fa = (s: number) => across(joint, joint.a, s);\n        const fb = (s: number) => across(joint, joint.b, s);\n        if (fa(joint.a.len) > 0) sEnd[ia] = fa(sStart[ia]) > 0 ? sStart[ia] : findCrossing(fa, sStart[ia], joint.a.len);\n        if (fb(0) < 0) sStart[ib] = fb(sEnd[ib]) < 0 ? sEnd[ib] : findCrossing(fb, 0, sEnd[ib]);\n      });\n\n      // Connector from the end of one edge's wave to the start of the next\n      const connector = (joint: any, i: number) => {\n        const ib = (i + 1) % chain.length;\n        const from = offsetPoint(joint.a, sEnd[i], wave);\n        const to = offsetPoint(joint.b, sStart[ib], wave);\n        if (from.sub(to).Length < 1e-7) return [];\n        if (joint.kind === \"sharp\" && !joint.convex) {\n          // Concave corner: follow a circle around the corner, as an offset curve would\n          const da = wave.at(joint.a.u0 + joint.a.len);\n          const db = wave.at(joint.b.u0);\n          if (da > 1e-6 && Math.abs(da - db) < 1e-9) {\n            const mid = joint.corner.add(joint.n1.add(joint.n2).normalize().multiply(da));\n            return [{ p1: to2D(to), mid: to2D(mid) }];\n          }\n        }\n        return [{ p1: to2D(to) }];\n      };\n\n      // Wave path along the whole chain\n      const edgeSegs = chain.map((oe: any, i: number) => waveSegs(oe, sStart[i], sEnd[i]));\n      let waveStart = to2D(offsetPoint(chain[0], sStart[0], wave));\n      const wavePath: any[] = [];\n      chain.forEach((oe: any, i: number) => {\n        const segs = edgeSegs[i];\n        wavePath.push(...segs);\n        if (i >= joints.length) return;\n        const joint = joints[i];\n        const ib = (i + 1) % chain.length;\n        const gap = () => {\n          const from = segs[segs.length - 1].p1;\n          const to = edgeSegs[ib][0].p0;\n          return Math.hypot(from[0] - to[0], from[1] - to[1]);\n        };\n        const joinable = segs.length > 0 && edgeSegs[ib].length > 0;\n        if (joinable && ((joint.kind === \"sharp\" && joint.convex) || gap() < EPS)) {\n          // Ends that nearly meet (e.g. trimmed ends on the bisector) are joined at their midpoint\n          // rather than bridged, which would leave a sliver face\n          const next = edgeSegs[ib][0].p0;\n          const last = segs[segs.length - 1];\n          last.p1 = [(last.p1[0] + next[0]) / 2, (last.p1[1] + next[1]) / 2];\n          if (ib === 0) waveStart = last.p1;\n        } else {\n          wavePath.push(...connector(joint, i));\n        }\n      });\n\n      // Outline just outside the part along the whole chain\n      const outerPath: any[] = [];\n      chain.forEach((oe: any, i: number) => {\n        const before = i > 0 ? joints[i - 1] : closed ? joints[joints.length - 1] : null;\n        const after = i < joints.length ? joints[i] : null;\n        outerPath.push(\n          ...outerSegs(\n            oe,\n            before?.kind === \"sharp\" ? before.outer : null,\n            after?.kind === \"sharp\" ? after.outer : null,\n          ),\n        );\n      });\n\n      const trace = (pen: any, segs: any[]) => {\n        segs.forEach((g) => {\n          if (g.c1) pen = pen.cubicBezierCurveTo(g.p1, g.c1, g.c2);\n          else if (g.mid) pen = pen.threePointsArcTo(g.p1, g.mid);\n          else pen = pen.lineTo(g.p1);\n        });\n        return pen;\n      };\n      const extrude = (drawing: any) =>\n        drawing.sketchOnPlane(plane).extrude(throughDist, { extrusionDirection: nB.multiply(-1) });\n\n      if (closed) {\n        // Tool is the band between the wave loop and the loop just outside the part\n        const loop = (start: number[], segs: any[]) => {\n          const last = segs[segs.length - 1];\n          if (Math.hypot(last.p1[0] - start[0], last.p1[1] - start[1]) < 1e-6) last.p1 = start;\n          return trace(replicad.draw(start), segs).close();\n        };\n        const waveSolid = extrude(loop(waveStart, wavePath));\n        const outerSolid = extrude(loop(outerPath[0].p0, outerPath));\n        addTool(\n          replicad.measureVolume(waveSolid) > replicad.measureVolume(outerSolid)\n            ? waveSolid.cut(outerSolid)\n            : outerSolid.cut(waveSolid),\n        );\n        return;\n      }\n      const outerBack = outerPath\n        .slice()\n        .reverse()\n        .map((g) => ({ p0: g.p1, p1: g.p0, c1: g.c2, c2: g.c1 }));\n      let pen = replicad.draw(outerPath[0].p0).lineTo(waveStart);\n      pen = trace(pen, wavePath).lineTo(outerBack[0].p0);\n      addTool(extrude(trace(pen, outerBack).close()));\n    });\n\n    if (tools) {\n      leaf.geometry = body.cut(tools);\n    }\n    return leaf;\n  });\n}",
                   "compiledCode": "\"use strict\";\nfunction run(shape, wavelength = 10, depth = 2, flipSide = false, reverseStart = false) {\n    let EPS = 0.01; // how far the cutting tool extends outside the part (grows with part size)\n    const TOL = 1e-4; // distance at which edge endpoints count as touching\n    const MAX_TURN = Math.PI / 8; // max direction change covered by one Bezier on a curved edge\n    const k = (2 * Math.PI) / wavelength;\n    // Depth into the material at arc length u along a chain: the wave, or just outside the part\n    const wave = {\n        at: (u) => (depth * (1 - Math.cos(k * u))) / 2,\n        slope: (u) => (depth * k * Math.sin(k * u)) / 2,\n    };\n    const outside = { at: (u) => -EPS, slope: (u) => 0 };\n    // Arc length -> normalized edge parameter lookup, plus total turning angle\n    function prepEdge(edge) {\n        const len = edge.length;\n        let toParam = (s) => s / len;\n        let turn = 0;\n        if (edge.geomType !== \"LINE\") {\n            const N = 32;\n            const params = [0];\n            const lengths = [0];\n            let prevP = edge.pointAt(0);\n            let prevT = edge.tangentAt(0).normalize();\n            for (let i = 1; i <= N; i++) {\n                const p = edge.pointAt(i / N);\n                const t = edge.tangentAt(i / N).normalize();\n                lengths.push(lengths[i - 1] + p.sub(prevP).Length);\n                params.push(i / N);\n                turn += Math.acos(Math.min(1, Math.max(-1, t.dot(prevT))));\n                prevP = p;\n                prevT = t;\n            }\n            if (edge.geomType !== \"CIRCLE\") {\n                const scale = len / lengths[N];\n                toParam = (s) => {\n                    let i = 1;\n                    while (i < N && lengths[i] * scale < s)\n                        i++;\n                    const a = lengths[i - 1] * scale;\n                    const b = lengths[i] * scale;\n                    return params[i - 1] + ((s - a) / (b - a)) * (params[i] - params[i - 1]);\n                };\n            }\n        }\n        return { edge, len, toParam, turn, start: edge.startPoint, end: edge.endPoint };\n    }\n    // An edge traversed in chain direction; s runs 0..len along it\n    function orient(info, reversed) {\n        const param = (s) => info.toParam(reversed ? info.len - s : s);\n        return {\n            info,\n            reversed,\n            len: info.len,\n            start: reversed ? info.end : info.start,\n            end: reversed ? info.start : info.end,\n            point: (s) => info.edge.pointAt(param(s)),\n            tangent: (s) => info.edge.tangentAt(param(s)).normalize().multiply(reversed ? -1 : 1),\n            u0: 0, // arc length along the chain where this edge starts\n            inSign: 1, // which side of the edge (within face B) the material is on\n        };\n    }\n    return shape.onLeafs((leaf) => {\n        if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n            return leaf;\n        }\n        const body = leaf.geometry;\n        // Gather the selected edges: directly selected edges first, in the order they were clicked,\n        // then the edges of any selected faces\n        let selectedEdges = [];\n        if (leaf.selection?.edges) {\n            selectedEdges.push(...leaf.selection.edges.map((index) => body.edges[index]));\n        }\n        selectedEdges = selectedEdges.filter((e) => e != null);\n        const clickedCount = selectedEdges.length;\n        if (leaf.selection?.faces) {\n            leaf.selection.faces.forEach((faceIndex) => {\n                selectedEdges.push(...body.faces[faceIndex].edges);\n            });\n        }\n        selectedEdges = selectedEdges.filter((e) => e != null);\n        // Faces share edges, so drop duplicates\n        selectedEdges = selectedEdges.filter((e, i) => selectedEdges.findIndex((other) => other.isSame(e)) === i);\n        if (selectedEdges.length === 0) {\n            return leaf;\n        }\n        const faces = body.faces;\n        const faceEdges = faces.map((f) => f.edges);\n        const adjacentFaces = (edge) => faces.map((f, i) => i).filter((i) => faceEdges[i].some((e) => e.isSame(edge)));\n        // Link touching edges into chains so the wave phase continues across them\n        const infos = selectedEdges.map((edge, rank) => ({ ...prepEdge(edge), rank, clicked: rank < clickedCount }));\n        const near = (a, b) => a.sub(b).Length < TOL;\n        const degree = (p) => infos.reduce((n, inf) => n + (near(inf.start, p) ? 1 : 0) + (near(inf.end, p) ? 1 : 0), 0);\n        const used = new Set();\n        const chains = [];\n        while (used.size < infos.length) {\n            const remaining = infos.filter((inf) => !used.has(inf));\n            // Prefer starting at a free end so open chains are traversed end to end\n            let first = remaining.find((inf) => degree(inf.start) === 1);\n            let chain = [];\n            if (first) {\n                chain.push(orient(first, false));\n            }\n            else {\n                first = remaining.find((inf) => degree(inf.end) === 1) ?? remaining[0];\n                chain.push(orient(first, degree(first.end) === 1));\n            }\n            used.add(first);\n            let next;\n            do {\n                const tip = chain[chain.length - 1].end;\n                next = infos.find((inf) => !used.has(inf) && (near(inf.start, tip) || near(inf.end, tip)));\n                if (next) {\n                    chain.push(orient(next, !near(next.start, tip)));\n                    used.add(next);\n                }\n            } while (next);\n            chains.push(chain);\n        }\n        const [bMin, bMax] = body.boundingBox.bounds;\n        const diagonal = Math.hypot(bMax[0] - bMin[0], bMax[1] - bMin[1], bMax[2] - bMin[2]);\n        EPS = Math.max(0.01, diagonal * 1e-5);\n        const throughDist = diagonal + 2 * EPS;\n        const smooth = (a, b) => a.tangent(a.len).dot(b.tangent(0)) > Math.cos(Math.PI / 180);\n        let tools = null;\n        const addTool = (tool) => {\n            tools = tools ? tools.fuse(tool) : tool;\n        };\n        const reverseChain = (chain) => chain\n            .slice()\n            .reverse()\n            .map((oe) => orient(oe.info, !oe.reversed));\n        chains.forEach((chain) => {\n            const closed = near(chain[chain.length - 1].end, chain[0].start);\n            // Pick where the wave starts: at the edge that was clicked first\n            const clicked = chain\n                .map((oe, i) => ({ i, rank: oe.info.rank, clicked: oe.info.clicked }))\n                .filter((c) => c.clicked)\n                .sort((a, b) => a.rank - b.rank);\n            if (!closed) {\n                // Open chain: start from whichever free end is nearer the first-clicked edge\n                if (clicked.length > 0) {\n                    const total = chain.reduce((sum, oe) => sum + oe.len, 0);\n                    let before = 0;\n                    for (let i = 0; i < clicked[0].i; i++)\n                        before += chain[i].len;\n                    if (before + chain[clicked[0].i].len / 2 > total / 2)\n                        chain = reverseChain(chain);\n                }\n            }\n            else if (clicked.length > 0) {\n                // Closed loop: start where the first-clicked edge begins, heading toward the second one\n                const first = clicked[0].i;\n                chain = chain.slice(first).concat(chain.slice(0, first));\n                const second = clicked.length > 1 ? (clicked[1].i - first + chain.length) % chain.length : 1;\n                if (second === chain.length - 1 && chain.length > 2) {\n                    chain = reverseChain(chain);\n                    chain = [chain[chain.length - 1], ...chain.slice(0, -1)];\n                }\n            }\n            else {\n                // Loop from a face selection has no click order: start at a sharp corner to hide the seam\n                // where the phase restarts\n                const corner = chain.findIndex((oe, i) => !smooth(chain[(i + chain.length - 1) % chain.length], oe));\n                if (corner > 0)\n                    chain = chain.slice(corner).concat(chain.slice(0, corner));\n            }\n            if (reverseStart)\n                chain = reverseChain(chain);\n            // The wave is drawn in a flat face shared by every edge in the chain\n            let common = adjacentFaces(chain[0].info.edge);\n            chain.forEach((oe) => {\n                const adj = adjacentFaces(oe.info.edge);\n                common = common.filter((i) => adj.includes(i));\n            });\n            common = common.filter((i) => faces[i].geomType === \"PLANE\");\n            if (common.length === 0) {\n                console.warn(\"Sine edge: touching edges must share a flat face, skipping\");\n                return;\n            }\n            // Default to the larger face (e.g. the top of a plate) so the side becomes wavy\n            common.sort((a, b) => replicad.measureArea(faces[b]) - replicad.measureArea(faces[a]));\n            const faceB = common[flipSide && common.length > 1 ? 1 : 0];\n            const nB = faces[faceB].normalAt(chain[0].start);\n            let u = 0;\n            for (const oe of chain) {\n                oe.u0 = u;\n                u += oe.len;\n                // Material is on the side away from the other adjacent face's normal\n                const faceA = adjacentFaces(oe.info.edge).find((i) => i !== faceB);\n                if (faceA === undefined) {\n                    console.warn(\"Sine edge: edge does not border two faces, skipping\");\n                    return;\n                }\n                const mid = oe.point(oe.len / 2);\n                const side = nB.cross(oe.tangent(oe.len / 2));\n                oe.inSign = side.dot(faces[faceA].normalAt(mid)) > 0 ? -1 : 1;\n            }\n            const plane = new replicad.Plane(chain[0].start.add(nB.multiply(EPS)), chain[0].tangent(0), nB);\n            const to2D = (v) => {\n                const d = v.sub(plane.origin);\n                return [d.dot(plane.xDir), d.dot(plane.yDir)];\n            };\n            // Unit direction into the material, and the point offset by offset.at(u) along it\n            const inward = (oe, s) => nB.cross(oe.tangent(s)).multiply(oe.inSign);\n            const offsetPoint = (oe, s, offset) => oe.point(s).add(inward(oe, s).multiply(offset.at(oe.u0 + s)));\n            // Derivative of offsetPoint along s\n            const offsetDeriv = (oe, s, offset) => {\n                const t = oe.tangent(s);\n                const u = oe.u0 + s;\n                let result = t.add(inward(oe, s).multiply(offset.slope(u)));\n                if (oe.info.edge.geomType !== \"LINE\") {\n                    // Rate at which the edge direction turns, from a small central difference\n                    const h = oe.len * 1e-4;\n                    const a = Math.max(0, s - h);\n                    const b = Math.min(oe.len, s + h);\n                    const dt = oe.tangent(b).sub(oe.tangent(a)).multiply(1 / (b - a));\n                    result = result.add(nB.cross(dt).multiply(oe.inSign * offset.at(u)));\n                }\n                return result;\n            };\n            // Hermite Bezier (matching position and slope at both ends) of an offset curve over [s0, s1].\n            // Handles use the circular-arc length (4/3)tan(θ/4) instead of the plain 1/3, which keeps\n            // curved edges accurate at any scale; on straight edges the two are identical.\n            const bezier = (oe, s0, s1, offset) => {\n                const cosTurn = Math.min(1, Math.max(-1, oe.tangent(s0).dot(oe.tangent(s1))));\n                const turn = Math.acos(cosTurn);\n                const h = turn > 1e-9 ? ((s1 - s0) * (4 / 3) * Math.tan(turn / 4)) / turn : (s1 - s0) / 3;\n                const p0 = offsetPoint(oe, s0, offset);\n                const p1 = offsetPoint(oe, s1, offset);\n                return {\n                    p0: to2D(p0),\n                    p1: to2D(p1),\n                    c1: to2D(p0.add(offsetDeriv(oe, s0, offset).multiply(h))),\n                    c2: to2D(p1.sub(offsetDeriv(oe, s1, offset).multiply(h))),\n                };\n            };\n            // Number of Beziers needed so each one turns by at most MAX_TURN\n            const turnPieces = (oe, span) => Math.ceil((span / oe.len) * oe.info.turn / MAX_TURN);\n            // Wave segments along one edge between s = sA and s = sB, split at every quarter wave\n            function waveSegs(oe, sA, sB) {\n                const segs = [];\n                if (sB - sA < 1e-9)\n                    return segs;\n                const breaks = [sA];\n                const quarter = wavelength / 4;\n                for (let m = Math.ceil((oe.u0 + sA) / quarter); m * quarter < oe.u0 + sB; m++) {\n                    const s = m * quarter - oe.u0;\n                    if (s > sA + 1e-6 && s < sB - 1e-6)\n                        breaks.push(s);\n                }\n                breaks.push(sB);\n                // A trimmed end can leave a sliver next to a quarter break; merge it and split in two instead\n                const sliver = quarter / 4;\n                const merged = new Set();\n                if (breaks.length > 2 && breaks[1] - breaks[0] < sliver) {\n                    breaks.splice(1, 1);\n                    merged.add(0);\n                }\n                if (breaks.length > 2 && breaks[breaks.length - 1] - breaks[breaks.length - 2] < sliver) {\n                    breaks.splice(breaks.length - 2, 1);\n                    merged.add(breaks.length - 2);\n                }\n                // On curved edges a single Bezier per quarter wave drifts, so use at least two\n                const minPieces = oe.info.edge.geomType !== \"LINE\" ? 2 : 1;\n                for (let i = 0; i + 1 < breaks.length; i++) {\n                    const n = Math.max(merged.has(i) ? 2 : minPieces, turnPieces(oe, breaks[i + 1] - breaks[i]));\n                    for (let j = 0; j < n; j++) {\n                        const s0 = breaks[i] + ((breaks[i + 1] - breaks[i]) * j) / n;\n                        const s1 = breaks[i] + ((breaks[i + 1] - breaks[i]) * (j + 1)) / n;\n                        segs.push(bezier(oe, s0, s1, wave));\n                    }\n                }\n                return segs;\n            }\n            // Segments just outside one edge, with the ends moved to the given corner points\n            function outerSegs(oe, startPt, endPt) {\n                let segs;\n                if (oe.info.edge.geomType === \"LINE\") {\n                    segs = [{ p0: to2D(offsetPoint(oe, 0, outside)), p1: to2D(offsetPoint(oe, oe.len, outside)) }];\n                }\n                else {\n                    const n = Math.max(1, turnPieces(oe, oe.len));\n                    segs = [];\n                    for (let j = 0; j < n; j++)\n                        segs.push(bezier(oe, (oe.len * j) / n, (oe.len * (j + 1)) / n, outside));\n                }\n                if (startPt)\n                    segs[0].p0 = startPt;\n                if (endPt)\n                    segs[segs.length - 1].p1 = endPt;\n                return segs;\n            }\n            // Classify each joint between consecutive edges (including the closing joint of a loop)\n            const joints = [];\n            const jointCount = closed ? chain.length : chain.length - 1;\n            for (let i = 0; i < jointCount; i++) {\n                const a = chain[i];\n                const b = chain[(i + 1) % chain.length];\n                const joint = { a, b, kind: smooth(a, b) ? \"smooth\" : \"sharp\" };\n                if (joint.kind === \"sharp\") {\n                    const corner = a.end;\n                    const n1 = inward(a, a.len);\n                    const n2 = inward(b, 0);\n                    // Convex when the next edge heads into the material, so the wave curves overlap\n                    joint.convex = b.tangent(0).dot(n1) > 0;\n                    // Mitered corner of the outline just outside the part\n                    joint.outer = to2D(corner.sub(n1.add(n2).multiply(EPS / (1 + n1.dot(n2)))));\n                    joint.corner = corner;\n                    joint.n1 = n1;\n                    joint.n2 = n2;\n                }\n                joints.push(joint);\n            }\n            // At convex corners, trim both wave curves back to where they cross the corner bisector\n            const sStart = chain.map(() => 0);\n            const sEnd = chain.map((oe) => oe.len);\n            const across = (joint, oe, s) => {\n                const m = joint.a.tangent(joint.a.len).add(joint.b.tangent(0)).normalize();\n                return offsetPoint(oe, s, wave).sub(joint.corner).dot(m);\n            };\n            const findCrossing = (f, lo, hi) => {\n                for (let i = 0; i < 40; i++) {\n                    const mid = (lo + hi) / 2;\n                    if (f(mid) > 0)\n                        hi = mid;\n                    else\n                        lo = mid;\n                }\n                return (lo + hi) / 2;\n            };\n            joints.forEach((joint, i) => {\n                if (joint.kind !== \"sharp\" || !joint.convex)\n                    return;\n                const ia = i;\n                const ib = (i + 1) % chain.length;\n                const fa = (s) => across(joint, joint.a, s);\n                const fb = (s) => across(joint, joint.b, s);\n                if (fa(joint.a.len) > 0)\n                    sEnd[ia] = fa(sStart[ia]) > 0 ? sStart[ia] : findCrossing(fa, sStart[ia], joint.a.len);\n                if (fb(0) < 0)\n                    sStart[ib] = fb(sEnd[ib]) < 0 ? sEnd[ib] : findCrossing(fb, 0, sEnd[ib]);\n            });\n            // Connector from the end of one edge's wave to the start of the next\n            const connector = (joint, i) => {\n                const ib = (i + 1) % chain.length;\n                const from = offsetPoint(joint.a, sEnd[i], wave);\n                const to = offsetPoint(joint.b, sStart[ib], wave);\n                if (from.sub(to).Length < 1e-7)\n                    return [];\n                if (joint.kind === \"sharp\" && !joint.convex) {\n                    // Concave corner: follow a circle around the corner, as an offset curve would\n                    const da = wave.at(joint.a.u0 + joint.a.len);\n                    const db = wave.at(joint.b.u0);\n                    if (da > 1e-6 && Math.abs(da - db) < 1e-9) {\n                        const mid = joint.corner.add(joint.n1.add(joint.n2).normalize().multiply(da));\n                        return [{ p1: to2D(to), mid: to2D(mid) }];\n                    }\n                }\n                return [{ p1: to2D(to) }];\n            };\n            // Wave path along the whole chain\n            const edgeSegs = chain.map((oe, i) => waveSegs(oe, sStart[i], sEnd[i]));\n            let waveStart = to2D(offsetPoint(chain[0], sStart[0], wave));\n            const wavePath = [];\n            chain.forEach((oe, i) => {\n                const segs = edgeSegs[i];\n                wavePath.push(...segs);\n                if (i >= joints.length)\n                    return;\n                const joint = joints[i];\n                const ib = (i + 1) % chain.length;\n                const gap = () => {\n                    const from = segs[segs.length - 1].p1;\n                    const to = edgeSegs[ib][0].p0;\n                    return Math.hypot(from[0] - to[0], from[1] - to[1]);\n                };\n                const joinable = segs.length > 0 && edgeSegs[ib].length > 0;\n                if (joinable && ((joint.kind === \"sharp\" && joint.convex) || gap() < EPS)) {\n                    // Ends that nearly meet (e.g. trimmed ends on the bisector) are joined at their midpoint\n                    // rather than bridged, which would leave a sliver face\n                    const next = edgeSegs[ib][0].p0;\n                    const last = segs[segs.length - 1];\n                    last.p1 = [(last.p1[0] + next[0]) / 2, (last.p1[1] + next[1]) / 2];\n                    if (ib === 0)\n                        waveStart = last.p1;\n                }\n                else {\n                    wavePath.push(...connector(joint, i));\n                }\n            });\n            // Outline just outside the part along the whole chain\n            const outerPath = [];\n            chain.forEach((oe, i) => {\n                const before = i > 0 ? joints[i - 1] : closed ? joints[joints.length - 1] : null;\n                const after = i < joints.length ? joints[i] : null;\n                outerPath.push(...outerSegs(oe, before?.kind === \"sharp\" ? before.outer : null, after?.kind === \"sharp\" ? after.outer : null));\n            });\n            const trace = (pen, segs) => {\n                segs.forEach((g) => {\n                    if (g.c1)\n                        pen = pen.cubicBezierCurveTo(g.p1, g.c1, g.c2);\n                    else if (g.mid)\n                        pen = pen.threePointsArcTo(g.p1, g.mid);\n                    else\n                        pen = pen.lineTo(g.p1);\n                });\n                return pen;\n            };\n            const extrude = (drawing) => drawing.sketchOnPlane(plane).extrude(throughDist, { extrusionDirection: nB.multiply(-1) });\n            if (closed) {\n                // Tool is the band between the wave loop and the loop just outside the part\n                const loop = (start, segs) => {\n                    const last = segs[segs.length - 1];\n                    if (Math.hypot(last.p1[0] - start[0], last.p1[1] - start[1]) < 1e-6)\n                        last.p1 = start;\n                    return trace(replicad.draw(start), segs).close();\n                };\n                const waveSolid = extrude(loop(waveStart, wavePath));\n                const outerSolid = extrude(loop(outerPath[0].p0, outerPath));\n                addTool(replicad.measureVolume(waveSolid) > replicad.measureVolume(outerSolid)\n                    ? waveSolid.cut(outerSolid)\n                    : outerSolid.cut(waveSolid));\n                return;\n            }\n            const outerBack = outerPath\n                .slice()\n                .reverse()\n                .map((g) => ({ p0: g.p1, p1: g.p0, c1: g.c2, c2: g.c1 }));\n            let pen = replicad.draw(outerPath[0].p0).lineTo(waveStart);\n            pen = trace(pen, wavePath).lineTo(outerBack[0].p0);\n            addTool(extrude(trace(pen, outerBack).close()));\n        });\n        if (tools) {\n            leaf.geometry = body.cut(tools);\n        }\n        return leaf;\n    });\n}\n"
+                },
+                {
+                  "atomType": "GitHubMolecule",
+                  "x": 0.4,
+                  "y": 0.7,
+                  "uniqueID": "id-5980",
+                  "name": "Mirror",
+                  "ioValues": [
+                    {
+                      "name": "Shape",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "Pivot",
+                      "ioValue": 90
+                    },
+                    {
+                      "name": "Plane",
+                      "ioValue": "Y",
+                      "currentEquation": "Y"
+                    }
+                  ],
+                  "topLevel": false,
+                  "allAtoms": [
+                    {
+                      "atomType": "Output",
+                      "x": 1,
+                      "y": 0.5,
+                      "uniqueID": "id-5968",
+                      "ioValues": [
+                        {
+                          "name": "number or geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Input",
+                      "x": 0,
+                      "y": 0.2,
+                      "uniqueID": "id-5969",
+                      "name": "Shape",
+                      "type": "geometry",
+                      "options": []
+                    },
+                    {
+                      "atomType": "Code",
+                      "x": 0.6,
+                      "y": 0.6,
+                      "uniqueID": "id-5970",
+                      "ioValues": [
+                        {
+                          "name": "shape",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "pivot",
+                          "ioValue": 90
+                        },
+                        {
+                          "name": "plane",
+                          "ioValue": "X",
+                          "currentEquation": "X"
+                        }
+                      ],
+                      "interpreterVersion": 0,
+                      "code": "\n      const Inputs = [\n       {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n        {inputName: \"pivot\", type: \"number\", defaultValue: 90},\n        {inputName: \"plane\", type: \"string\", defaultValue: \"X\"}\n        \n        ]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n\n      //Gets the shape from the library - no need to clone or access geometry directly\n      let importedShape = library[shape]\n\n      const newPlane = new replicad.Plane().pivot(pivot, plane)\n      console.log(importedShape)\n      let mirroredShape = importedShape.geometry[0].mirror(newPlane,(0,0,0))\n\n\n      //Wrap the raw replicad geometry in our assembly format\n      let shape2 = {\n          geometry: [mirroredShape],\n          dimension: \"3D\",\n          tags: [\"createdShape\"],\n          color: '#A3CE5B',\n          plane: newPlane,\n          bom: []\n      }\n    \n      return shape2\n\n      /**\n      Built-in Functions Available:\n      - Move(geometry, x, y, z) - Move a shape in 3D space\n      - Rotate(geometry, x, y, z) - Rotate a shape around X, Y, Z axes (degrees)\n      - Scale(geometry, factor) - Scale a shape by a factor\n      - Assembly([shapes]) - Combine multiple shapes into an assembly\n      - Intersect(shape1, shape2) - Boolean intersection of two shapes\n      - GetBounds(geometry) - Get the bounding box of a shape\n      - Fillet(geometry, radius) - Round edges with specified radius\n      - Chamfer(geometry, size) - Bevel edges with specified size\n\n      To Use the Code Atom, enter your inputs to the input list as an object array:\n      const Inputs = [\n        {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n        {inputName: \"dist\", type: \"number\", defaultValue: 5},\n        {inputName: \"height\", type: \"number\", defaultValue: 10}\n      ]\n\n      Access imported geometry using library[inputName] - the built-in functions handle \n      the complexity of accessing geometry arrays and maintaining metadata automatically.\n\n      Simple Example - Move a shape:\n         const Inputs = [\n          {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n          {inputName: \"x\", type: \"number\", defaultValue: 5}\n        ]\n        let movedShape = await Move(library[shape], x, 0, 0)\n        return movedShape\n      */\n      "
+                    },
+                    {
+                      "atomType": "Rectangle",
+                      "x": 0.2,
+                      "y": 0.7,
+                      "uniqueID": "id-5971",
+                      "ioValues": [
+                        {
+                          "name": "x length",
+                          "ioValue": 10
+                        },
+                        {
+                          "name": "y length",
+                          "ioValue": 10
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Extrude",
+                      "x": 0.3,
+                      "y": 0.8,
+                      "uniqueID": "id-5972",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "height",
+                          "ioValue": 1
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Move",
+                      "x": 0.4,
+                      "y": 0.7,
+                      "uniqueID": "id-5973",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "xDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "yDist",
+                          "ioValue": 10
+                        },
+                        {
+                          "name": "zDist",
+                          "ioValue": 0
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Input",
+                      "x": 0,
+                      "y": 0.2,
+                      "uniqueID": "id-5974",
+                      "name": "Pivot",
+                      "type": "number",
+                      "options": []
+                    },
+                    {
+                      "atomType": "Assembly",
+                      "x": 0.7,
+                      "y": 0.8,
+                      "uniqueID": "id-5975",
+                      "ioValues": [
+                        {
+                          "name": "Shape 1",
+                          "ioValue": null
+                        },
+                        {
+                          "name": "Shape 3",
+                          "ioValue": null
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Readme",
+                      "x": 0.8,
+                      "y": 0.7,
+                      "uniqueID": "id-5976",
+                      "name": "README",
+                      "ioValues": [
+                        {
+                          "name": "value",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        }
+                      ],
+                      "readMeText": "Mirror a given shape",
+                      "global": true
+                    },
+                    {
+                      "atomType": "Rotate",
+                      "x": 0.5,
+                      "y": 0.8,
+                      "uniqueID": "id-5977",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "x-axis degrees",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "y-axis degrees",
+                          "ioValue": 30
+                        },
+                        {
+                          "name": "z-axis degrees",
+                          "ioValue": 0
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Code",
+                      "x": 0.5,
+                      "y": 0.3,
+                      "uniqueID": "id-5978",
+                      "ioValues": [
+                        {
+                          "name": "shape",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "pivot",
+                          "ioValue": 90
+                        },
+                        {
+                          "name": "plane",
+                          "ioValue": "Y",
+                          "currentEquation": "X"
+                        }
+                      ],
+                      "interpreterVersion": 0,
+                      "code": "\n      const Inputs = [\n       {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n        {inputName: \"pivot\", type: \"number\", defaultValue: 90},\n        {inputName: \"plane\", type: \"string\", defaultValue: \"X\"}\n        \n        ]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n\n      //Gets the shape from the library - no need to clone or access geometry directly\n      let importedShape = library[shape]\n\n      const newPlane = new replicad.Plane().pivot(pivot, plane)\n      console.log(importedShape)\n      let mirroredShape = importedShape.geometry[0].mirror(newPlane,(0,0,0))\n\n\n      //Wrap the raw replicad geometry in our assembly format\n      let shape2 = {\n          geometry: [mirroredShape],\n          dimension: \"3D\",\n          tags: [\"createdShape\"],\n          color: '#A3CE5B',\n          plane: newPlane,\n          bom: []\n      }\n    \n      return shape2\n\n      /**\n      Built-in Functions Available:\n      - Move(geometry, x, y, z) - Move a shape in 3D space\n      - Rotate(geometry, x, y, z) - Rotate a shape around X, Y, Z axes (degrees)\n      - Scale(geometry, factor) - Scale a shape by a factor\n      - Assembly([shapes]) - Combine multiple shapes into an assembly\n      - Intersect(shape1, shape2) - Boolean intersection of two shapes\n      - GetBounds(geometry) - Get the bounding box of a shape\n      - Fillet(geometry, radius) - Round edges with specified radius\n      - Chamfer(geometry, size) - Bevel edges with specified size\n\n      To Use the Code Atom, enter your inputs to the input list as an object array:\n      const Inputs = [\n        {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n        {inputName: \"dist\", type: \"number\", defaultValue: 5},\n        {inputName: \"height\", type: \"number\", defaultValue: 10}\n      ]\n\n      Access imported geometry using library[inputName] - the built-in functions handle \n      the complexity of accessing geometry arrays and maintaining metadata automatically.\n\n      Simple Example - Move a shape:\n         const Inputs = [\n          {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n          {inputName: \"x\", type: \"number\", defaultValue: 5}\n        ]\n        let movedShape = await Move(library[shape], x, 0, 0)\n        return movedShape\n      */\n      "
+                    },
+                    {
+                      "atomType": "Input",
+                      "x": 0,
+                      "y": 0.3,
+                      "uniqueID": "id-5979",
+                      "name": "Plane",
+                      "type": "string",
+                      "options": []
+                    }
+                  ],
+                  "allConnectors": [
+                    {
+                      "ap2Name": "shape",
+                      "ap1ID": "id-5969",
+                      "ap2ID": "id-5978"
+                    },
+                    {
+                      "ap2Name": "Shape 1",
+                      "ap1ID": "id-5970",
+                      "ap2ID": "id-5975"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-5971",
+                      "ap2ID": "id-5972"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-5972",
+                      "ap2ID": "id-5973"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-5973",
+                      "ap2ID": "id-5977"
+                    },
+                    {
+                      "ap2Name": "pivot",
+                      "ap1ID": "id-5974",
+                      "ap2ID": "id-5978"
+                    },
+                    {
+                      "ap2Name": "shape",
+                      "ap1ID": "id-5977",
+                      "ap2ID": "id-5970"
+                    },
+                    {
+                      "ap2Name": "Shape 3",
+                      "ap1ID": "id-5977",
+                      "ap2ID": "id-5975"
+                    },
+                    {
+                      "ap2Name": "number or geometry",
+                      "ap1ID": "id-5978",
+                      "ap2ID": "id-5968"
+                    },
+                    {
+                      "ap2Name": "plane",
+                      "ap1ID": "id-5979",
+                      "ap2ID": "id-5978"
+                    }
+                  ],
+                  "parentRepo": {
+                    "lastFoundGit": "2026-09-20T02:23:39.099Z",
+                    "privateRepo": false,
+                    "repoName": "Mirror",
+                    "dateCreated": "2025-12-04T15:13:10Z",
+                    "likes": 0,
+                    "pngURL": "https://raw.githubusercontent.com/alzatin/Mirror/master/project.png?sanitize=true",
+                    "readme": "https://raw.githubusercontent.com/alzatin/Mirror/master/README.md?sanitize=true",
+                    "yyyy": 2025,
+                    "topMoleculeID": "",
+                    "userRanking": 0.2,
+                    "userSetAsThumbnail": false,
+                    "githubMoleculesUsed": [],
+                    "html_url": "https://github.com/alzatin/Mirror",
+                    "topics": [
+                      "abundance-tool"
+                    ],
+                    "pullRequests": [],
+                    "forks": 1,
+                    "dateModified": "2026-01-17T18:13:56Z",
+                    "ranking": 1,
+                    "searchField": "mirror alzatin tool to mirror a part along an axis  abundance-tool",
+                    "owner": "alzatin",
+                    "description": "Tool to mirror a part along an axis ",
+                    "contentURL": "https://raw.githubusercontent.com/alzatin/Mirror/master/project.abundance?sanitize=true",
+                    "svgURL": "https://raw.githubusercontent.com/alzatin/Mirror/master/project.svg?sanitize=true",
+                    "isLocal": false
+                  },
+                  "unitsKey": "Unitless",
+                  "fileTypeVersion": 1,
+                  "lastReloadedFromGithubAt": 1790615244402
+                },
+                {
+                  "atomType": "Fusion",
+                  "x": 0.6,
+                  "y": 0.7,
+                  "uniqueID": "id-6020",
+                  "ioValues": [
+                    {
+                      "name": "Shape 1",
+                      "ioValue": {
+                        "geometry": "253016f0-{\"geometry\":\"3889129b-0\",\"color\":\"#aad7f2\",\"tags\":[],\"bom\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"metadata\":{},\"selection\":{\"edges\":[18,21,23]},\"dimension\":\"3D\"}-90-Y-0",
+                        "dimension": "3D",
+                        "tags": [
+                          "createdShape"
+                        ],
+                        "color": "#A3CE5B",
+                        "plane": {
+                          "origin": [
+                            0,
+                            0,
+                            0
+                          ],
+                          "xDir": [
+                            1.1102230246251565e-16,
+                            0,
+                            -1
+                          ],
+                          "normal": [
+                            1,
+                            0,
+                            1.1102230246251565e-16
+                          ]
+                        },
+                        "bom": []
+                      }
+                    },
+                    {
+                      "name": "Shape 2",
+                      "ioValue": {
+                        "geometry": "3889129b-0",
+                        "color": "#aad7f2",
+                        "tags": [],
+                        "bom": [],
+                        "plane": {
+                          "origin": [
+                            0,
+                            0,
+                            0
+                          ],
+                          "xDir": [
+                            1,
+                            0,
+                            0
+                          ],
+                          "normal": [
+                            0,
+                            0,
+                            1
+                          ]
+                        },
+                        "metadata": {},
+                        "selection": {
+                          "edges": [
+                            18,
+                            21,
+                            23
+                          ]
+                        },
+                        "dimension": "3D"
+                      }
+                    }
+                  ],
+                  "unionType": "Fusion"
                 }
               ],
               "allConnectors": [
@@ -6817,8 +6678,23 @@
                   "ap2ID": "id-4603"
                 },
                 {
-                  "ap2Name": "number or geometry",
+                  "ap2Name": "Shape",
                   "ap1ID": "id-4603",
+                  "ap2ID": "id-5980"
+                },
+                {
+                  "ap2Name": "Shape 2",
+                  "ap1ID": "id-4603",
+                  "ap2ID": "id-6020"
+                },
+                {
+                  "ap2Name": "Shape 1",
+                  "ap1ID": "id-5980",
+                  "ap2ID": "id-6020"
+                },
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-6020",
                   "ap2ID": "id-4601"
                 }
               ],
@@ -7457,6 +7333,591 @@
               "ap1ID": "id-5928",
               "ap2ID": "id-4600"
             }
+          ],
+          "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Molecule",
+          "x": 0.5,
+          "y": 0.6,
+          "uniqueID": "id-6025",
+          "name": "New Molecule",
+          "ioValues": [
+            {
+              "name": "input",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "input_1",
+              "ioValue": 304.79999999999995
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-6027",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Move",
+              "x": 0.6,
+              "y": 0.8,
+              "uniqueID": "id-6029",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "xDist",
+                  "ioValue": 0
+                },
+                {
+                  "name": "yDist",
+                  "ioValue": 0
+                },
+                {
+                  "name": "zDist",
+                  "ioValue": 600
+                }
+              ]
+            },
+            {
+              "atomType": "GitHubMolecule",
+              "x": 0.7,
+              "y": 0.5,
+              "uniqueID": "id-6030",
+              "name": "Linear-Pattern",
+              "ioValues": [
+                {
+                  "name": "Number",
+                  "ioValue": 11
+                },
+                {
+                  "name": "Geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "distX",
+                  "ioValue": 0
+                },
+                {
+                  "name": "distY",
+                  "ioValue": 304.79999999999995
+                },
+                {
+                  "name": "distZ",
+                  "ioValue": 0
+                }
+              ],
+              "topLevel": false,
+              "allAtoms": [
+                {
+                  "atomType": "Output",
+                  "x": 1,
+                  "y": 0.5,
+                  "uniqueID": "id-6031",
+                  "ioValues": [
+                    {
+                      "name": "number or geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Rectangle",
+                  "x": 0.3,
+                  "y": 0.2,
+                  "uniqueID": "id-6032",
+                  "ioValues": [
+                    {
+                      "name": "x length",
+                      "ioValue": 10
+                    },
+                    {
+                      "name": "y length",
+                      "ioValue": 10
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Input",
+                  "x": 0,
+                  "y": 0.2,
+                  "uniqueID": "id-6033",
+                  "name": "Number",
+                  "type": "number",
+                  "options": []
+                },
+                {
+                  "atomType": "Input",
+                  "x": 0,
+                  "y": 0.2,
+                  "uniqueID": "id-6034",
+                  "name": "Geometry",
+                  "type": "geometry",
+                  "options": []
+                },
+                {
+                  "atomType": "Input",
+                  "x": 0,
+                  "y": 0.3,
+                  "uniqueID": "id-6035",
+                  "name": "distX",
+                  "type": "number",
+                  "options": []
+                },
+                {
+                  "atomType": "Input",
+                  "x": 0,
+                  "y": 0.4,
+                  "uniqueID": "id-6036",
+                  "name": "distY",
+                  "type": "number",
+                  "options": []
+                },
+                {
+                  "atomType": "Input",
+                  "x": 0,
+                  "y": 0.5,
+                  "uniqueID": "id-6037",
+                  "name": "distZ",
+                  "type": "number",
+                  "options": []
+                },
+                {
+                  "atomType": "Readme",
+                  "x": 0.8,
+                  "y": 0.3,
+                  "uniqueID": "id-6038",
+                  "name": "README",
+                  "ioValues": [
+                    {
+                      "name": "value",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ],
+                  "readMeText": "Readme text here",
+                  "global": true
+                },
+                {
+                  "atomType": "Extrude",
+                  "x": 0.4,
+                  "y": 0.3,
+                  "uniqueID": "id-6039",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "height",
+                      "ioValue": 10
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Code",
+                  "x": 0.6,
+                  "y": 0.2,
+                  "uniqueID": "id-6040",
+                  "ioValues": [
+                    {
+                      "name": "shape",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "count",
+                      "ioValue": 5
+                    },
+                    {
+                      "name": "distX",
+                      "ioValue": 20
+                    },
+                    {
+                      "name": "distY",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "distZ",
+                      "ioValue": 0
+                    }
+                  ],
+                  "interpreterVersion": 1,
+                  "code": "\n/**\n * =========================================================================\n *  ABUNDANCE CODE ATOM — Quick Reference\n * =========================================================================\n *\n *  HOW INPUTS WORK\n *  ---------------\n *  Every parameter of run() becomes an input port on this atom.\n *  Four types are supported:\n *\n *    number   -> numeric input / slider\n *    string   -> text input  (great for hex color codes, labels, etc.)\n *    boolean  -> true/false toggle\n *    Assembly -> geometry -- wire this to the output of another atom\n *\n *  Give a parameter a default value ( = x ) to make it optional.\n *  Mark it with ? (name?: Assembly) to make it optional with no default.\n *  Parameters without a default must be connected before the atom runs.\n *\n *  RETURN VALUE\n *  ------------\n *  Return an Assembly, an Assembly[], or a primitive (number/string/boolean).\n *  Returning an Assembly[] lets downstream atoms (BOM, cut layout...)\n *  see each piece independently.\n *\n *  GEOMETRY API  (replicad is available as a global)\n *  -------------------------------------------------\n *  Create 2-D sketches\n *    replicad.drawCircle(radius)\n *    replicad.drawRectangle(width, height)\n *    replicad.drawRoundedRectangle(width, height, cornerRadius)\n *\n *  Turn a 2-D sketch into a 3-D solid\n *    sketch.sketchOnPlane().extrude(distance)\n *    sketch.sketchOnPlane().revolve()          // rotate 360 deg around Z\n *\n *  Create 3-D primitives directly\n *    replicad.makeBaseBox(width, depth, height)\n *    replicad.makeSphere(radius)\n *    replicad.makeCylinder(radius, height)\n *\n *  Boolean operations\n *    solidA.fuse(solidB)                       // union\n *    solidA.cut(solidB)                        // difference (cut a hole)\n *    solidA.intersect(solidB)                  // intersection\n *\n *  Post-processing\n *    solid.fillet(radius)                      // round ALL edges\n *    solid.fillet(r, e => e.inPlane(\"XY\", z))  // round only top-face edges\n *    solid.chamfer(distance)                   // bevel ALL edges\n *    solid.translate(x, y, z)                  // move the solid\n *    solid.rotate(angle, [0, 0, 1])            // rotate around Z axis\n *\n *  ASSEMBLY CLASS\n *  --------------\n *  Wrap any replicad solid in an Assembly to attach display metadata:\n *    new Assembly({ geometry, color, tags, bom })\n *      geometry -> replicad solid / drawing returned by the API above\n *      color    -> hex string shown in the 3-D viewport  (\"#A3CE5B\")\n *      tags     -> string[] used for filtering in cut layout / BOM\n *      bom      -> string[] lines added to the Bill of Materials panel\n *\n *  AI PROMPT TIP\n *  -------------\n *  Copy the code in this editor into ChatGPT / Claude and say something like:\n *    \"Modify this Abundance Code Atom to create a gear with 12 teeth\"\n *    \"Change this to make a hexagonal nut instead of a round plate\"\n *  The comments above give the AI all the context it needs to produce\n *  valid, working Abundance TypeScript code.\n * =========================================================================\n */\n\n/**\n * A rectangular mounting plate with a circular hole in the centre.\n * All parameters have defaults so the atom produces geometry immediately\n * after creation — no connections required to get started.\n */\nfunction run(\n  shape: Assembly,\n  count: number = 5,\n  distX: number = 10,\n  distY: number = 0,\n  distZ: number = 0           \n) {\n  let shapesArray = [];\n  for (let i = 0; i < count; i++) {\n    const offsetAssembly = new Assembly(shape).onLeafs((leaf) => {\n      if (leaf.is2D()) {\n        leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i)\n        leaf.plane = leaf.plane.translateZ(distZ * i)\n      } else {\n        leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i, distZ * i)\n      }\n      return leaf;\n    })\n    shapesArray.push(offsetAssembly)\n  }\n  return shapesArray;\n}\n",
+                  "compiledCode": "\"use strict\";\n/**\n * =========================================================================\n *  ABUNDANCE CODE ATOM — Quick Reference\n * =========================================================================\n *\n *  HOW INPUTS WORK\n *  ---------------\n *  Every parameter of run() becomes an input port on this atom.\n *  Four types are supported:\n *\n *    number   -> numeric input / slider\n *    string   -> text input  (great for hex color codes, labels, etc.)\n *    boolean  -> true/false toggle\n *    Assembly -> geometry -- wire this to the output of another atom\n *\n *  Give a parameter a default value ( = x ) to make it optional.\n *  Mark it with ? (name?: Assembly) to make it optional with no default.\n *  Parameters without a default must be connected before the atom runs.\n *\n *  RETURN VALUE\n *  ------------\n *  Return an Assembly, an Assembly[], or a primitive (number/string/boolean).\n *  Returning an Assembly[] lets downstream atoms (BOM, cut layout...)\n *  see each piece independently.\n *\n *  GEOMETRY API  (replicad is available as a global)\n *  -------------------------------------------------\n *  Create 2-D sketches\n *    replicad.drawCircle(radius)\n *    replicad.drawRectangle(width, height)\n *    replicad.drawRoundedRectangle(width, height, cornerRadius)\n *\n *  Turn a 2-D sketch into a 3-D solid\n *    sketch.sketchOnPlane().extrude(distance)\n *    sketch.sketchOnPlane().revolve()          // rotate 360 deg around Z\n *\n *  Create 3-D primitives directly\n *    replicad.makeBaseBox(width, depth, height)\n *    replicad.makeSphere(radius)\n *    replicad.makeCylinder(radius, height)\n *\n *  Boolean operations\n *    solidA.fuse(solidB)                       // union\n *    solidA.cut(solidB)                        // difference (cut a hole)\n *    solidA.intersect(solidB)                  // intersection\n *\n *  Post-processing\n *    solid.fillet(radius)                      // round ALL edges\n *    solid.fillet(r, e => e.inPlane(\"XY\", z))  // round only top-face edges\n *    solid.chamfer(distance)                   // bevel ALL edges\n *    solid.translate(x, y, z)                  // move the solid\n *    solid.rotate(angle, [0, 0, 1])            // rotate around Z axis\n *\n *  ASSEMBLY CLASS\n *  --------------\n *  Wrap any replicad solid in an Assembly to attach display metadata:\n *    new Assembly({ geometry, color, tags, bom })\n *      geometry -> replicad solid / drawing returned by the API above\n *      color    -> hex string shown in the 3-D viewport  (\"#A3CE5B\")\n *      tags     -> string[] used for filtering in cut layout / BOM\n *      bom      -> string[] lines added to the Bill of Materials panel\n *\n *  AI PROMPT TIP\n *  -------------\n *  Copy the code in this editor into ChatGPT / Claude and say something like:\n *    \"Modify this Abundance Code Atom to create a gear with 12 teeth\"\n *    \"Change this to make a hexagonal nut instead of a round plate\"\n *  The comments above give the AI all the context it needs to produce\n *  valid, working Abundance TypeScript code.\n * =========================================================================\n */\n/**\n * A rectangular mounting plate with a circular hole in the centre.\n * All parameters have defaults so the atom produces geometry immediately\n * after creation — no connections required to get started.\n */\nfunction run(shape, count = 5, distX = 10, distY = 0, distZ = 0) {\n    let shapesArray = [];\n    for (let i = 0; i < count; i++) {\n        const offsetAssembly = new Assembly(shape).onLeafs((leaf) => {\n            if (leaf.is2D()) {\n                leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i);\n                leaf.plane = leaf.plane.translateZ(distZ * i);\n            }\n            else {\n                leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i, distZ * i);\n            }\n            return leaf;\n        });\n        shapesArray.push(offsetAssembly);\n    }\n    return shapesArray;\n}\n"
+                },
+                {
+                  "atomType": "Code",
+                  "x": 0.4,
+                  "y": 0.7,
+                  "uniqueID": "id-6041",
+                  "ioValues": [
+                    {
+                      "name": "shape",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "count",
+                      "ioValue": 11
+                    },
+                    {
+                      "name": "distX",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "distY",
+                      "ioValue": 304.79999999999995
+                    },
+                    {
+                      "name": "distZ",
+                      "ioValue": 0
+                    }
+                  ],
+                  "interpreterVersion": 1,
+                  "code": "\n/**\n * =========================================================================\n *  ABUNDANCE CODE ATOM — Quick Reference\n * =========================================================================\n *\n *  HOW INPUTS WORK\n *  ---------------\n *  Every parameter of run() becomes an input port on this atom.\n *  Four types are supported:\n *\n *    number   -> numeric input / slider\n *    string   -> text input  (great for hex color codes, labels, etc.)\n *    boolean  -> true/false toggle\n *    Assembly -> geometry -- wire this to the output of another atom\n *\n *  Give a parameter a default value ( = x ) to make it optional.\n *  Mark it with ? (name?: Assembly) to make it optional with no default.\n *  Parameters without a default must be connected before the atom runs.\n *\n *  RETURN VALUE\n *  ------------\n *  Return an Assembly, an Assembly[], or a primitive (number/string/boolean).\n *  Returning an Assembly[] lets downstream atoms (BOM, cut layout...)\n *  see each piece independently.\n *\n *  GEOMETRY API  (replicad is available as a global)\n *  -------------------------------------------------\n *  Create 2-D sketches\n *    replicad.drawCircle(radius)\n *    replicad.drawRectangle(width, height)\n *    replicad.drawRoundedRectangle(width, height, cornerRadius)\n *\n *  Turn a 2-D sketch into a 3-D solid\n *    sketch.sketchOnPlane().extrude(distance)\n *    sketch.sketchOnPlane().revolve()          // rotate 360 deg around Z\n *\n *  Create 3-D primitives directly\n *    replicad.makeBaseBox(width, depth, height)\n *    replicad.makeSphere(radius)\n *    replicad.makeCylinder(radius, height)\n *\n *  Boolean operations\n *    solidA.fuse(solidB)                       // union\n *    solidA.cut(solidB)                        // difference (cut a hole)\n *    solidA.intersect(solidB)                  // intersection\n *\n *  Post-processing\n *    solid.fillet(radius)                      // round ALL edges\n *    solid.fillet(r, e => e.inPlane(\"XY\", z))  // round only top-face edges\n *    solid.chamfer(distance)                   // bevel ALL edges\n *    solid.translate(x, y, z)                  // move the solid\n *    solid.rotate(angle, [0, 0, 1])            // rotate around Z axis\n *\n *  ASSEMBLY CLASS\n *  --------------\n *  Wrap any replicad solid in an Assembly to attach display metadata:\n *    new Assembly({ geometry, color, tags, bom })\n *      geometry -> replicad solid / drawing returned by the API above\n *      color    -> hex string shown in the 3-D viewport  (\"#A3CE5B\")\n *      tags     -> string[] used for filtering in cut layout / BOM\n *      bom      -> string[] lines added to the Bill of Materials panel\n *\n *  AI PROMPT TIP\n *  -------------\n *  Copy the code in this editor into ChatGPT / Claude and say something like:\n *    \"Modify this Abundance Code Atom to create a gear with 12 teeth\"\n *    \"Change this to make a hexagonal nut instead of a round plate\"\n *  The comments above give the AI all the context it needs to produce\n *  valid, working Abundance TypeScript code.\n * =========================================================================\n */\n\n/**\n * A rectangular mounting plate with a circular hole in the centre.\n * All parameters have defaults so the atom produces geometry immediately\n * after creation — no connections required to get started.\n */\nfunction run(\n  shape: Assembly,\n  count: number = 5,\n  distX: number = 10,\n  distY: number = 0,\n  distZ: number = 0\n) {\n  let shapesArray = [];\n  for (let i = 0; i < count; i++) {\n    const offsetAssembly = new Assembly(shape).onLeafs((leaf) => {\n      if (leaf.is2D()) {\n        leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i)\n        leaf.plane = leaf.plane.translateZ(distZ * i)\n      } else {\n        leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i, distZ * i)\n      }\n      return leaf;\n    })\n    shapesArray.push(offsetAssembly)\n  }\n  return shapesArray;\n}\n",
+                  "compiledCode": "\"use strict\";\n/**\n * =========================================================================\n *  ABUNDANCE CODE ATOM — Quick Reference\n * =========================================================================\n *\n *  HOW INPUTS WORK\n *  ---------------\n *  Every parameter of run() becomes an input port on this atom.\n *  Four types are supported:\n *\n *    number   -> numeric input / slider\n *    string   -> text input  (great for hex color codes, labels, etc.)\n *    boolean  -> true/false toggle\n *    Assembly -> geometry -- wire this to the output of another atom\n *\n *  Give a parameter a default value ( = x ) to make it optional.\n *  Mark it with ? (name?: Assembly) to make it optional with no default.\n *  Parameters without a default must be connected before the atom runs.\n *\n *  RETURN VALUE\n *  ------------\n *  Return an Assembly, an Assembly[], or a primitive (number/string/boolean).\n *  Returning an Assembly[] lets downstream atoms (BOM, cut layout...)\n *  see each piece independently.\n *\n *  GEOMETRY API  (replicad is available as a global)\n *  -------------------------------------------------\n *  Create 2-D sketches\n *    replicad.drawCircle(radius)\n *    replicad.drawRectangle(width, height)\n *    replicad.drawRoundedRectangle(width, height, cornerRadius)\n *\n *  Turn a 2-D sketch into a 3-D solid\n *    sketch.sketchOnPlane().extrude(distance)\n *    sketch.sketchOnPlane().revolve()          // rotate 360 deg around Z\n *\n *  Create 3-D primitives directly\n *    replicad.makeBaseBox(width, depth, height)\n *    replicad.makeSphere(radius)\n *    replicad.makeCylinder(radius, height)\n *\n *  Boolean operations\n *    solidA.fuse(solidB)                       // union\n *    solidA.cut(solidB)                        // difference (cut a hole)\n *    solidA.intersect(solidB)                  // intersection\n *\n *  Post-processing\n *    solid.fillet(radius)                      // round ALL edges\n *    solid.fillet(r, e => e.inPlane(\"XY\", z))  // round only top-face edges\n *    solid.chamfer(distance)                   // bevel ALL edges\n *    solid.translate(x, y, z)                  // move the solid\n *    solid.rotate(angle, [0, 0, 1])            // rotate around Z axis\n *\n *  ASSEMBLY CLASS\n *  --------------\n *  Wrap any replicad solid in an Assembly to attach display metadata:\n *    new Assembly({ geometry, color, tags, bom })\n *      geometry -> replicad solid / drawing returned by the API above\n *      color    -> hex string shown in the 3-D viewport  (\"#A3CE5B\")\n *      tags     -> string[] used for filtering in cut layout / BOM\n *      bom      -> string[] lines added to the Bill of Materials panel\n *\n *  AI PROMPT TIP\n *  -------------\n *  Copy the code in this editor into ChatGPT / Claude and say something like:\n *    \"Modify this Abundance Code Atom to create a gear with 12 teeth\"\n *    \"Change this to make a hexagonal nut instead of a round plate\"\n *  The comments above give the AI all the context it needs to produce\n *  valid, working Abundance TypeScript code.\n * =========================================================================\n */\n/**\n * A rectangular mounting plate with a circular hole in the centre.\n * All parameters have defaults so the atom produces geometry immediately\n * after creation — no connections required to get started.\n */\nfunction run(shape, count = 5, distX = 10, distY = 0, distZ = 0) {\n    let shapesArray = [];\n    for (let i = 0; i < count; i++) {\n        const offsetAssembly = new Assembly(shape).onLeafs((leaf) => {\n            if (leaf.is2D()) {\n                leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i);\n                leaf.plane = leaf.plane.translateZ(distZ * i);\n            }\n            else {\n                leaf.geometry = leaf.geometry.clone().translate(distX * i, distY * i, distZ * i);\n            }\n            return leaf;\n        });\n        shapesArray.push(offsetAssembly);\n    }\n    return shapesArray;\n}\n"
+                },
+                {
+                  "atomType": "Move",
+                  "x": 0.5,
+                  "y": 0.4,
+                  "uniqueID": "id-6042",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": 3
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": 9
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Assembly",
+                  "x": 0.5,
+                  "y": 0.5,
+                  "uniqueID": "id-6043",
+                  "ioValues": [
+                    {
+                      "name": "Shape 1",
+                      "ioValue": null
+                    },
+                    {
+                      "name": "Shape 2",
+                      "ioValue": null
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Code",
+                  "x": 0.7,
+                  "y": 0.2,
+                  "uniqueID": "id-6044",
+                  "interpreterVersion": 1,
+                  "code": "// Example Code\nconst Inputs = [\n  { inputName: \"Shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"Number\", type: \"number\", defaultValue: 5 },\n  { inputName: \"distX\", type: \"number\", defaultValue: 10 },\n    { inputName: \"distY\", type: \"number\", defaultValue: 0 },\n    { inputName: \"distZ\", type: \"number\", defaultValue: 0 }\n];\n\nlet shapesArray = [];\nfor (let i = 0; i < Number; i++) {\n    let rotatedShape = await Move(Shape, distX * i, distY * i,distZ * i);\n    shapesArray.push(rotatedShape);\n}\n\nlet assembledShape = await Assembly(shapesArray)\n\nreturn assembledShape;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /**\n    To Use the Code Atom, enter your inputs to the input list a.e Inputs:[shape, height]\n    If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0] \n    Use any replicad available methods to modify your geometry. Learn more about all of the available methods at \n    https://replicad.xyz/docs/introapp/UserGuide.html \n    Return a replicad object that includes geometry, color, tags and plane. \n\n\n    Example Code Atom:\n\n      Inputs:[shape, x];\n\n      let finalShape = library[shape].geometry[0].clone.translate[x,0,0]\n\n      return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n\n      - See more examples at _______ \n\n\n    */\n"
+                }
+              ],
+              "allConnectors": [
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-6032",
+                  "ap2ID": "id-6039"
+                },
+                {
+                  "ap2Name": "count",
+                  "ap1ID": "id-6033",
+                  "ap2ID": "id-6041"
+                },
+                {
+                  "ap2Name": "shape",
+                  "ap1ID": "id-6034",
+                  "ap2ID": "id-6041"
+                },
+                {
+                  "ap2Name": "distX",
+                  "ap1ID": "id-6035",
+                  "ap2ID": "id-6041"
+                },
+                {
+                  "ap2Name": "distY",
+                  "ap1ID": "id-6036",
+                  "ap2ID": "id-6041"
+                },
+                {
+                  "ap2Name": "distZ",
+                  "ap1ID": "id-6037",
+                  "ap2ID": "id-6041"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-6039",
+                  "ap2ID": "id-6042"
+                },
+                {
+                  "ap2Name": "Shape 2",
+                  "ap1ID": "id-6039",
+                  "ap2ID": "id-6043"
+                },
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-6041",
+                  "ap2ID": "id-6031"
+                },
+                {
+                  "ap2Name": "Shape 1",
+                  "ap1ID": "id-6042",
+                  "ap2ID": "id-6043"
+                },
+                {
+                  "ap2Name": "shape",
+                  "ap1ID": "id-6043",
+                  "ap2ID": "id-6040"
+                }
+              ],
+              "parentRepo": {
+                "lastFoundGit": "2026-09-20T02:23:39.099Z",
+                "privateRepo": false,
+                "repoName": "Linear-Pattern",
+                "dateCreated": "2025-01-02T21:47:44Z",
+                "likes": 0,
+                "pngURL": "https://raw.githubusercontent.com/alzatin/Linear-Pattern/master/project.png?sanitize=true",
+                "readme": "https://raw.githubusercontent.com/alzatin/Linear-Pattern/master/README.md?sanitize=true",
+                "yyyy": 2025,
+                "topMoleculeID": "",
+                "userRanking": 0.2,
+                "userSetAsThumbnail": false,
+                "githubMoleculesUsed": [],
+                "html_url": "https://github.com/alzatin/Linear-Pattern",
+                "topics": [
+                  "abundance-tool"
+                ],
+                "pullRequests": [],
+                "forks": 1,
+                "dateModified": "2026-06-03T16:57:00Z",
+                "ranking": 2,
+                "searchField": "linear-pattern alzatin  abundance-tool",
+                "owner": "alzatin",
+                "description": "",
+                "contentURL": "https://raw.githubusercontent.com/alzatin/Linear-Pattern/master/project.abundance?sanitize=true",
+                "svgURL": "https://raw.githubusercontent.com/alzatin/Linear-Pattern/master/project.svg?sanitize=true",
+                "isLocal": false
+              },
+              "unitsKey": "MM",
+              "fileTypeVersion": 1,
+              "lastReloadedFromGithubAt": 1790298714784
+            },
+            {
+              "atomType": "GitHubMolecule",
+              "x": 0.8,
+              "y": 0.5,
+              "uniqueID": "id-6045",
+              "name": "Center_XY",
+              "ioValues": [
+                {
+                  "name": "Geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ],
+              "topLevel": false,
+              "allAtoms": [
+                {
+                  "atomType": "Output",
+                  "x": 1,
+                  "y": 0.5,
+                  "uniqueID": "id-6046",
+                  "ioValues": [
+                    {
+                      "name": "number or geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Code",
+                  "x": 0.4,
+                  "y": 0.3,
+                  "uniqueID": "id-6047",
+                  "ioValues": [
+                    {
+                      "name": "A",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ],
+                  "interpreterVersion": 0,
+                  "code": "/**\n Inputs for this Code Atom:\n - Takes a single geometry input \"A\" and recenters it in the XY plane based on its bounding box.\n*/\nInputs = [\n  { inputName: \"A\", type: \"geometry\", defaultValue: null }\n]\n\nif (!A) {\n  // Nothing to do if no input provided\n  return null\n}\n\n// Get bounding box of A\nlet boundsA = await GetBounds(A);\n// boundsA.min and boundsA.max are arrays [x,y,z]\nlet min = boundsA.min\nlet max = boundsA.max\n\n// Compute the center of the bounding box in X and Y\nlet centerX = (min[0] + max[0]) / 2.0\nlet centerY = (min[1] + max[1]) / 2.0\n\n// Translation to move the bounding box center to the origin (0,0) in XY,\n// leaving Z unchanged.\nlet translationX = -centerX\nlet translationY = -centerY\nlet translationZ = 0\n\n// Move the shape. Move takes the input ID and translations (x,y,z)\nlet movedOutput = await Move(A, translationX, translationY, translationZ)\n\n// Return the moved shape. Move typically returns a replicad object suitable for return.\nreturn movedOutput"
+                },
+                {
+                  "atomType": "Rectangle",
+                  "x": 0.2,
+                  "y": 0.6,
+                  "uniqueID": "id-6048",
+                  "ioValues": [
+                    {
+                      "name": "x length",
+                      "ioValue": 10
+                    },
+                    {
+                      "name": "y length",
+                      "ioValue": 10
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Extrude",
+                  "x": 0.3,
+                  "y": 0.6,
+                  "uniqueID": "id-6049",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "height",
+                      "ioValue": 10
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Move",
+                  "x": 0.5,
+                  "y": 0.6,
+                  "uniqueID": "id-6050",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": 50
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": 30
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": 0
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Input",
+                  "x": 0,
+                  "y": 0.2,
+                  "uniqueID": "id-6051",
+                  "name": "Geometry",
+                  "type": "geometry",
+                  "options": []
+                }
+              ],
+              "allConnectors": [
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-6047",
+                  "ap2ID": "id-6046"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-6048",
+                  "ap2ID": "id-6049"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-6049",
+                  "ap2ID": "id-6050"
+                },
+                {
+                  "ap2Name": "A",
+                  "ap1ID": "id-6051",
+                  "ap2ID": "id-6047"
+                }
+              ],
+              "parentRepo": {
+                "lastFoundGit": "2026-09-20T02:23:39.099Z",
+                "privateRepo": false,
+                "repoName": "Center_XY",
+                "dateCreated": "2025-12-04T19:44:27Z",
+                "likes": 0,
+                "pngURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/project.png?sanitize=true",
+                "readme": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/README.md?sanitize=true",
+                "yyyy": 2025,
+                "topMoleculeID": "",
+                "userRanking": 0,
+                "userSetAsThumbnail": false,
+                "githubMoleculesUsed": [],
+                "html_url": "https://github.com/BarbourSmith/Center_XY",
+                "topics": [],
+                "pullRequests": [],
+                "forks": 0,
+                "dateModified": "2025-12-04T19:48:48Z",
+                "ranking": 1,
+                "searchField": "center_xy barboursmith this takes an input shape and moves it to be centered on the xy plane ",
+                "owner": "BarbourSmith",
+                "description": "This takes an input shape and moves it to be centered on the XY plane",
+                "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/project.abundance?sanitize=true",
+                "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/project.svg?sanitize=true",
+                "isLocal": false
+              },
+              "unitsKey": "MM",
+              "fileTypeVersion": 1,
+              "lastReloadedFromGithubAt": 1790299566714
+            },
+            {
+              "atomType": "Input",
+              "x": 0,
+              "y": 0.2,
+              "uniqueID": "id-6122",
+              "name": "input",
+              "type": "geometry",
+              "options": []
+            },
+            {
+              "atomType": "Input",
+              "x": 0,
+              "y": 0.2,
+              "uniqueID": "id-6125",
+              "name": "input_1",
+              "type": "any",
+              "options": []
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "Geometry",
+              "ap1ID": "id-6029",
+              "ap2ID": "id-6030"
+            },
+            {
+              "ap2Name": "Geometry",
+              "ap1ID": "id-6030",
+              "ap2ID": "id-6045"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-6045",
+              "ap2ID": "id-6027"
+            },
+            null
           ],
           "fileTypeVersion": 1
         },
@@ -8172,27 +8633,17 @@
         {
           "ap2Name": "distY",
           "ap1ID": "id-1766",
-          "ap2ID": "id-1848"
+          "ap2ID": "id-1976"
         },
         {
-          "ap2Name": "distY",
+          "ap2Name": "input_1",
           "ap1ID": "id-1766",
-          "ap2ID": "id-1976"
+          "ap2ID": "id-6025"
         },
         {
           "ap2Name": "Shape 2",
           "ap1ID": "id-1772",
           "ap2ID": "id-1938"
-        },
-        {
-          "ap2Name": "Geometry",
-          "ap1ID": "id-1836",
-          "ap2ID": "id-1848"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-1836",
-          "ap2ID": "id-1944"
         },
         {
           "ap2Name": "X",
@@ -8265,24 +8716,9 @@
           "ap2ID": "id-1760"
         },
         {
-          "ap2Name": "geometry",
+          "ap2Name": "input",
           "ap1ID": "id-1778",
-          "ap2ID": "id-1836"
-        },
-        {
-          "ap2Name": "Geometry",
-          "ap1ID": "id-1848",
-          "ap2ID": "id-1906"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-1906",
-          "ap2ID": "id-1772"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-1906",
-          "ap2ID": "id-1932"
+          "ap2ID": "id-6025"
         },
         {
           "ap2Name": "Geometry",
