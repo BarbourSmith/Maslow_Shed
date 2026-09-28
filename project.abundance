@@ -96,16 +96,24 @@
       "uniqueID": "id-1291",
       "ioValues": [
         {
+          "name": "makeDisjoint",
+          "ioValue": true
+        },
+        {
           "name": "Shape 1",
-          "ioValue": null
+          "ioValue": "__GEOMETRY_INPUT__"
         },
         {
           "name": "Shape 2",
-          "ioValue": null
+          "ioValue": "__GEOMETRY_INPUT__"
         },
         {
           "name": "Shape 3",
-          "ioValue": null
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Shape4",
+          "ioValue": "__GEOMETRY_INPUT__"
         }
       ]
     },
@@ -4202,12 +4210,20 @@
                           "uniqueID": "id-12031",
                           "ioValues": [
                             {
+                              "name": "makeDisjoint",
+                              "ioValue": true
+                            },
+                            {
                               "name": "Shape 1",
-                              "ioValue": null
+                              "ioValue": "__GEOMETRY_INPUT__"
                             },
                             {
                               "name": "Shape 2",
-                              "ioValue": null
+                              "ioValue": "__GEOMETRY_INPUT__"
+                            },
+                            {
+                              "name": "Shape3",
+                              "ioValue": "__GEOMETRY_INPUT__"
                             }
                           ]
                         },
@@ -6260,16 +6276,24 @@
                           "uniqueID": "id-12113",
                           "ioValues": [
                             {
+                              "name": "makeDisjoint",
+                              "ioValue": true
+                            },
+                            {
                               "name": "Shape 1",
-                              "ioValue": null
+                              "ioValue": "__GEOMETRY_INPUT__"
                             },
                             {
                               "name": "Shape 3",
-                              "ioValue": null
+                              "ioValue": "__GEOMETRY_INPUT__"
                             },
                             {
                               "name": "Shape 4",
-                              "ioValue": null
+                              "ioValue": "__GEOMETRY_INPUT__"
+                            },
+                            {
+                              "name": "Shape5",
+                              "ioValue": "__GEOMETRY_INPUT__"
                             }
                           ]
                         },
@@ -6605,16 +6629,24 @@
                       "uniqueID": "id-12128",
                       "ioValues": [
                         {
+                          "name": "makeDisjoint",
+                          "ioValue": true
+                        },
+                        {
                           "name": "Shape 1",
-                          "ioValue": null
+                          "ioValue": "__GEOMETRY_INPUT__"
                         },
                         {
                           "name": "Shape 2",
-                          "ioValue": null
+                          "ioValue": "__GEOMETRY_INPUT__"
                         },
                         {
                           "name": "Shape 3",
-                          "ioValue": null
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "Shape4",
+                          "ioValue": "__GEOMETRY_INPUT__"
                         }
                       ]
                     },
@@ -6861,12 +6893,20 @@
                   "uniqueID": "id-12134",
                   "ioValues": [
                     {
+                      "name": "makeDisjoint",
+                      "ioValue": true
+                    },
+                    {
                       "name": "Shape 1",
-                      "ioValue": null
+                      "ioValue": "__GEOMETRY_INPUT__"
                     },
                     {
                       "name": "Shape 2",
-                      "ioValue": null
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "Shape3",
+                      "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ]
                 },
@@ -7019,12 +7059,20 @@
                       "uniqueID": "id-12144",
                       "ioValues": [
                         {
+                          "name": "makeDisjoint",
+                          "ioValue": true
+                        },
+                        {
                           "name": "Shape 1",
-                          "ioValue": null
+                          "ioValue": "__GEOMETRY_INPUT__"
                         },
                         {
                           "name": "Shape 2",
-                          "ioValue": null
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "Shape3",
+                          "ioValue": "__GEOMETRY_INPUT__"
                         }
                       ]
                     },
@@ -7282,8 +7330,7 @@
                 },
                 {
                   "name": "distX",
-                  "ioValue": 0,
-                  "currentEquation": "0"
+                  "ioValue": 0
                 },
                 {
                   "name": "distY",
@@ -7291,8 +7338,7 @@
                 },
                 {
                   "name": "distZ",
-                  "ioValue": 10,
-                  "currentEquation": "10"
+                  "ioValue": 10
                 }
               ],
               "topLevel": false,
@@ -7494,12 +7540,20 @@
                   "uniqueID": "id-12674",
                   "ioValues": [
                     {
+                      "name": "makeDisjoint",
+                      "ioValue": true
+                    },
+                    {
                       "name": "Shape 1",
-                      "ioValue": null
+                      "ioValue": "__GEOMETRY_INPUT__"
                     },
                     {
                       "name": "Shape 2",
-                      "ioValue": null
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "Shape3",
+                      "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ]
                 },
@@ -7604,7 +7658,7 @@
             {
               "atomType": "Input",
               "x": 0,
-              "y": 0.5,
+              "y": 0.2,
               "uniqueID": "id-12720",
               "name": "Wood_Thickness",
               "type": "number",
@@ -7622,8 +7676,7 @@
                 },
                 {
                   "name": "x-axis degrees",
-                  "ioValue": -90,
-                  "currentEquation": "-90"
+                  "ioValue": -90
                 },
                 {
                   "name": "y-axis degrees",
@@ -7643,6 +7696,11 @@
               "ap2ID": "id-12676"
             },
             {
+              "ap2Name": "distZ",
+              "ap1ID": "id-12720",
+              "ap2ID": "id-12676"
+            },
+            {
               "ap2Name": "geometry",
               "ap1ID": "id-12676",
               "ap2ID": "id-12723"
@@ -7651,11 +7709,6 @@
               "ap2Name": "number or geometry",
               "ap1ID": "id-12676",
               "ap2ID": "id-12652"
-            },
-            {
-              "ap2Name": "distZ",
-              "ap1ID": "id-12720",
-              "ap2ID": "id-12676"
             }
           ],
           "fileTypeVersion": 1
@@ -8365,12 +8418,20 @@
               "uniqueID": "id-1791",
               "ioValues": [
                 {
+                  "name": "makeDisjoint",
+                  "ioValue": true
+                },
+                {
                   "name": "Shape 1",
-                  "ioValue": null
+                  "ioValue": "__GEOMETRY_INPUT__"
                 },
                 {
                   "name": "Shape 2",
-                  "ioValue": null
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "Shape3",
+                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ]
             },
@@ -8521,20 +8582,28 @@
           "uniqueID": "id-1938",
           "ioValues": [
             {
+              "name": "makeDisjoint",
+              "ioValue": true
+            },
+            {
               "name": "Shape 1",
-              "ioValue": null
+              "ioValue": "__GEOMETRY_INPUT__"
             },
             {
               "name": "Shape 2",
-              "ioValue": null
+              "ioValue": "__GEOMETRY_INPUT__"
             },
             {
               "name": "Shape 3",
-              "ioValue": null
+              "ioValue": "__GEOMETRY_INPUT__"
             },
             {
               "name": "Shape 4",
-              "ioValue": null
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Shape5",
+              "ioValue": "__GEOMETRY_INPUT__"
             }
           ]
         },
@@ -10745,12 +10814,20 @@
                       "uniqueID": "id-5975",
                       "ioValues": [
                         {
+                          "name": "makeDisjoint",
+                          "ioValue": true
+                        },
+                        {
                           "name": "Shape 1",
-                          "ioValue": null
+                          "ioValue": "__GEOMETRY_INPUT__"
                         },
                         {
                           "name": "Shape 3",
-                          "ioValue": null
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "Shape4",
+                          "ioValue": "__GEOMETRY_INPUT__"
                         }
                       ]
                     },
@@ -11001,14 +11078,14 @@
                   "ap2ID": "id-6020"
                 },
                 {
-                  "ap2Name": "Shape 1",
-                  "ap1ID": "id-5980",
-                  "ap2ID": "id-6020"
-                },
-                {
                   "ap2Name": "number or geometry",
                   "ap1ID": "id-6020",
                   "ap2ID": "id-4601"
+                },
+                {
+                  "ap2Name": "Shape 1",
+                  "ap1ID": "id-5980",
+                  "ap2ID": "id-6020"
                 }
               ],
               "fileTypeVersion": 1
@@ -11323,8 +11400,7 @@
                 },
                 {
                   "name": "Angle X",
-                  "ioValue": 0,
-                  "currentEquation": "0"
+                  "ioValue": 0
                 },
                 {
                   "name": "Angle Z",
@@ -11332,8 +11408,7 @@
                 },
                 {
                   "name": "Angle Y",
-                  "ioValue": 90,
-                  "currentEquation": "90"
+                  "ioValue": 90
                 }
               ],
               "topLevel": false,
@@ -11632,6 +11707,11 @@
               "ap2ID": "id-476"
             },
             {
+              "ap2Name": "Geometry_Select",
+              "ap1ID": "id-5928",
+              "ap2ID": "id-4600"
+            },
+            {
               "ap2Name": "2D_Shape",
               "ap1ID": "id-396",
               "ap2ID": "id-466"
@@ -11640,11 +11720,6 @@
               "ap2Name": "retain",
               "ap1ID": "id-396",
               "ap2ID": "id-471"
-            },
-            {
-              "ap2Name": "Geometry_Select",
-              "ap1ID": "id-5928",
-              "ap2ID": "id-4600"
             }
           ],
           "fileTypeVersion": 1
@@ -11930,12 +12005,20 @@
                   "uniqueID": "id-6043",
                   "ioValues": [
                     {
+                      "name": "makeDisjoint",
+                      "ioValue": true
+                    },
+                    {
                       "name": "Shape 1",
-                      "ioValue": null
+                      "ioValue": "__GEOMETRY_INPUT__"
                     },
                     {
                       "name": "Shape 2",
-                      "ioValue": null
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "Shape3",
+                      "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ]
                 },
@@ -12207,7 +12290,7 @@
             {
               "atomType": "Input",
               "x": 0,
-              "y": 0.9,
+              "y": 0.2,
               "uniqueID": "id-6125",
               "name": "Dist",
               "type": "any",
@@ -12222,8 +12305,7 @@
               "ioValues": [
                 {
                   "name": "Number",
-                  "ioValue": 6,
-                  "currentEquation": "6"
+                  "ioValue": 6
                 },
                 {
                   "name": "Geometry",
@@ -12441,12 +12523,20 @@
                   "uniqueID": "id-6141",
                   "ioValues": [
                     {
+                      "name": "makeDisjoint",
+                      "ioValue": true
+                    },
+                    {
                       "name": "Shape 1",
-                      "ioValue": null
+                      "ioValue": "__GEOMETRY_INPUT__"
                     },
                     {
                       "name": "Shape 2",
-                      "ioValue": null
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "Shape3",
+                      "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ]
                 },
@@ -12947,12 +13037,20 @@
                   "uniqueID": "id-6230",
                   "ioValues": [
                     {
+                      "name": "makeDisjoint",
+                      "ioValue": true
+                    },
+                    {
                       "name": "Shape 1",
-                      "ioValue": null
+                      "ioValue": "__GEOMETRY_INPUT__"
                     },
                     {
                       "name": "Shape 2",
-                      "ioValue": null
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "Shape3",
+                      "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ]
                 },
@@ -13232,8 +13330,7 @@
                 },
                 {
                   "name": "zDist",
-                  "ioValue": 100,
-                  "currentEquation": "100"
+                  "ioValue": 100
                 }
               ]
             },
@@ -13244,12 +13341,20 @@
               "uniqueID": "id-6307",
               "ioValues": [
                 {
+                  "name": "makeDisjoint",
+                  "ioValue": true
+                },
+                {
                   "name": "Shape 1",
-                  "ioValue": null
+                  "ioValue": "__GEOMETRY_INPUT__"
                 },
                 {
                   "name": "Shape 2",
-                  "ioValue": null
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "Shape3",
+                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ]
             }
@@ -13271,11 +13376,6 @@
               "ap2ID": "id-6217"
             },
             {
-              "ap2Name": "Geometry",
-              "ap1ID": "id-6030",
-              "ap2ID": "id-6045"
-            },
-            {
               "ap2Name": "geometry",
               "ap1ID": "id-6122",
               "ap2ID": "id-6029"
@@ -13291,11 +13391,6 @@
               "ap2ID": "id-6186"
             },
             {
-              "ap2Name": "Geometry",
-              "ap1ID": "id-6128",
-              "ap2ID": "id-6191"
-            },
-            {
               "ap2Name": "distY",
               "ap1ID": "id-6186",
               "ap2ID": "id-6128"
@@ -13304,6 +13399,26 @@
               "ap2Name": "distY",
               "ap1ID": "id-6186",
               "ap2ID": "id-6217"
+            },
+            {
+              "ap2Name": "Shape 1",
+              "ap1ID": "id-6301",
+              "ap2ID": "id-6307"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-6307",
+              "ap2ID": "id-6027"
+            },
+            {
+              "ap2Name": "Geometry",
+              "ap1ID": "id-6030",
+              "ap2ID": "id-6045"
+            },
+            {
+              "ap2Name": "Geometry",
+              "ap1ID": "id-6128",
+              "ap2ID": "id-6191"
             },
             {
               "ap2Name": "Shape 2",
@@ -13319,16 +13434,6 @@
               "ap2Name": "geometry",
               "ap1ID": "id-6232",
               "ap2ID": "id-6301"
-            },
-            {
-              "ap2Name": "Shape 1",
-              "ap1ID": "id-6301",
-              "ap2ID": "id-6307"
-            },
-            {
-              "ap2Name": "number or geometry",
-              "ap1ID": "id-6307",
-              "ap2ID": "id-6027"
             }
           ],
           "fileTypeVersion": 1
@@ -13341,16 +13446,16 @@
           "name": "Pannel with T Nuts",
           "ioValues": [
             {
+              "name": "T_Nut",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
               "name": "X",
               "ioValue": 274.79999999999995
             },
             {
               "name": "Wood_Thickness",
               "ioValue": 10
-            },
-            {
-              "name": "T_Nut",
-              "ioValue": "__GEOMETRY_INPUT__"
             }
           ],
           "topLevel": false,
@@ -13358,7 +13463,7 @@
             {
               "atomType": "Input",
               "x": 0,
-              "y": 0.8,
+              "y": 0.2,
               "uniqueID": "id-11233",
               "name": "T_Nut",
               "type": "geometry",
@@ -13376,8 +13481,7 @@
                 },
                 {
                   "name": "x-axis degrees",
-                  "ioValue": 0,
-                  "currentEquation": "0"
+                  "ioValue": 0
                 },
                 {
                   "name": "y-axis degrees",
@@ -13385,8 +13489,7 @@
                 },
                 {
                   "name": "z-axis degrees",
-                  "ioValue": 90,
-                  "currentEquation": "90"
+                  "ioValue": 90
                 }
               ]
             },
@@ -13402,8 +13505,7 @@
                 },
                 {
                   "name": "xDist",
-                  "ioValue": 167.5,
-                  "currentEquation": "167.5"
+                  "ioValue": 167.5
                 },
                 {
                   "name": "yDist",
@@ -13411,8 +13513,7 @@
                 },
                 {
                   "name": "zDist",
-                  "ioValue": 5,
-                  "currentEquation": "5"
+                  "ioValue": 5
                 }
               ]
             },
@@ -13436,8 +13537,7 @@
                 },
                 {
                   "name": "z-axis degrees",
-                  "ioValue": 180,
-                  "currentEquation": "180"
+                  "ioValue": 180
                 }
               ]
             },
@@ -13491,7 +13591,7 @@
             {
               "atomType": "Input",
               "x": 0,
-              "y": 0.3,
+              "y": 0.2,
               "uniqueID": "id-6316",
               "name": "X",
               "type": "any",
@@ -13500,7 +13600,7 @@
             {
               "atomType": "Input",
               "x": 0,
-              "y": 0.6,
+              "y": 0.3,
               "uniqueID": "id-6319",
               "name": "Wood_Thickness",
               "type": "number",
@@ -13911,51 +14011,29 @@
               "uniqueID": "id-6377",
               "ioValues": [
                 {
+                  "name": "makeDisjoint",
+                  "ioValue": true
+                },
+                {
                   "name": "Shape 1",
-                  "ioValue": null
+                  "ioValue": "__GEOMETRY_INPUT__"
                 },
                 {
                   "name": "Shape 2",
-                  "ioValue": null
+                  "ioValue": "__GEOMETRY_INPUT__"
                 },
                 {
                   "name": "Shape 3",
-                  "ioValue": null
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "Shape4",
+                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ]
             }
           ],
           "allConnectors": [
-            {
-              "ap2Name": "X",
-              "ap1ID": "id-6316",
-              "ap2ID": "id-6322"
-            },
-            {
-              "ap2Name": "Tab Length",
-              "ap1ID": "id-6319",
-              "ap2ID": "id-6322"
-            },
-            {
-              "ap2Name": "Wood Thickness",
-              "ap1ID": "id-6319",
-              "ap2ID": "id-6322"
-            },
-            {
-              "ap2Name": "geometry",
-              "ap1ID": "id-6322",
-              "ap2ID": "id-12644"
-            },
-            {
-              "ap2Name": "number or geometry",
-              "ap1ID": "id-6377",
-              "ap2ID": "id-6314"
-            },
-            {
-              "ap2Name": "geometry",
-              "ap1ID": "id-6377",
-              "ap2ID": "id-12647"
-            },
             {
               "ap2Name": "geometry",
               "ap1ID": "id-11233",
@@ -13985,6 +14063,36 @@
               "ap2Name": "Shape 1",
               "ap1ID": "id-12644",
               "ap2ID": "id-6377"
+            },
+            {
+              "ap2Name": "X",
+              "ap1ID": "id-6316",
+              "ap2ID": "id-6322"
+            },
+            {
+              "ap2Name": "Tab Length",
+              "ap1ID": "id-6319",
+              "ap2ID": "id-6322"
+            },
+            {
+              "ap2Name": "Wood Thickness",
+              "ap1ID": "id-6319",
+              "ap2ID": "id-6322"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-6377",
+              "ap2ID": "id-6314"
+            },
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-6377",
+              "ap2ID": "id-12647"
+            },
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-6322",
+              "ap2ID": "id-12644"
             }
           ],
           "fileTypeVersion": 1
@@ -14240,12 +14348,20 @@
               "uniqueID": "id-738",
               "ioValues": [
                 {
+                  "name": "makeDisjoint",
+                  "ioValue": true
+                },
+                {
                   "name": "Shape 1",
-                  "ioValue": null
+                  "ioValue": "__GEOMETRY_INPUT__"
                 },
                 {
                   "name": "Shape 2",
-                  "ioValue": null
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "Shape3",
+                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ]
             },
@@ -14574,12 +14690,20 @@
               "uniqueID": "id-797",
               "ioValues": [
                 {
+                  "name": "makeDisjoint",
+                  "ioValue": true
+                },
+                {
                   "name": "Shape 1",
-                  "ioValue": null
+                  "ioValue": "__GEOMETRY_INPUT__"
                 },
                 {
                   "name": "Shape 2",
-                  "ioValue": null
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "Shape3",
+                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ]
             },
@@ -14683,6 +14807,16 @@
         }
       ],
       "allConnectors": [
+        {
+          "ap2Name": "Wood_Thickness",
+          "ap1ID": "id-12639",
+          "ap2ID": "id-12149"
+        },
+        {
+          "ap2Name": "Geometry",
+          "ap1ID": "id-12729",
+          "ap2ID": "id-784"
+        },
         {
           "ap2Name": "Geometry",
           "ap1ID": "id-1760",
@@ -14810,13 +14944,8 @@
         },
         {
           "ap2Name": "geometry",
-          "ap1ID": "id-395",
-          "ap2ID": "id-715"
-        },
-        {
-          "ap2Name": "input",
-          "ap1ID": "id-395",
-          "ap2ID": "id-12650"
+          "ap1ID": "id-12650",
+          "ap2ID": "id-12729"
         },
         {
           "ap2Name": "geometry",
@@ -14839,24 +14968,19 @@
           "ap2ID": "id-1760"
         },
         {
+          "ap2Name": "geometry",
+          "ap1ID": "id-395",
+          "ap2ID": "id-715"
+        },
+        {
+          "ap2Name": "input",
+          "ap1ID": "id-395",
+          "ap2ID": "id-12650"
+        },
+        {
           "ap2Name": "T_Nut",
           "ap1ID": "id-12149",
           "ap2ID": "id-6312"
-        },
-        {
-          "ap2Name": "Wood_Thickness",
-          "ap1ID": "id-12639",
-          "ap2ID": "id-12149"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-12650",
-          "ap2ID": "id-12729"
-        },
-        {
-          "ap2Name": "Geometry",
-          "ap1ID": "id-12729",
-          "ap2ID": "id-784"
         }
       ],
       "fileTypeVersion": 1
@@ -16595,8 +16719,7 @@
         },
         {
           "name": "xDist",
-          "ioValue": 1300,
-          "currentEquation": "1300"
+          "ioValue": 1300
         },
         {
           "name": "yDist",
@@ -16921,12 +17044,20 @@
           "uniqueID": "id-1236",
           "ioValues": [
             {
+              "name": "makeDisjoint",
+              "ioValue": true
+            },
+            {
               "name": "Shape 1",
-              "ioValue": null
+              "ioValue": "__GEOMETRY_INPUT__"
             },
             {
               "name": "Shape 2",
-              "ioValue": null
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Shape3",
+              "ioValue": "__GEOMETRY_INPUT__"
             }
           ]
         },
@@ -17551,12 +17682,20 @@
               "uniqueID": "id-931",
               "ioValues": [
                 {
+                  "name": "makeDisjoint",
+                  "ioValue": true
+                },
+                {
                   "name": "Shape 1",
-                  "ioValue": null
+                  "ioValue": "__GEOMETRY_INPUT__"
                 },
                 {
                   "name": "Shape 2",
-                  "ioValue": null
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "Shape3",
+                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ]
             },
@@ -17776,6 +17915,11 @@
       "ap2ID": "id-385"
     },
     {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-5906",
+      "ap2ID": "id-2"
+    },
+    {
       "ap2Name": "geometry",
       "ap1ID": "id-874",
       "ap2ID": "id-1285"
@@ -17799,11 +17943,6 @@
       "ap2Name": "Shape 2",
       "ap1ID": "id-385",
       "ap2ID": "id-1291"
-    },
-    {
-      "ap2Name": "number or geometry",
-      "ap1ID": "id-5906",
-      "ap2ID": "id-2"
     }
   ],
   "unitsKey": "MM",
