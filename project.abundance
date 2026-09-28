@@ -7,7 +7,8 @@
   "ioValues": [
     {
       "name": "Length_(Y)",
-      "ioValue": 3657.6
+      "ioValue": 3657.6,
+      "currentEquation": "3657.6"
     },
     {
       "name": "Width_(X)",
@@ -1088,11 +1089,57 @@
                       "ioValues": [
                         {
                           "name": "Shape 2",
-                          "ioValue": null
+                          "ioValue": {
+                            "geometry": "cut-intersect-move-cut-circle-47-circle-27-0--42-0-circle-66.5-move-rectangle-500-500--250-0-0",
+                            "tags": [],
+                            "color": "#aad7f2",
+                            "plane": {
+                              "origin": [
+                                0,
+                                0,
+                                0
+                              ],
+                              "xDir": [
+                                1,
+                                0,
+                                0
+                              ],
+                              "normal": [
+                                0,
+                                0,
+                                1
+                              ]
+                            },
+                            "bom": [],
+                            "dimension": "2D"
+                          }
                         },
                         {
                           "name": "Shape 3",
-                          "ioValue": null
+                          "ioValue": {
+                            "geometry": "circle-29.5",
+                            "dimension": "2D",
+                            "tags": [],
+                            "plane": {
+                              "origin": [
+                                0,
+                                0,
+                                0
+                              ],
+                              "xDir": [
+                                1,
+                                0,
+                                0
+                              ],
+                              "normal": [
+                                0,
+                                0,
+                                1
+                              ]
+                            },
+                            "color": "#aad7f2",
+                            "bom": []
+                          }
                         }
                       ],
                       "unionType": "Fusion"
