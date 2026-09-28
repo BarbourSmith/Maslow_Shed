@@ -3080,11 +3080,6 @@
           "ap2ID": "id-37916"
         },
         {
-          "ap2Name": "A",
-          "ap1ID": "id-37886",
-          "ap2ID": "id-37938"
-        },
-        {
           "ap2Name": "geometry",
           "ap1ID": "id-37889",
           "ap2ID": "id-37901"
