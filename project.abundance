@@ -68,7 +68,7 @@
     {
       "atomType": "Move",
       "x": 0.4,
-      "y": 0.5,
+      "y": 0.8,
       "uniqueID": "id-1285",
       "ioValues": [
         {
@@ -120,7 +120,7 @@
     {
       "atomType": "Molecule",
       "x": 0.3,
-      "y": 0.3,
+      "y": 0.6,
       "uniqueID": "id-1296",
       "name": "Exterior Shell",
       "ioValues": [
@@ -20955,7 +20955,7 @@
     {
       "atomType": "Molecule",
       "x": 0.2,
-      "y": 0.3,
+      "y": 0.4,
       "uniqueID": "id-4",
       "name": "Outline",
       "ioValues": [
@@ -22137,8 +22137,8 @@
     },
     {
       "atomType": "GitHubMolecule",
-      "x": 0.5,
-      "y": 0.7,
+      "x": 0.7,
+      "y": 0.8,
       "uniqueID": "id-5843",
       "name": "Person-For-Scale",
       "topLevel": false,
