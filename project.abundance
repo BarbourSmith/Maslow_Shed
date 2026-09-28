@@ -7944,6 +7944,21 @@
                       "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ]
+                },
+                {
+                  "atomType": "Tag",
+                  "x": 0.6,
+                  "y": 0.8,
+                  "uniqueID": "id-21634",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ],
+                  "tags": [
+                    ""
+                  ]
                 }
               ],
               "allConnectors": [
