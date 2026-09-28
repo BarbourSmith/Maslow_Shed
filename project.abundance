@@ -2778,8 +2778,7 @@
             },
             {
               "name": "i",
-              "ioValue": 0,
-              "currentEquation": "0"
+              "ioValue": 0
             }
           ],
           "topLevel": false,
@@ -2882,25 +2881,6 @@
           "lastReloadedFromGithubAt": 1790635083723
         },
         {
-          "atomType": "CutOrient",
-          "x": 0.8,
-          "y": 0.7,
-          "uniqueID": "id-37913",
-          "name": "Cut Orient",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ],
-          "orientations": [
-            {
-              "downwardFaceIndex": 134
-            }
-          ],
-          "orientationsForHashed": 1
-        },
-        {
           "atomType": "ExtractTag",
           "x": 0.6,
           "y": 0.4,
@@ -2932,8 +2912,7 @@
             },
             {
               "name": "i",
-              "ioValue": 0,
-              "currentEquation": "0"
+              "ioValue": 0
             }
           ],
           "topLevel": false,
@@ -3036,25 +3015,6 @@
           "lastReloadedFromGithubAt": 1790635083723
         },
         {
-          "atomType": "CutOrient",
-          "x": 0.9,
-          "y": 0.4,
-          "uniqueID": "id-37922",
-          "name": "Cut Orient",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ],
-          "orientations": [
-            {
-              "downwardFaceIndex": 134
-            }
-          ],
-          "orientationsForHashed": 1
-        },
-        {
           "atomType": "Code",
           "x": 0.4,
           "y": 0.8,
@@ -3097,8 +3057,7 @@
             },
             {
               "name": "height",
-              "ioValue": 3000,
-              "currentEquation": "3000"
+              "ioValue": 3000
             }
           ]
         },
@@ -3118,8 +3077,7 @@
             },
             {
               "name": "yDist",
-              "ioValue": 150,
-              "currentEquation": "150"
+              "ioValue": 150
             },
             {
               "name": "zDist",
@@ -3169,16 +3127,6 @@
           "ap2Name": "geometry",
           "ap1ID": "id-40816",
           "ap2ID": "id-43695"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-37901",
-          "ap2ID": "id-37913"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-37917",
-          "ap2ID": "id-37922"
         },
         {
           "ap2Name": "geometry2",
