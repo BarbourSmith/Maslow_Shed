@@ -8131,6 +8131,10 @@
                 {
                   "name": "Shape3",
                   "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "Shape4",
+                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ]
             },
@@ -8514,6 +8518,30 @@
                 }
               ],
               "fileTypeVersion": 1
+            },
+            {
+              "atomType": "Move",
+              "x": 0.5,
+              "y": 0.6,
+              "uniqueID": "id-17265",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "xDist",
+                  "ioValue": 0
+                },
+                {
+                  "name": "yDist",
+                  "ioValue": 0
+                },
+                {
+                  "name": "zDist",
+                  "ioValue": 10
+                }
+              ]
             }
           ],
           "allConnectors": [
@@ -8543,14 +8571,14 @@
               "ap2ID": "id-17184"
             },
             {
+              "ap2Name": "zDist",
+              "ap1ID": "id-12720",
+              "ap2ID": "id-17265"
+            },
+            {
               "ap2Name": "geometry",
               "ap1ID": "id-16957",
               "ap2ID": "id-17172"
-            },
-            {
-              "ap2Name": "number or geometry",
-              "ap1ID": "id-16957",
-              "ap2ID": "id-12652"
             },
             {
               "ap2Name": "Shape2",
@@ -8571,6 +8599,21 @@
               "ap2Name": "zDist",
               "ap1ID": "id-17184",
               "ap2ID": "id-17178"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-17189",
+              "ap2ID": "id-12652"
+            },
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-17195",
+              "ap2ID": "id-17265"
+            },
+            {
+              "ap2Name": "Shape3",
+              "ap1ID": "id-17265",
+              "ap2ID": "id-17189"
             }
           ],
           "fileTypeVersion": 1
