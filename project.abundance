@@ -8279,7 +8279,7 @@
                     },
                     {
                       "atomType": "GitHubMolecule",
-                      "x": 0.1,
+                      "x": 0,
                       "y": 0.6,
                       "uniqueID": "id-25362",
                       "name": "T_Nut_with_14-20_bolt",
@@ -12652,7 +12652,7 @@
                     },
                     {
                       "atomType": "Rotate",
-                      "x": 0.3,
+                      "x": 0.2,
                       "y": 0.7,
                       "uniqueID": "id-25857",
                       "ioValues": [
@@ -12676,7 +12676,7 @@
                     },
                     {
                       "atomType": "Move",
-                      "x": 0.5,
+                      "x": 0.3,
                       "y": 0.7,
                       "uniqueID": "id-25863",
                       "ioValues": [
@@ -12700,8 +12700,8 @@
                     },
                     {
                       "atomType": "GitHubMolecule",
-                      "x": 0.6,
-                      "y": 0.8,
+                      "x": 0.4,
+                      "y": 0.7,
                       "uniqueID": "id-25888",
                       "name": "Linear-Pattern",
                       "ioValues": [
@@ -13043,7 +13043,7 @@
                     {
                       "atomType": "Assembly",
                       "x": 0.8,
-                      "y": 0.4,
+                      "y": 0.3,
                       "uniqueID": "id-25933",
                       "ioValues": [
                         {
@@ -13070,8 +13070,8 @@
                     },
                     {
                       "atomType": "Rotate",
-                      "x": 0.7,
-                      "y": 0.7,
+                      "x": 0.6,
+                      "y": 0.9,
                       "uniqueID": "id-25939",
                       "ioValues": [
                         {
@@ -13094,8 +13094,8 @@
                     },
                     {
                       "atomType": "Move",
-                      "x": 0.8,
-                      "y": 0.8,
+                      "x": 0.7,
+                      "y": 0.7,
                       "uniqueID": "id-25945",
                       "ioValues": [
                         {
