@@ -2714,7 +2714,7 @@
     {
       "atomType": "Molecule",
       "x": 0.7,
-      "y": 0.8,
+      "y": 0.2,
       "uniqueID": "id-37882",
       "name": "Make Templates",
       "ioValues": [
@@ -2728,7 +2728,7 @@
         {
           "atomType": "Output",
           "x": 1,
-          "y": 0.5,
+          "y": 0.2,
           "uniqueID": "id-37884",
           "ioValues": [
             {
@@ -2748,7 +2748,7 @@
         },
         {
           "atomType": "ExtractTag",
-          "x": 0.2,
+          "x": 0.3,
           "y": 0.5,
           "uniqueID": "id-37889",
           "name": "Extract A2",
@@ -2921,7 +2921,7 @@
         {
           "atomType": "GitHubMolecule",
           "x": 0.4,
-          "y": 0.2,
+          "y": 0.3,
           "uniqueID": "id-37917",
           "name": "IthFromAssembly",
           "ioValues": [
@@ -3036,7 +3036,7 @@
         {
           "atomType": "CutOrient",
           "x": 0.5,
-          "y": 0.2,
+          "y": 0.4,
           "uniqueID": "id-37922",
           "name": "Cut Orient",
           "ioValues": [
@@ -3054,7 +3054,7 @@
         },
         {
           "atomType": "Code",
-          "x": 0.2,
+          "x": 0.4,
           "y": 0.8,
           "uniqueID": "id-37938",
           "ioValues": [
@@ -3066,6 +3066,22 @@
           "interpreterVersion": 1,
           "code": "/**\n * Compute Disjoint\n *\n * Makes every overlapping (\"lazy\") sub-assembly inside A disjoint, the same\n * way the Assembly atom does when \"makeDisjoint\" is on: within each\n * overlapping group, every part is cut by all the parts listed after it, so\n * later parts win where they overlap.\n *\n * Only groups flagged as possibly overlapping (metadata.mightOverlap) are\n * processed; groups that are already disjoint pass through untouched.\n */\nfunction run(A: Assembly) {\n  if (!A) {\n    return null;\n  }\n\n  const result = makeDisjoint(A);\n  // Everything that needed cutting has been cut above, so skip the automatic\n  // (and expensive) whole-assembly disjointness pass on the way out.\n  return result ? result.skipDisjointPostprocess() : null;\n}\n\n/**\n * Copy an assembly node's color, tags, bom, plane and metadata onto new\n * geometry. Unlike `new Assembly({ ...node, geometry })`, this reuses the\n * geometry as-is instead of deep-cloning it, which matters on big assemblies.\n */\nfunction withGeometry(\n  node: Assembly,\n  geometry: any,\n  metadata = node.metadata,\n): Assembly {\n  const copy = new Assembly({ ...node, geometry: undefined, metadata });\n  copy.geometry = geometry;\n  return copy;\n}\n\n/** Leaf geometry plus its bounding box, computed once and reused. */\ninterface Cutter {\n  leaf: Assembly;\n  geometry: any;\n  is3D: boolean;\n  box: any;\n}\n\n/** Same color the built-in Assembly uses to flag parts it could not cut. */\nconst FAILED_CUT_COLOR = \"#ff0000\";\n\n/** Cutter parts involved in a failed cut, painted red once they're reached. */\nconst failedCutters = new Set<Assembly>();\n\nfunction describe(leaf: Assembly): string {\n  return leaf.tags.length > 0\n    ? `part [${leaf.tags.join(\", \")}]`\n    : \"untagged part\";\n}\n\nfunction makeDisjoint(node: Assembly): Assembly | null {\n  if (node.isLeaf()) {\n    return node;\n  }\n\n  // Resolve nested groups first so every child is internally disjoint.\n  const original = node.geometry as Assembly[];\n  const children = original\n    .map(makeDisjoint)\n    .filter((child): child is Assembly => child !== null);\n\n  if (!node.metadata?.mightOverlap) {\n    const unchanged =\n      children.length === original.length &&\n      children.every((child, i) => child === original[i]);\n    return unchanged ? node : withGeometry(node, children);\n  }\n\n  // Each child is cut by every child after it; the last one is unchanged.\n  const cuttersAfter: Cutter[][] = children.map((_, i) =>\n    children.slice(i + 1).flatMap(toCutters),\n  );\n  const totalCuts = children.reduce(\n    (sum, child, i) => sum + child.leafCount() * cuttersAfter[i].length,\n    0,\n  );\n  let checked = 0;\n\n  const cutChildren = children\n    .map((child, i) =>\n      child.onLeafs((leaf) => {\n        const cut = cutLeaf(leaf, cuttersAfter[i], () => {\n          checked++;\n          progress(`checking overlap ${checked}/${totalCuts}`);\n        });\n        // onLeafs is typed for leaf -> leaf, but a cut can split one part\n        // into several, so allow it to return a small branch.\n        return cut as any;\n      }),\n    )\n    .filter((child): child is Assembly => child !== null);\n\n  if (cutChildren.length === 0) {\n    return null;\n  }\n\n  // This group is now disjoint, so drop the overlap flag.\n  const { mightOverlap, ...metadata } = node.metadata;\n  return withGeometry(node, cutChildren, metadata);\n}\n\nfunction toCutters(assembly: Assembly): Cutter[] {\n  return assembly\n    .filterLeafs((leaf) => leaf.is3D() || leaf.is2D())\n    .map((leaf) => {\n      const geometry = leaf.geometry as LeafGeom;\n      return { leaf, geometry, is3D: leaf.is3D(), box: geometry.boundingBox };\n    });\n}\n\n/**\n * Subtract every overlapping cutter from one part. Returns the part\n * unchanged if nothing overlaps, null if it was cut away completely, or a\n * branch of pieces if a 3D cut split it into several separate solids.\n *\n * A cut that throws is skipped and both parts are painted red, like the\n * built-in Assembly does, so one bad pair doesn't fail the whole atom.\n */\nfunction cutLeaf(\n  leaf: Assembly<LeafGeom>,\n  cutters: Cutter[],\n  onChecked: () => void,\n): Assembly | null {\n  const is3D = leaf.is3D();\n  // This part was a cutter in an earlier failed cut; flag it.\n  const color = failedCutters.has(leaf) ? FAILED_CUT_COLOR : leaf.color;\n  // Wires and points have no volume or area to cut.\n  if (!is3D && !leaf.is2D()) {\n    cutters.forEach(onChecked);\n    return leaf;\n  }\n\n  // Cutting only ever shrinks the part, so its original box stays a safe\n  // (conservative) filter for every cut.\n  const box = leaf.geometry.boundingBox;\n  let geometry: any = leaf.geometry;\n  let failed = false;\n  for (const cutter of cutters) {\n    onChecked();\n    if (cutter.is3D !== is3D || box.isOut(cutter.box)) {\n      continue;\n    }\n    let next: any;\n    try {\n      next = geometry.cut(cutter.geometry);\n    } catch (e) {\n      console.warn(\n        `Cut failed, skipping: ${describe(leaf)} cut by ${describe(cutter.leaf)}: ${e}`,\n      );\n      failed = true;\n      failedCutters.add(cutter.leaf);\n      continue;\n    }\n    // Free the previous intermediate result right away. Keeping every\n    // intermediate alive can exhaust OCCT's WASM memory on big assemblies.\n    // Never free the input geometry itself; other cuts still use it.\n    if (geometry !== leaf.geometry) {\n      geometry.delete?.();\n    }\n    geometry = next;\n  }\n\n  const result = (g: any) => {\n    const part = withGeometry(leaf, g);\n    part.color = failed ? FAILED_CUT_COLOR : color;\n    return part;\n  };\n\n  if (geometry === leaf.geometry) {\n    return failed || color !== leaf.color ? result(geometry) : leaf;\n  }\n  if (!is3D) {\n    return result(geometry);\n  }\n\n  // A 3D cut can leave nothing, or break the part into separate solids.\n  const solids = [...replicad.iterTopo(geometry.wrapped, \"solid\")].map(\n    (solid) => new replicad.Solid(solid),\n  );\n  // The solids hold their own references, so the cut result can go.\n  geometry.delete?.();\n  if (solids.length === 0) {\n    return null;\n  }\n  if (solids.length === 1) {\n    return result(solids[0]);\n  }\n  return result(solids.map((solid) => result(solid)));\n}",
           "compiledCode": "\"use strict\";\n/**\n * Compute Disjoint\n *\n * Makes every overlapping (\"lazy\") sub-assembly inside A disjoint, the same\n * way the Assembly atom does when \"makeDisjoint\" is on: within each\n * overlapping group, every part is cut by all the parts listed after it, so\n * later parts win where they overlap.\n *\n * Only groups flagged as possibly overlapping (metadata.mightOverlap) are\n * processed; groups that are already disjoint pass through untouched.\n */\nfunction run(A) {\n    if (!A) {\n        return null;\n    }\n    const result = makeDisjoint(A);\n    // Everything that needed cutting has been cut above, so skip the automatic\n    // (and expensive) whole-assembly disjointness pass on the way out.\n    return result ? result.skipDisjointPostprocess() : null;\n}\n/**\n * Copy an assembly node's color, tags, bom, plane and metadata onto new\n * geometry. Unlike `new Assembly({ ...node, geometry })`, this reuses the\n * geometry as-is instead of deep-cloning it, which matters on big assemblies.\n */\nfunction withGeometry(node, geometry, metadata = node.metadata) {\n    const copy = new Assembly({ ...node, geometry: undefined, metadata });\n    copy.geometry = geometry;\n    return copy;\n}\n/** Same color the built-in Assembly uses to flag parts it could not cut. */\nconst FAILED_CUT_COLOR = \"#ff0000\";\n/** Cutter parts involved in a failed cut, painted red once they're reached. */\nconst failedCutters = new Set();\nfunction describe(leaf) {\n    return leaf.tags.length > 0\n        ? `part [${leaf.tags.join(\", \")}]`\n        : \"untagged part\";\n}\nfunction makeDisjoint(node) {\n    if (node.isLeaf()) {\n        return node;\n    }\n    // Resolve nested groups first so every child is internally disjoint.\n    const original = node.geometry;\n    const children = original\n        .map(makeDisjoint)\n        .filter((child) => child !== null);\n    if (!node.metadata?.mightOverlap) {\n        const unchanged = children.length === original.length &&\n            children.every((child, i) => child === original[i]);\n        return unchanged ? node : withGeometry(node, children);\n    }\n    // Each child is cut by every child after it; the last one is unchanged.\n    const cuttersAfter = children.map((_, i) => children.slice(i + 1).flatMap(toCutters));\n    const totalCuts = children.reduce((sum, child, i) => sum + child.leafCount() * cuttersAfter[i].length, 0);\n    let checked = 0;\n    const cutChildren = children\n        .map((child, i) => child.onLeafs((leaf) => {\n        const cut = cutLeaf(leaf, cuttersAfter[i], () => {\n            checked++;\n            progress(`checking overlap ${checked}/${totalCuts}`);\n        });\n        // onLeafs is typed for leaf -> leaf, but a cut can split one part\n        // into several, so allow it to return a small branch.\n        return cut;\n    }))\n        .filter((child) => child !== null);\n    if (cutChildren.length === 0) {\n        return null;\n    }\n    // This group is now disjoint, so drop the overlap flag.\n    const { mightOverlap, ...metadata } = node.metadata;\n    return withGeometry(node, cutChildren, metadata);\n}\nfunction toCutters(assembly) {\n    return assembly\n        .filterLeafs((leaf) => leaf.is3D() || leaf.is2D())\n        .map((leaf) => {\n        const geometry = leaf.geometry;\n        return { leaf, geometry, is3D: leaf.is3D(), box: geometry.boundingBox };\n    });\n}\n/**\n * Subtract every overlapping cutter from one part. Returns the part\n * unchanged if nothing overlaps, null if it was cut away completely, or a\n * branch of pieces if a 3D cut split it into several separate solids.\n *\n * A cut that throws is skipped and both parts are painted red, like the\n * built-in Assembly does, so one bad pair doesn't fail the whole atom.\n */\nfunction cutLeaf(leaf, cutters, onChecked) {\n    const is3D = leaf.is3D();\n    // This part was a cutter in an earlier failed cut; flag it.\n    const color = failedCutters.has(leaf) ? FAILED_CUT_COLOR : leaf.color;\n    // Wires and points have no volume or area to cut.\n    if (!is3D && !leaf.is2D()) {\n        cutters.forEach(onChecked);\n        return leaf;\n    }\n    // Cutting only ever shrinks the part, so its original box stays a safe\n    // (conservative) filter for every cut.\n    const box = leaf.geometry.boundingBox;\n    let geometry = leaf.geometry;\n    let failed = false;\n    for (const cutter of cutters) {\n        onChecked();\n        if (cutter.is3D !== is3D || box.isOut(cutter.box)) {\n            continue;\n        }\n        let next;\n        try {\n            next = geometry.cut(cutter.geometry);\n        }\n        catch (e) {\n            console.warn(`Cut failed, skipping: ${describe(leaf)} cut by ${describe(cutter.leaf)}: ${e}`);\n            failed = true;\n            failedCutters.add(cutter.leaf);\n            continue;\n        }\n        // Free the previous intermediate result right away. Keeping every\n        // intermediate alive can exhaust OCCT's WASM memory on big assemblies.\n        // Never free the input geometry itself; other cuts still use it.\n        if (geometry !== leaf.geometry) {\n            geometry.delete?.();\n        }\n        geometry = next;\n    }\n    const result = (g) => {\n        const part = withGeometry(leaf, g);\n        part.color = failed ? FAILED_CUT_COLOR : color;\n        return part;\n    };\n    if (geometry === leaf.geometry) {\n        return failed || color !== leaf.color ? result(geometry) : leaf;\n    }\n    if (!is3D) {\n        return result(geometry);\n    }\n    // A 3D cut can leave nothing, or break the part into separate solids.\n    const solids = [...replicad.iterTopo(geometry.wrapped, \"solid\")].map((solid) => new replicad.Solid(solid));\n    // The solids hold their own references, so the cut result can go.\n    geometry.delete?.();\n    if (solids.length === 0) {\n        return null;\n    }\n    if (solids.length === 1) {\n        return result(solids[0]);\n    }\n    return result(solids.map((solid) => result(solid)));\n}\n"
+        },
+        {
+          "atomType": "Rectangle",
+          "x": 0.1,
+          "y": 0.8,
+          "uniqueID": "id-40811",
+          "ioValues": [
+            {
+              "name": "x length",
+              "ioValue": 10
+            },
+            {
+              "name": "y length",
+              "ioValue": 10
+            }
+          ]
         }
       ],
       "allConnectors": [
@@ -3080,19 +3096,14 @@
           "ap2ID": "id-37916"
         },
         {
-          "ap2Name": "A",
+          "ap2Name": "number or geometry",
           "ap1ID": "id-37886",
-          "ap2ID": "id-37938"
+          "ap2ID": "id-37884"
         },
         {
           "ap2Name": "geometry",
           "ap1ID": "id-37889",
           "ap2ID": "id-37901"
-        },
-        {
-          "ap2Name": "number or geometry",
-          "ap1ID": "id-37913",
-          "ap2ID": "id-37884"
         },
         {
           "ap2Name": "geometry",
@@ -24286,11 +24297,6 @@
       "ap2ID": "id-5906"
     },
     {
-      "ap2Name": "input",
-      "ap1ID": "id-1291",
-      "ap2ID": "id-37882"
-    },
-    {
       "ap2Name": "Wood_Thickness",
       "ap1ID": "id-349",
       "ap2ID": "id-385"
@@ -24324,6 +24330,11 @@
       "ap2Name": "Shape 2",
       "ap1ID": "id-385",
       "ap2ID": "id-1291"
+    },
+    {
+      "ap2Name": "input",
+      "ap1ID": "id-385",
+      "ap2ID": "id-37882"
     }
   ],
   "unitsKey": "MM",
