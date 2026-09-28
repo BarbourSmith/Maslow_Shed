@@ -3032,7 +3032,7 @@
         {
           "atomType": "Rectangle",
           "x": 0,
-          "y": 0.9,
+          "y": 0.4,
           "uniqueID": "id-40811",
           "ioValues": [
             {
@@ -3047,8 +3047,8 @@
         },
         {
           "atomType": "Extrude",
-          "x": 0,
-          "y": 0.7,
+          "x": 0.1,
+          "y": 0.4,
           "uniqueID": "id-40816",
           "ioValues": [
             {
@@ -3063,8 +3063,8 @@
         },
         {
           "atomType": "Move",
-          "x": 0.1,
-          "y": 0.5,
+          "x": 0.2,
+          "y": 0.3,
           "uniqueID": "id-43695",
           "ioValues": [
             {
