@@ -13261,8 +13261,7 @@
                         },
                         {
                           "name": "xDist",
-                          "ioValue": 600,
-                          "currentEquation": "600"
+                          "ioValue": 600
                         },
                         {
                           "name": "yDist",
@@ -13294,8 +13293,7 @@
                         },
                         {
                           "name": "z-axis degrees",
-                          "ioValue": -16,
-                          "currentEquation": "-16"
+                          "ioValue": -16
                         }
                       ]
                     }
@@ -13335,21 +13333,6 @@
                       "ap2Name": "Shape3",
                       "ap1ID": "id-25945",
                       "ap2ID": "id-25933"
-                    },
-                    {
-                      "ap2Name": "Shape2",
-                      "ap1ID": "id-25888",
-                      "ap2ID": "id-25933"
-                    },
-                    {
-                      "ap2Name": "geometry",
-                      "ap1ID": "id-25888",
-                      "ap2ID": "id-25939"
-                    },
-                    {
-                      "ap2Name": "Shape2",
-                      "ap1ID": "id-25362",
-                      "ap2ID": "id-31366"
                     },
                     {
                       "ap2Name": "geometry",
@@ -13395,6 +13378,21 @@
                       "ap2Name": "geometry",
                       "ap1ID": "id-31392",
                       "ap2ID": "id-31380"
+                    },
+                    {
+                      "ap2Name": "Shape2",
+                      "ap1ID": "id-25888",
+                      "ap2ID": "id-25933"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-25888",
+                      "ap2ID": "id-25939"
+                    },
+                    {
+                      "ap2Name": "Shape2",
+                      "ap1ID": "id-25362",
+                      "ap2ID": "id-31366"
                     }
                   ],
                   "fileTypeVersion": 1
@@ -16746,7 +16744,7 @@
             {
               "atomType": "Input",
               "x": 0,
-              "y": 0.9,
+              "y": 0.2,
               "uniqueID": "id-473",
               "name": "Wood_Thickness",
               "type": "number",
@@ -16864,7 +16862,7 @@
             {
               "atomType": "Input",
               "x": 0,
-              "y": 0.4,
+              "y": 0.2,
               "uniqueID": "id-478",
               "name": "input",
               "type": "geometry",
