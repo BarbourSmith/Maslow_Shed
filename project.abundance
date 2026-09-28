@@ -6771,7 +6771,11 @@
                   "type": "edgeselect",
                   "options": [],
                   "selectedEdgeData": {
-                    "0": []
+                    "0": [
+                      18,
+                      21,
+                      23
+                    ]
                   }
                 },
                 {
