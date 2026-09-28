@@ -2827,7 +2827,8 @@
             },
             {
               "name": "height",
-              "ioValue": 3000
+              "ioValue": 4000,
+              "currentEquation": "4000"
             }
           ]
         },
@@ -2884,8 +2885,7 @@
             },
             {
               "name": "i",
-              "ioValue": 0,
-              "currentEquation": "0"
+              "ioValue": 0
             }
           ],
           "topLevel": false,
