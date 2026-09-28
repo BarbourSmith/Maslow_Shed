@@ -19919,10 +19919,6 @@
                 {
                   "name": "Shape4",
                   "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "Shape5",
-                  "ioValue": "__GEOMETRY_INPUT__"
                 }
               ]
             },
@@ -20420,11 +20416,6 @@
               "ap2Name": "geometry",
               "ap1ID": "id-23784",
               "ap2ID": "id-23790"
-            },
-            {
-              "ap2Name": "Shape 1",
-              "ap1ID": "id-23790",
-              "ap2ID": "id-23793"
             },
             {
               "ap2Name": "number or geometry",
