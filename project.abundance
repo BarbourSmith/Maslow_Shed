@@ -2749,7 +2749,7 @@
         {
           "atomType": "ExtractTag",
           "x": 0.2,
-          "y": 0.6,
+          "y": 0.5,
           "uniqueID": "id-37889",
           "name": "Extract A2",
           "ioValues": [
@@ -3078,6 +3078,11 @@
           "ap2Name": "geometry",
           "ap1ID": "id-37886",
           "ap2ID": "id-37916"
+        },
+        {
+          "ap2Name": "A",
+          "ap1ID": "id-37886",
+          "ap2ID": "id-37938"
         },
         {
           "ap2Name": "geometry",
