@@ -97,7 +97,7 @@
       "ioValues": [
         {
           "name": "makeDisjoint",
-          "ioValue": true
+          "ioValue": false
         },
         {
           "name": "Shape 1",
@@ -8583,7 +8583,7 @@
           "ioValues": [
             {
               "name": "makeDisjoint",
-              "ioValue": true
+              "ioValue": false
             },
             {
               "name": "Shape 1",
@@ -13313,7 +13313,7 @@
             {
               "atomType": "Move",
               "x": 0.6,
-              "y": 0.7,
+              "y": 0.3,
               "uniqueID": "id-6301",
               "ioValues": [
                 {
@@ -13342,7 +13342,7 @@
               "ioValues": [
                 {
                   "name": "makeDisjoint",
-                  "ioValue": true
+                  "ioValue": false
                 },
                 {
                   "name": "Shape 1",
