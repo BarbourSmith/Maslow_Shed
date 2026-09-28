@@ -13214,21 +13214,21 @@
                       "x": 0.3,
                       "y": 0.9,
                       "uniqueID": "id-31376",
-                      "name": "-1*(10*12*25.4)",
-                      "currentEquation": "-1*(10*12*25.4)"
+                      "name": "-1*(10*12*25.4)+600",
+                      "currentEquation": "-1*(10*12*25.4)+600"
                     },
                     {
                       "atomType": "Equation",
                       "x": 0.3,
-                      "y": 0.7,
+                      "y": 0.8,
                       "uniqueID": "id-31378",
-                      "name": "(7*12*25.4)",
-                      "currentEquation": "(7*12*25.4)"
+                      "name": "(7*12*25.4)-600",
+                      "currentEquation": "(7*12*25.4)-600"
                     },
                     {
                       "atomType": "Move",
                       "x": 0.5,
-                      "y": 0.8,
+                      "y": 0.7,
                       "uniqueID": "id-31380",
                       "ioValues": [
                         {
@@ -13237,11 +13237,11 @@
                         },
                         {
                           "name": "xDist",
-                          "ioValue": 2133.6
+                          "ioValue": 1533.6
                         },
                         {
                           "name": "yDist",
-                          "ioValue": -3048
+                          "ioValue": -2448
                         },
                         {
                           "name": "zDist",
@@ -13261,8 +13261,8 @@
                         },
                         {
                           "name": "xDist",
-                          "ioValue": 300,
-                          "currentEquation": "300"
+                          "ioValue": 600,
+                          "currentEquation": "600"
                         },
                         {
                           "name": "yDist",
@@ -13294,7 +13294,8 @@
                         },
                         {
                           "name": "z-axis degrees",
-                          "ioValue": 0
+                          "ioValue": -16,
+                          "currentEquation": "-16"
                         }
                       ]
                     }
