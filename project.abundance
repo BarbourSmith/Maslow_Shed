@@ -3080,19 +3080,9 @@
           "ap2ID": "id-37916"
         },
         {
-          "ap2Name": "A",
-          "ap1ID": "id-37886",
-          "ap2ID": "id-37938"
-        },
-        {
           "ap2Name": "geometry",
           "ap1ID": "id-37889",
           "ap2ID": "id-37901"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-37901",
-          "ap2ID": "id-37913"
         },
         {
           "ap2Name": "number or geometry",
@@ -3103,6 +3093,11 @@
           "ap2Name": "geometry",
           "ap1ID": "id-37916",
           "ap2ID": "id-37917"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-37901",
+          "ap2ID": "id-37913"
         },
         {
           "ap2Name": "geometry",
@@ -21306,6 +21301,11 @@
           "ap2ID": "id-2060"
         },
         {
+          "ap2Name": "Shape 1",
+          "ap1ID": "id-37860",
+          "ap2ID": "id-1938"
+        },
+        {
           "ap2Name": "Geometry",
           "ap1ID": "id-784",
           "ap2ID": "id-37860"
@@ -21344,11 +21344,6 @@
           "ap2Name": "geometry",
           "ap1ID": "id-12650",
           "ap2ID": "id-12729"
-        },
-        {
-          "ap2Name": "Shape 1",
-          "ap1ID": "id-37860",
-          "ap2ID": "id-1938"
         }
       ],
       "fileTypeVersion": 1
