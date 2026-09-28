@@ -8445,6 +8445,39 @@
                       "ioValue": 0
                     }
                   ]
+                },
+                {
+                  "atomType": "Rectangle",
+                  "x": 0.1,
+                  "y": 0.5,
+                  "uniqueID": "id-17278",
+                  "ioValues": [
+                    {
+                      "name": "x length",
+                      "ioValue": 2438.3999999999996,
+                      "currentEquation": "96*25.4"
+                    },
+                    {
+                      "name": "y length",
+                      "ioValue": 400
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Extrude",
+                  "x": 0.1,
+                  "y": 0.5,
+                  "uniqueID": "id-17279",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "height",
+                      "ioValue": 50
+                    }
+                  ]
                 }
               ],
               "allConnectors": [
@@ -8457,11 +8490,6 @@
                   "ap2Name": "geometry",
                   "ap1ID": "id-17198",
                   "ap2ID": "id-17199"
-                },
-                {
-                  "ap2Name": "geometry",
-                  "ap1ID": "id-17198",
-                  "ap2ID": "id-17206"
                 },
                 {
                   "ap2Name": "geometry",
@@ -8547,6 +8575,16 @@
                   "ap2Name": "geometry2",
                   "ap1ID": "id-17272",
                   "ap2ID": "id-17201"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-17278",
+                  "ap2ID": "id-17279"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-17279",
+                  "ap2ID": "id-17206"
                 }
               ],
               "fileTypeVersion": 1
