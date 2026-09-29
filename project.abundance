@@ -39,22 +39,8 @@
     },
     {
       "atomType": "Equation",
-      "x": 0.2,
+      "x": 0.1,
       "y": 0.8,
-      "uniqueID": "id-1106",
-      "name": "X-12*25.4",
-      "ioValues": [
-        {
-          "name": "X",
-          "ioValue": 4267.2
-        }
-      ],
-      "currentEquation": "X-12*25.4"
-    },
-    {
-      "atomType": "Equation",
-      "x": 0.2,
-      "y": 0.6,
       "uniqueID": "id-1111",
       "name": "Y-12*25.4",
       "ioValues": [
@@ -119,8 +105,8 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.3,
-      "y": 0.6,
+      "x": 0.4,
+      "y": 0.4,
       "uniqueID": "id-1296",
       "name": "Exterior Shell",
       "ioValues": [
@@ -23702,11 +23688,6 @@
       "ap2Name": "Width_(X)",
       "ap1ID": "id-1097",
       "ap2ID": "id-4"
-    },
-    {
-      "ap2Name": "X",
-      "ap1ID": "id-1097",
-      "ap2ID": "id-1106"
     },
     {
       "ap2Name": "Floor_X",
