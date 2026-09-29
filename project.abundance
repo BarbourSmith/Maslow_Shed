@@ -4746,8 +4746,8 @@
             },
             {
               "name": "Offset",
-              "ioValue": 1.825,
-              "currentEquation": "1.825"
+              "ioValue": -1.825,
+              "currentEquation": "-1.825"
             }
           ],
           "topLevel": false,
@@ -4793,7 +4793,7 @@
                 },
                 {
                   "name": "distance",
-                  "ioValue": 1.825
+                  "ioValue": -1.825
                 }
               ],
               "interpreterVersion": 1,
