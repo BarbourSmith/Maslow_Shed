@@ -4735,8 +4735,8 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.9,
-          "y": 0.7,
+          "x": 0.7,
+          "y": 0.6,
           "uniqueID": "id-55567",
           "name": "Offset_2D",
           "ioValues": [
@@ -4847,6 +4847,59 @@
           "unitsKey": "MM",
           "fileTypeVersion": 1,
           "lastReloadedFromGithubAt": 1790655190539
+        },
+        {
+          "atomType": "Extrude",
+          "x": 0.8,
+          "y": 0.8,
+          "uniqueID": "id-55583",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "height",
+              "ioValue": 12,
+              "currentEquation": "12"
+            }
+          ]
+        },
+        {
+          "atomType": "Gcode",
+          "x": 0.9,
+          "y": 0.5,
+          "uniqueID": "id-55587",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Tool Size",
+              "ioValue": 3.125,
+              "currentEquation": "3.125"
+            },
+            {
+              "name": "Passes",
+              "ioValue": 1
+            },
+            {
+              "name": "Speed",
+              "ioValue": 1500
+            },
+            {
+              "name": "Cut Through",
+              "ioValue": 0
+            },
+            {
+              "name": "Part Name",
+              "ioValue": "Make Templates",
+              "currentEquation": "Make Templates"
+            }
+          ],
+          "partName": "Make Templates",
+          "sortDirection": "Left"
         }
       ],
       "allConnectors": [
@@ -4909,6 +4962,16 @@
           "ap2Name": "2D_Shape",
           "ap1ID": "id-55362",
           "ap2ID": "id-55567"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-55567",
+          "ap2ID": "id-55583"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-55583",
+          "ap2ID": "id-55587"
         }
       ],
       "fileTypeVersion": 1
