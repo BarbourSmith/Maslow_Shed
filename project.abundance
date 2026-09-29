@@ -4892,8 +4892,8 @@
             },
             {
               "name": "Part Name",
-              "ioValue": "Template Part B2",
-              "currentEquation": "Template Part B2"
+              "ioValue": "Template Part A1",
+              "currentEquation": "Template Part A1"
             }
           ],
           "partName": "Make Templates",
@@ -5322,12 +5322,17 @@
             },
             {
               "name": "distance",
-              "ioValue": -1.825
+              "ioValue": -1.825,
+              "currentEquation": "-1.825"
+            },
+            {
+              "name": "samplesPerCurve",
+              "ioValue": 12
             }
           ],
           "interpreterVersion": 1,
-          "code": "function run(shape: Assembly, distance: number = -1.825): Assembly {\n  function splitSingleCurve(blueprint) {\n    if (blueprint.curves.length !== 1) {\n      return blueprint.clone();\n    }\n\n    const curve = blueprint.curves[0];\n    const midpoint = (curve.firstParameter + curve.lastParameter) / 2;\n    const segments = curve.splitAt([midpoint]);\n\n    if (segments.length < 2) {\n      throw new Error(\"Could not split a single-curve boundary for offsetting\");\n    }\n\n    return new replicad.Blueprint(segments);\n  }\n\n  function flatten(shape2D) {\n    if (shape2D instanceof replicad.Blueprint) {\n      return [shape2D];\n    }\n\n    if (\n      shape2D instanceof replicad.CompoundBlueprint ||\n      shape2D instanceof replicad.Blueprints\n    ) {\n      return shape2D.blueprints.flatMap(flatten);\n    }\n\n    return [];\n  }\n\n  function offsetBoundary(blueprint) {\n    const prepared = splitSingleCurve(blueprint);\n    const offsetDrawing = new replicad.Drawing(prepared).offset(distance);\n    return flatten(offsetDrawing.innerShape);\n  }\n\n  return shape.onLeafs((leaf) => {\n    const boundaries = flatten(leaf.geometry.innerShape);\n    const offsetBoundaries = boundaries.flatMap(offsetBoundary);\n\n    if (offsetBoundaries.length === 0) {\n      throw new Error(\"Offset removed every boundary\");\n    }\n\n    leaf.geometry = new replicad.Drawing(\n      replicad.organiseBlueprints(offsetBoundaries),\n    );\n    return leaf;\n  }) as Assembly;\n}",
-          "compiledCode": "\"use strict\";\nfunction run(shape, distance = -1.825) {\n    function splitSingleCurve(blueprint) {\n        if (blueprint.curves.length !== 1) {\n            return blueprint.clone();\n        }\n        const curve = blueprint.curves[0];\n        const midpoint = (curve.firstParameter + curve.lastParameter) / 2;\n        const segments = curve.splitAt([midpoint]);\n        if (segments.length < 2) {\n            throw new Error(\"Could not split a single-curve boundary for offsetting\");\n        }\n        return new replicad.Blueprint(segments);\n    }\n    function flatten(shape2D) {\n        if (shape2D instanceof replicad.Blueprint) {\n            return [shape2D];\n        }\n        if (shape2D instanceof replicad.CompoundBlueprint ||\n            shape2D instanceof replicad.Blueprints) {\n            return shape2D.blueprints.flatMap(flatten);\n        }\n        return [];\n    }\n    function offsetBoundary(blueprint) {\n        const prepared = splitSingleCurve(blueprint);\n        const offsetDrawing = new replicad.Drawing(prepared).offset(distance);\n        return flatten(offsetDrawing.innerShape);\n    }\n    return shape.onLeafs((leaf) => {\n        const boundaries = flatten(leaf.geometry.innerShape);\n        const offsetBoundaries = boundaries.flatMap(offsetBoundary);\n        if (offsetBoundaries.length === 0) {\n            throw new Error(\"Offset removed every boundary\");\n        }\n        leaf.geometry = new replicad.Drawing(replicad.organiseBlueprints(offsetBoundaries));\n        return leaf;\n    });\n}\n"
+          "code": "function run(shape: Assembly, distance: number = -1.825, samplesPerCurve: number = 12): Assembly {\n  function flatten(s) {\n    if (s instanceof replicad.Blueprint) return [s];\n    if (s instanceof replicad.CompoundBlueprint || s instanceof replicad.Blueprints) return s.blueprints.flatMap(flatten);\n    return [];\n  }\n\n  // Offset with OpenCascade's native wire offset. replicad's JavaScript\n  // Drawing.offset stalls on outlines made of many spline curves.\n  // The result is traced back into a flat drawing as short line segments.\n  function offsetBlueprint(bp) {\n    const wire = bp.sketchOnPlane(\"XY\").wire.offset2D(distance, \"arc\");\n    const pts = [];\n    for (const edge of wire.edges) {\n      const n = edge.geomType === \"LINE\" ? 1 : samplesPerCurve;\n      for (let i = 0; i < n; i++) {\n        const p = edge.pointAt(i / n);\n        pts.push([p.x, p.y]);\n      }\n    }\n    let pen = replicad.draw(pts[0]);\n    for (let i = 1; i < pts.length; i++) pen = pen.lineTo(pts[i]);\n    return flatten(pen.close().innerShape);\n  }\n\n  return shape.onLeafs((leaf) => {\n    const offsets = flatten(leaf.geometry.innerShape).flatMap(offsetBlueprint);\n    if (offsets.length === 0) throw new Error(\"Offset removed every boundary\");\n    leaf.geometry = new replicad.Drawing(replicad.organiseBlueprints(offsets));\n    return leaf;\n  }) as Assembly;\n}",
+          "compiledCode": "\"use strict\";\nfunction run(shape, distance = -1.825, samplesPerCurve = 12) {\n    function flatten(s) {\n        if (s instanceof replicad.Blueprint)\n            return [s];\n        if (s instanceof replicad.CompoundBlueprint || s instanceof replicad.Blueprints)\n            return s.blueprints.flatMap(flatten);\n        return [];\n    }\n    // Offset with OpenCascade's native wire offset. replicad's JavaScript\n    // Drawing.offset stalls on outlines made of many spline curves.\n    // The result is traced back into a flat drawing as short line segments.\n    function offsetBlueprint(bp) {\n        const wire = bp.sketchOnPlane(\"XY\").wire.offset2D(distance, \"arc\");\n        const pts = [];\n        for (const edge of wire.edges) {\n            const n = edge.geomType === \"LINE\" ? 1 : samplesPerCurve;\n            for (let i = 0; i < n; i++) {\n                const p = edge.pointAt(i / n);\n                pts.push([p.x, p.y]);\n            }\n        }\n        let pen = replicad.draw(pts[0]);\n        for (let i = 1; i < pts.length; i++)\n            pen = pen.lineTo(pts[i]);\n        return flatten(pen.close().innerShape);\n    }\n    return shape.onLeafs((leaf) => {\n        const offsets = flatten(leaf.geometry.innerShape).flatMap(offsetBlueprint);\n        if (offsets.length === 0)\n            throw new Error(\"Offset removed every boundary\");\n        leaf.geometry = new replicad.Drawing(replicad.organiseBlueprints(offsets));\n        return leaf;\n    });\n}\n"
         },
         {
           "atomType": "Rotate",
@@ -5349,8 +5354,8 @@
             },
             {
               "name": "z-axis degrees",
-              "ioValue": 90,
-              "currentEquation": "90"
+              "ioValue": 0,
+              "currentEquation": "0"
             }
           ]
         },
