@@ -2860,7 +2860,7 @@
         {
           "atomType": "GitHubMolecule",
           "x": 0.7,
-          "y": 0.6,
+          "y": 0.3,
           "uniqueID": "id-46599",
           "name": "IthFromAssembly",
           "ioValues": [
@@ -2870,7 +2870,7 @@
             },
             {
               "name": "i",
-              "ioValue": 0
+              "ioValue": 6
             }
           ],
           "topLevel": false,
@@ -2899,7 +2899,7 @@
                 },
                 {
                   "name": "i",
-                  "ioValue": 0
+                  "ioValue": 6
                 }
               ],
               "interpreterVersion": 0,
@@ -2974,34 +2974,23 @@
           "lastReloadedFromGithubAt": 1790639439697
         },
         {
-          "atomType": "CutLayout",
+          "atomType": "CutOrient",
           "x": 0.8,
-          "y": 0.4,
-          "uniqueID": "id-49471",
-          "name": "Cut Layout",
+          "y": 0.6,
+          "uniqueID": "id-55284",
+          "name": "Cut Orient",
           "ioValues": [
             {
               "name": "geometry",
               "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "Sheet Width",
-              "ioValue": 2438
-            },
-            {
-              "name": "Sheet Height",
-              "ioValue": 1219
-            },
-            {
-              "name": "Part Padding",
-              "ioValue": 10
-            },
-            {
-              "name": "Orientations",
-              "ioValue": 12
             }
           ],
-          "placements": []
+          "orientations": [
+            {
+              "downwardFaceIndex": 201
+            }
+          ],
+          "orientationsForHashed": 1
         }
       ],
       "allConnectors": [
@@ -3014,11 +3003,6 @@
           "ap2Name": "geometry",
           "ap1ID": "id-37916",
           "ap2ID": "id-46599"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-37916",
-          "ap2ID": "id-49471"
         },
         {
           "ap2Name": "geometry",
@@ -3054,6 +3038,11 @@
           "ap2Name": "A",
           "ap1ID": "id-43701",
           "ap2ID": "id-37938"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-46599",
+          "ap2ID": "id-55284"
         }
       ],
       "fileTypeVersion": 1
