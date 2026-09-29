@@ -2753,7 +2753,7 @@
         },
         {
           "atomType": "ExtractTag",
-          "x": 0.4,
+          "x": 0.3,
           "y": 0.8,
           "uniqueID": "id-37916",
           "name": "Extract B2",
@@ -2772,8 +2772,8 @@
         },
         {
           "atomType": "Code",
-          "x": 0.3,
-          "y": 0.7,
+          "x": 0.2,
+          "y": 0.8,
           "uniqueID": "id-37938",
           "ioValues": [
             {
@@ -2859,8 +2859,8 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.5,
-          "y": 0.6,
+          "x": 0.4,
+          "y": 0.5,
           "uniqueID": "id-46599",
           "name": "IthFromAssembly",
           "ioValues": [
@@ -2975,8 +2975,8 @@
         },
         {
           "atomType": "CutOrient",
-          "x": 0.7,
-          "y": 0.5,
+          "x": 0.5,
+          "y": 0.6,
           "uniqueID": "id-55284",
           "name": "Cut Orient",
           "ioValues": [
@@ -2994,7 +2994,7 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.7,
+          "x": 0.6,
           "y": 0.7,
           "uniqueID": "id-55362",
           "name": "2D_Slice",
