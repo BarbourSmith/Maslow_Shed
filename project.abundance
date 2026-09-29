@@ -2827,8 +2827,7 @@
             },
             {
               "name": "height",
-              "ioValue": 4000,
-              "currentEquation": "4000"
+              "ioValue": 4000
             }
           ]
         },
