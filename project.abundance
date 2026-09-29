@@ -4746,8 +4746,7 @@
             },
             {
               "name": "Offset",
-              "ioValue": -1.825,
-              "currentEquation": "-1.825"
+              "ioValue": -1.825
             }
           ],
           "topLevel": false,
@@ -4860,8 +4859,7 @@
             },
             {
               "name": "height",
-              "ioValue": 12,
-              "currentEquation": "12"
+              "ioValue": 12
             }
           ]
         },
@@ -4877,8 +4875,7 @@
             },
             {
               "name": "Tool Size",
-              "ioValue": 3.125,
-              "currentEquation": "3.125"
+              "ioValue": 3.125
             },
             {
               "name": "Passes",
@@ -5200,11 +5197,6 @@
           "ap2ID": "id-37938"
         },
         {
-          "ap2Name": "geometry",
-          "ap1ID": "id-46599",
-          "ap2ID": "id-55284"
-        },
-        {
           "ap2Name": "Input",
           "ap1ID": "id-55284",
           "ap2ID": "id-55362"
@@ -5215,9 +5207,14 @@
           "ap2ID": "id-55609"
         },
         {
-          "ap2Name": "2D_Shape",
-          "ap1ID": "id-55362",
-          "ap2ID": "id-55567"
+          "ap2Name": "geometry",
+          "ap1ID": "id-55583",
+          "ap2ID": "id-55587"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-46599",
+          "ap2ID": "id-55284"
         },
         {
           "ap2Name": "geometry",
@@ -5225,9 +5222,9 @@
           "ap2ID": "id-55583"
         },
         {
-          "ap2Name": "geometry",
-          "ap1ID": "id-55583",
-          "ap2ID": "id-55587"
+          "ap2Name": "2D_Shape",
+          "ap1ID": "id-55362",
+          "ap2ID": "id-55567"
         }
       ],
       "fileTypeVersion": 1
