@@ -2737,7 +2737,7 @@
           "x": 0.4,
           "y": 0.3,
           "uniqueID": "id-37889",
-          "name": "Extract A2",
+          "name": "Extract A1",
           "ioValues": [
             {
               "name": "geometry",
@@ -2746,7 +2746,7 @@
           ],
           "tagIndex": 0,
           "selectedTags": [
-            "A2"
+            "A1"
           ],
           "includeUntagged": false,
           "notKeepOut": false
@@ -2859,7 +2859,7 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.4,
+          "x": 0.3,
           "y": 0.5,
           "uniqueID": "id-46599",
           "name": "IthFromAssembly",
@@ -2870,7 +2870,7 @@
             },
             {
               "name": "i",
-              "ioValue": 6
+              "ioValue": 13
             }
           ],
           "topLevel": false,
@@ -2899,7 +2899,7 @@
                 },
                 {
                   "name": "i",
-                  "ioValue": 6
+                  "ioValue": 13
                 }
               ],
               "interpreterVersion": 0,
@@ -2995,7 +2995,7 @@
         {
           "atomType": "GitHubMolecule",
           "x": 0.6,
-          "y": 0.7,
+          "y": 0.8,
           "uniqueID": "id-55362",
           "name": "2D_Slice",
           "ioValues": [
@@ -4859,14 +4859,15 @@
             },
             {
               "name": "height",
-              "ioValue": 12
+              "ioValue": 6,
+              "currentEquation": "6"
             }
           ]
         },
         {
           "atomType": "Gcode",
           "x": 0.9,
-          "y": 0.6,
+          "y": 0.5,
           "uniqueID": "id-55587",
           "ioValues": [
             {
@@ -4887,12 +4888,12 @@
             },
             {
               "name": "Cut Through",
-              "ioValue": 0
+              "ioValue": 1
             },
             {
               "name": "Part Name",
-              "ioValue": "Make Templates",
-              "currentEquation": "Make Templates"
+              "ioValue": "Template Part B2",
+              "currentEquation": "Template Part B2"
             }
           ],
           "partName": "Make Templates",
@@ -5325,8 +5326,243 @@
             }
           ],
           "interpreterVersion": 1,
-          "code": "function run(shape: Assembly, distance: number = -1.825): Assembly {\n  function splitSingleCurve(blueprint) {\n    if (blueprint.curves.length !== 1) {\n      return blueprint.clone();\n    }\n\n    const curve = blueprint.curves[0];\n    const midpoint = (curve.firstParameter + curve.lastParameter) / 2;\n    const segments = curve.splitAt([midpoint]);\n\n    if (segments.length < 2) {\n      throw new Error(\"Could not split a single-curve boundary for offsetting\");\n    }\n\n    return new replicad.Blueprint(segments);\n  }\n\n  function prepare(shape2D) {\n    if (shape2D instanceof replicad.Blueprint) {\n      return splitSingleCurve(shape2D);\n    }\n\n    if (shape2D instanceof replicad.CompoundBlueprint) {\n      return new replicad.CompoundBlueprint(\n        shape2D.blueprints.map(splitSingleCurve),\n      );\n    }\n\n    if (shape2D instanceof replicad.Blueprints) {\n      return new replicad.Blueprints(\n        shape2D.blueprints.map((region) => {\n          if (region instanceof replicad.CompoundBlueprint) {\n            return new replicad.CompoundBlueprint(\n              region.blueprints.map(splitSingleCurve),\n            );\n          }\n          return splitSingleCurve(region);\n        }),\n      );\n    }\n\n    return shape2D;\n  }\n\n  return shape.onLeafs((leaf) => {\n    const drawing = leaf.geometry;\n    const innerShape = drawing.innerShape;\n    leaf.geometry = new replicad.Drawing(prepare(innerShape)).offset(distance);\n    return leaf;\n  }) as Assembly;\n}",
-          "compiledCode": "\"use strict\";\nfunction run(shape, distance = -1.825) {\n    function splitSingleCurve(blueprint) {\n        if (blueprint.curves.length !== 1) {\n            return blueprint.clone();\n        }\n        const curve = blueprint.curves[0];\n        const midpoint = (curve.firstParameter + curve.lastParameter) / 2;\n        const segments = curve.splitAt([midpoint]);\n        if (segments.length < 2) {\n            throw new Error(\"Could not split a single-curve boundary for offsetting\");\n        }\n        return new replicad.Blueprint(segments);\n    }\n    function prepare(shape2D) {\n        if (shape2D instanceof replicad.Blueprint) {\n            return splitSingleCurve(shape2D);\n        }\n        if (shape2D instanceof replicad.CompoundBlueprint) {\n            return new replicad.CompoundBlueprint(shape2D.blueprints.map(splitSingleCurve));\n        }\n        if (shape2D instanceof replicad.Blueprints) {\n            return new replicad.Blueprints(shape2D.blueprints.map((region) => {\n                if (region instanceof replicad.CompoundBlueprint) {\n                    return new replicad.CompoundBlueprint(region.blueprints.map(splitSingleCurve));\n                }\n                return splitSingleCurve(region);\n            }));\n        }\n        return shape2D;\n    }\n    return shape.onLeafs((leaf) => {\n        const drawing = leaf.geometry;\n        const innerShape = drawing.innerShape;\n        leaf.geometry = new replicad.Drawing(prepare(innerShape)).offset(distance);\n        return leaf;\n    });\n}\n"
+          "code": "function run(shape: Assembly, distance: number = -1.825): Assembly {\n  function splitSingleCurve(blueprint) {\n    if (blueprint.curves.length !== 1) {\n      return blueprint.clone();\n    }\n\n    const curve = blueprint.curves[0];\n    const midpoint = (curve.firstParameter + curve.lastParameter) / 2;\n    const segments = curve.splitAt([midpoint]);\n\n    if (segments.length < 2) {\n      throw new Error(\"Could not split a single-curve boundary for offsetting\");\n    }\n\n    return new replicad.Blueprint(segments);\n  }\n\n  function flatten(shape2D) {\n    if (shape2D instanceof replicad.Blueprint) {\n      return [shape2D];\n    }\n\n    if (\n      shape2D instanceof replicad.CompoundBlueprint ||\n      shape2D instanceof replicad.Blueprints\n    ) {\n      return shape2D.blueprints.flatMap(flatten);\n    }\n\n    return [];\n  }\n\n  function offsetBoundary(blueprint) {\n    const prepared = splitSingleCurve(blueprint);\n    const offsetDrawing = new replicad.Drawing(prepared).offset(distance);\n    return flatten(offsetDrawing.innerShape);\n  }\n\n  return shape.onLeafs((leaf) => {\n    const boundaries = flatten(leaf.geometry.innerShape);\n    const offsetBoundaries = boundaries.flatMap(offsetBoundary);\n\n    if (offsetBoundaries.length === 0) {\n      throw new Error(\"Offset removed every boundary\");\n    }\n\n    leaf.geometry = new replicad.Drawing(\n      replicad.organiseBlueprints(offsetBoundaries),\n    );\n    return leaf;\n  }) as Assembly;\n}",
+          "compiledCode": "\"use strict\";\nfunction run(shape, distance = -1.825) {\n    function splitSingleCurve(blueprint) {\n        if (blueprint.curves.length !== 1) {\n            return blueprint.clone();\n        }\n        const curve = blueprint.curves[0];\n        const midpoint = (curve.firstParameter + curve.lastParameter) / 2;\n        const segments = curve.splitAt([midpoint]);\n        if (segments.length < 2) {\n            throw new Error(\"Could not split a single-curve boundary for offsetting\");\n        }\n        return new replicad.Blueprint(segments);\n    }\n    function flatten(shape2D) {\n        if (shape2D instanceof replicad.Blueprint) {\n            return [shape2D];\n        }\n        if (shape2D instanceof replicad.CompoundBlueprint ||\n            shape2D instanceof replicad.Blueprints) {\n            return shape2D.blueprints.flatMap(flatten);\n        }\n        return [];\n    }\n    function offsetBoundary(blueprint) {\n        const prepared = splitSingleCurve(blueprint);\n        const offsetDrawing = new replicad.Drawing(prepared).offset(distance);\n        return flatten(offsetDrawing.innerShape);\n    }\n    return shape.onLeafs((leaf) => {\n        const boundaries = flatten(leaf.geometry.innerShape);\n        const offsetBoundaries = boundaries.flatMap(offsetBoundary);\n        if (offsetBoundaries.length === 0) {\n            throw new Error(\"Offset removed every boundary\");\n        }\n        leaf.geometry = new replicad.Drawing(replicad.organiseBlueprints(offsetBoundaries));\n        return leaf;\n    });\n}\n"
+        },
+        {
+          "atomType": "Rotate",
+          "x": 0.9,
+          "y": 0.5,
+          "uniqueID": "id-58711",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "x-axis degrees",
+              "ioValue": 0
+            },
+            {
+              "name": "y-axis degrees",
+              "ioValue": 0
+            },
+            {
+              "name": "z-axis degrees",
+              "ioValue": 90,
+              "currentEquation": "90"
+            }
+          ]
+        },
+        {
+          "atomType": "Rotate",
+          "x": 0.4,
+          "y": 0.6,
+          "uniqueID": "id-58717",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "x-axis degrees",
+              "ioValue": 90,
+              "currentEquation": "90"
+            },
+            {
+              "name": "y-axis degrees",
+              "ioValue": 0
+            },
+            {
+              "name": "z-axis degrees",
+              "ioValue": 0
+            }
+          ]
+        },
+        {
+          "atomType": "GitHubMolecule",
+          "x": 0.4,
+          "y": 0.3,
+          "uniqueID": "id-58723",
+          "name": "Center_XY",
+          "ioValues": [
+            {
+              "name": "Geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Code",
+              "x": 0.6,
+              "y": 0.4,
+              "uniqueID": "id-58724",
+              "ioValues": [
+                {
+                  "name": "A",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ],
+              "interpreterVersion": 1,
+              "code": "/**\n * Recenters geometry input \"A\" in the XY plane based on its bounding box.\n * Z is left unchanged.\n */\nfunction run(A: Assembly) {\n  if (!A) {\n    // Nothing to do if no input provided\n    return null;\n  }\n\n  const total = A.leafCount();\n\n  // Pass 1: accumulate the XY bounding box across every part of A.\n  let minX = Infinity;\n  let minY = Infinity;\n  let maxX = -Infinity;\n  let maxY = -Infinity;\n  let measured = 0;\n  A.onLeafs((leaf) => {\n    progress(`measuring part ${++measured}/${total}`);\n    // bounds is [[minX, minY, (minZ)], [maxX, maxY, (maxZ)]] for both 3D\n    // shapes and 2D drawings.\n    const [min, max] = leaf.geometry.boundingBox.bounds;\n    minX = Math.min(minX, min[0]);\n    minY = Math.min(minY, min[1]);\n    maxX = Math.max(maxX, max[0]);\n    maxY = Math.max(maxY, max[1]);\n    return leaf;\n  });\n\n  // Translation that moves the bounding box center to the origin in XY.\n  const dx = -(minX + maxX) / 2;\n  const dy = -(minY + maxY) / 2;\n\n  // Pass 2: move every part by the same offset.\n  let moved = 0;\n  return A.onLeafs((leaf) => {\n    progress(`moving part ${++moved}/${total}`);\n    const geometry = leaf.is2D()\n      ? leaf.geometry.clone().translate(dx, dy)\n      : leaf.geometry.clone().translate(dx, dy, 0);\n    return new Assembly({ ...leaf, geometry });\n  });\n}",
+              "compiledCode": "\"use strict\";\n/**\n * Recenters geometry input \"A\" in the XY plane based on its bounding box.\n * Z is left unchanged.\n */\nfunction run(A) {\n    if (!A) {\n        // Nothing to do if no input provided\n        return null;\n    }\n    const total = A.leafCount();\n    // Pass 1: accumulate the XY bounding box across every part of A.\n    let minX = Infinity;\n    let minY = Infinity;\n    let maxX = -Infinity;\n    let maxY = -Infinity;\n    let measured = 0;\n    A.onLeafs((leaf) => {\n        progress(`measuring part ${++measured}/${total}`);\n        // bounds is [[minX, minY, (minZ)], [maxX, maxY, (maxZ)]] for both 3D\n        // shapes and 2D drawings.\n        const [min, max] = leaf.geometry.boundingBox.bounds;\n        minX = Math.min(minX, min[0]);\n        minY = Math.min(minY, min[1]);\n        maxX = Math.max(maxX, max[0]);\n        maxY = Math.max(maxY, max[1]);\n        return leaf;\n    });\n    // Translation that moves the bounding box center to the origin in XY.\n    const dx = -(minX + maxX) / 2;\n    const dy = -(minY + maxY) / 2;\n    // Pass 2: move every part by the same offset.\n    let moved = 0;\n    return A.onLeafs((leaf) => {\n        progress(`moving part ${++moved}/${total}`);\n        const geometry = leaf.is2D()\n            ? leaf.geometry.clone().translate(dx, dy)\n            : leaf.geometry.clone().translate(dx, dy, 0);\n        return new Assembly({ ...leaf, geometry });\n    });\n}\n"
+            },
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-58725",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Rectangle",
+              "x": 0.2,
+              "y": 0.6,
+              "uniqueID": "id-58726",
+              "ioValues": [
+                {
+                  "name": "x length",
+                  "ioValue": 10
+                },
+                {
+                  "name": "y length",
+                  "ioValue": 10
+                }
+              ]
+            },
+            {
+              "atomType": "Extrude",
+              "x": 0.3,
+              "y": 0.6,
+              "uniqueID": "id-58727",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "height",
+                  "ioValue": 10
+                }
+              ]
+            },
+            {
+              "atomType": "Move",
+              "x": 0.5,
+              "y": 0.6,
+              "uniqueID": "id-58728",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "xDist",
+                  "ioValue": 50
+                },
+                {
+                  "name": "yDist",
+                  "ioValue": 30
+                },
+                {
+                  "name": "zDist",
+                  "ioValue": 0
+                }
+              ]
+            },
+            {
+              "atomType": "Input",
+              "x": 0,
+              "y": 0.2,
+              "uniqueID": "id-58729",
+              "name": "Geometry",
+              "type": "geometry",
+              "options": []
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-58724",
+              "ap2ID": "id-58725"
+            },
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-58726",
+              "ap2ID": "id-58727"
+            },
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-58727",
+              "ap2ID": "id-58728"
+            },
+            {
+              "ap2Name": "A",
+              "ap1ID": "id-58729",
+              "ap2ID": "id-58724"
+            }
+          ],
+          "parentRepo": {
+            "lastFoundGit": "2026-09-20T02:23:39.099Z",
+            "privateRepo": false,
+            "repoName": "Center_XY",
+            "dateCreated": "2025-12-04T19:44:27Z",
+            "likes": 0,
+            "pngURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/main/project.png",
+            "readme": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/README.md?sanitize=true",
+            "yyyy": 2025,
+            "topMoleculeID": "",
+            "userRanking": 0,
+            "userSetAsThumbnail": false,
+            "githubMoleculesUsed": [],
+            "html_url": "https://github.com/BarbourSmith/Center_XY",
+            "topics": [],
+            "pullRequests": [],
+            "userSetThumbnail": true,
+            "forks": 0,
+            "dateModified": "739887",
+            "ranking": 3,
+            "searchField": "center_xy barboursmith this takes an input shape and moves it to be centered on the xy plane ",
+            "owner": "BarbourSmith",
+            "description": "This takes an input shape and moves it to be centered on the XY plane",
+            "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/project.abundance?sanitize=true",
+            "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/project.svg?sanitize=true",
+            "isLocal": false
+          },
+          "unitsKey": "MM",
+          "fileTypeVersion": 1,
+          "lastReloadedFromGithubAt": 1790701527508
+        },
+        {
+          "atomType": "Move",
+          "x": 0.5,
+          "y": 0.4,
+          "uniqueID": "id-58749",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 0
+            },
+            {
+              "name": "yDist",
+              "ioValue": 0
+            },
+            {
+              "name": "zDist",
+              "ioValue": -140,
+              "currentEquation": "-140"
+            }
+          ]
         }
       ],
       "allConnectors": [
@@ -5337,7 +5573,7 @@
         },
         {
           "ap2Name": "geometry",
-          "ap1ID": "id-37916",
+          "ap1ID": "id-37889",
           "ap2ID": "id-46599"
         },
         {
@@ -5361,11 +5597,6 @@
           "ap2ID": "id-43701"
         },
         {
-          "ap2Name": "number or geometry",
-          "ap1ID": "id-43701",
-          "ap2ID": "id-37884"
-        },
-        {
           "ap2Name": "geometry",
           "ap1ID": "id-43701",
           "ap2ID": "id-37889"
@@ -5381,11 +5612,6 @@
           "ap2ID": "id-55362"
         },
         {
-          "ap2Name": "Input",
-          "ap1ID": "id-55284",
-          "ap2ID": "id-55609"
-        },
-        {
           "ap2Name": "Geometry",
           "ap1ID": "id-55583",
           "ap2ID": "id-58678"
@@ -5393,7 +5619,7 @@
         {
           "ap2Name": "geometry",
           "ap1ID": "id-46599",
-          "ap2ID": "id-55284"
+          "ap2ID": "id-58717"
         },
         {
           "ap2Name": "2D_Shape",
@@ -5406,9 +5632,44 @@
           "ap2ID": "id-58699"
         },
         {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-55609",
+          "ap2ID": "id-37884"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-58678",
+          "ap2ID": "id-58711"
+        },
+        {
           "ap2Name": "geometry",
           "ap1ID": "id-58699",
           "ap2ID": "id-55583"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-58711",
+          "ap2ID": "id-55587"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-58717",
+          "ap2ID": "id-55284"
+        },
+        {
+          "ap2Name": "Geometry",
+          "ap1ID": "id-58717",
+          "ap2ID": "id-58723"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-58723",
+          "ap2ID": "id-58749"
+        },
+        {
+          "ap2Name": "Input",
+          "ap1ID": "id-58749",
+          "ap2ID": "id-55609"
         }
       ],
       "fileTypeVersion": 1
