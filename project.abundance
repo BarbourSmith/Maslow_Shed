@@ -4850,7 +4850,7 @@
         {
           "atomType": "Extrude",
           "x": 0.8,
-          "y": 0.8,
+          "y": 0.6,
           "uniqueID": "id-55583",
           "ioValues": [
             {
@@ -4866,7 +4866,7 @@
         {
           "atomType": "Gcode",
           "x": 0.9,
-          "y": 0.5,
+          "y": 0.6,
           "uniqueID": "id-55587",
           "ioValues": [
             {
@@ -5148,6 +5148,166 @@
           "unitsKey": "MM",
           "fileTypeVersion": 1,
           "lastReloadedFromGithubAt": 1790656053135
+        },
+        {
+          "atomType": "GitHubMolecule",
+          "x": 0.9,
+          "y": 0.7,
+          "uniqueID": "id-58678",
+          "name": "Center_XY",
+          "ioValues": [
+            {
+              "name": "Geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Code",
+              "x": 0.6,
+              "y": 0.4,
+              "uniqueID": "id-58672",
+              "ioValues": [
+                {
+                  "name": "A",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ],
+              "interpreterVersion": 1,
+              "code": "/**\n * Recenters geometry input \"A\" in the XY plane based on its bounding box.\n * Z is left unchanged.\n */\nfunction run(A: Assembly) {\n  if (!A) {\n    // Nothing to do if no input provided\n    return null;\n  }\n\n  const total = A.leafCount();\n\n  // Pass 1: accumulate the XY bounding box across every part of A.\n  let minX = Infinity;\n  let minY = Infinity;\n  let maxX = -Infinity;\n  let maxY = -Infinity;\n  let measured = 0;\n  A.onLeafs((leaf) => {\n    progress(`measuring part ${++measured}/${total}`);\n    // bounds is [[minX, minY, (minZ)], [maxX, maxY, (maxZ)]] for both 3D\n    // shapes and 2D drawings.\n    const [min, max] = leaf.geometry.boundingBox.bounds;\n    minX = Math.min(minX, min[0]);\n    minY = Math.min(minY, min[1]);\n    maxX = Math.max(maxX, max[0]);\n    maxY = Math.max(maxY, max[1]);\n    return leaf;\n  });\n\n  // Translation that moves the bounding box center to the origin in XY.\n  const dx = -(minX + maxX) / 2;\n  const dy = -(minY + maxY) / 2;\n\n  // Pass 2: move every part by the same offset.\n  let moved = 0;\n  return A.onLeafs((leaf) => {\n    progress(`moving part ${++moved}/${total}`);\n    const geometry = leaf.is2D()\n      ? leaf.geometry.clone().translate(dx, dy)\n      : leaf.geometry.clone().translate(dx, dy, 0);\n    return new Assembly({ ...leaf, geometry });\n  });\n}",
+              "compiledCode": "\"use strict\";\n/**\n * Recenters geometry input \"A\" in the XY plane based on its bounding box.\n * Z is left unchanged.\n */\nfunction run(A) {\n    if (!A) {\n        // Nothing to do if no input provided\n        return null;\n    }\n    const total = A.leafCount();\n    // Pass 1: accumulate the XY bounding box across every part of A.\n    let minX = Infinity;\n    let minY = Infinity;\n    let maxX = -Infinity;\n    let maxY = -Infinity;\n    let measured = 0;\n    A.onLeafs((leaf) => {\n        progress(`measuring part ${++measured}/${total}`);\n        // bounds is [[minX, minY, (minZ)], [maxX, maxY, (maxZ)]] for both 3D\n        // shapes and 2D drawings.\n        const [min, max] = leaf.geometry.boundingBox.bounds;\n        minX = Math.min(minX, min[0]);\n        minY = Math.min(minY, min[1]);\n        maxX = Math.max(maxX, max[0]);\n        maxY = Math.max(maxY, max[1]);\n        return leaf;\n    });\n    // Translation that moves the bounding box center to the origin in XY.\n    const dx = -(minX + maxX) / 2;\n    const dy = -(minY + maxY) / 2;\n    // Pass 2: move every part by the same offset.\n    let moved = 0;\n    return A.onLeafs((leaf) => {\n        progress(`moving part ${++moved}/${total}`);\n        const geometry = leaf.is2D()\n            ? leaf.geometry.clone().translate(dx, dy)\n            : leaf.geometry.clone().translate(dx, dy, 0);\n        return new Assembly({ ...leaf, geometry });\n    });\n}\n"
+            },
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-58673",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Rectangle",
+              "x": 0.2,
+              "y": 0.6,
+              "uniqueID": "id-58674",
+              "ioValues": [
+                {
+                  "name": "x length",
+                  "ioValue": 10
+                },
+                {
+                  "name": "y length",
+                  "ioValue": 10
+                }
+              ]
+            },
+            {
+              "atomType": "Extrude",
+              "x": 0.3,
+              "y": 0.6,
+              "uniqueID": "id-58675",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "height",
+                  "ioValue": 10
+                }
+              ]
+            },
+            {
+              "atomType": "Move",
+              "x": 0.5,
+              "y": 0.6,
+              "uniqueID": "id-58676",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "xDist",
+                  "ioValue": 50
+                },
+                {
+                  "name": "yDist",
+                  "ioValue": 30
+                },
+                {
+                  "name": "zDist",
+                  "ioValue": 0
+                }
+              ]
+            },
+            {
+              "atomType": "Input",
+              "x": 0,
+              "y": 0.2,
+              "uniqueID": "id-58677",
+              "name": "Geometry",
+              "type": "geometry",
+              "options": []
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-58672",
+              "ap2ID": "id-58673"
+            },
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-58674",
+              "ap2ID": "id-58675"
+            },
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-58675",
+              "ap2ID": "id-58676"
+            },
+            {
+              "ap2Name": "A",
+              "ap1ID": "id-58677",
+              "ap2ID": "id-58672"
+            }
+          ],
+          "parentRepo": {
+            "lastFoundGit": "2026-09-20T02:23:39.099Z",
+            "privateRepo": false,
+            "repoName": "Center_XY",
+            "dateCreated": "2025-12-04T19:44:27Z",
+            "likes": 0,
+            "pngURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/main/project.png",
+            "readme": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/README.md?sanitize=true",
+            "yyyy": 2025,
+            "topMoleculeID": "",
+            "userRanking": 0,
+            "userSetAsThumbnail": false,
+            "githubMoleculesUsed": [],
+            "html_url": "https://github.com/BarbourSmith/Center_XY",
+            "topics": [],
+            "pullRequests": [],
+            "userSetThumbnail": true,
+            "forks": 0,
+            "dateModified": "739887",
+            "ranking": 3,
+            "searchField": "center_xy barboursmith this takes an input shape and moves it to be centered on the xy plane ",
+            "owner": "BarbourSmith",
+            "description": "This takes an input shape and moves it to be centered on the XY plane",
+            "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/project.abundance?sanitize=true",
+            "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Center_XY/master/project.svg?sanitize=true",
+            "isLocal": false
+          },
+          "unitsKey": "MM",
+          "fileTypeVersion": 1,
+          "lastReloadedFromGithubAt": 1790701527508
         }
       ],
       "allConnectors": [
@@ -5207,9 +5367,9 @@
           "ap2ID": "id-55609"
         },
         {
-          "ap2Name": "geometry",
+          "ap2Name": "Geometry",
           "ap1ID": "id-55583",
-          "ap2ID": "id-55587"
+          "ap2ID": "id-58678"
         },
         {
           "ap2Name": "geometry",
@@ -5223,7 +5383,7 @@
         },
         {
           "ap2Name": "2D_Shape",
-          "ap1ID": "id-55362",
+          "ap1ID": "id-55609",
           "ap2ID": "id-55567"
         }
       ],
