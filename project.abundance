@@ -4850,7 +4850,7 @@
         {
           "atomType": "Extrude",
           "x": 0.8,
-          "y": 0.6,
+          "y": 0.7,
           "uniqueID": "id-55583",
           "ioValues": [
             {
@@ -5308,6 +5308,25 @@
           "unitsKey": "MM",
           "fileTypeVersion": 1,
           "lastReloadedFromGithubAt": 1790701527508
+        },
+        {
+          "atomType": "Code",
+          "x": 0.7,
+          "y": 0.9,
+          "uniqueID": "id-58699",
+          "ioValues": [
+            {
+              "name": "shape",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "distance",
+              "ioValue": -1.825
+            }
+          ],
+          "interpreterVersion": 1,
+          "code": "function run(shape: Assembly, distance: number = -1.825): Assembly {\n  function splitSingleCurve(blueprint) {\n    if (blueprint.curves.length !== 1) {\n      return blueprint.clone();\n    }\n\n    const curve = blueprint.curves[0];\n    const midpoint = (curve.firstParameter + curve.lastParameter) / 2;\n    const segments = curve.splitAt([midpoint]);\n\n    if (segments.length < 2) {\n      throw new Error(\"Could not split a single-curve boundary for offsetting\");\n    }\n\n    return new replicad.Blueprint(segments);\n  }\n\n  function prepare(shape2D) {\n    if (shape2D instanceof replicad.Blueprint) {\n      return splitSingleCurve(shape2D);\n    }\n\n    if (shape2D instanceof replicad.CompoundBlueprint) {\n      return new replicad.CompoundBlueprint(\n        shape2D.blueprints.map(splitSingleCurve),\n      );\n    }\n\n    if (shape2D instanceof replicad.Blueprints) {\n      return new replicad.Blueprints(\n        shape2D.blueprints.map((region) => {\n          if (region instanceof replicad.CompoundBlueprint) {\n            return new replicad.CompoundBlueprint(\n              region.blueprints.map(splitSingleCurve),\n            );\n          }\n          return splitSingleCurve(region);\n        }),\n      );\n    }\n\n    return shape2D;\n  }\n\n  return shape.onLeafs((leaf) => {\n    const drawing = leaf.geometry;\n    const innerShape = drawing.innerShape;\n    leaf.geometry = new replicad.Drawing(prepare(innerShape)).offset(distance);\n    return leaf;\n  }) as Assembly;\n}",
+          "compiledCode": "\"use strict\";\nfunction run(shape, distance = -1.825) {\n    function splitSingleCurve(blueprint) {\n        if (blueprint.curves.length !== 1) {\n            return blueprint.clone();\n        }\n        const curve = blueprint.curves[0];\n        const midpoint = (curve.firstParameter + curve.lastParameter) / 2;\n        const segments = curve.splitAt([midpoint]);\n        if (segments.length < 2) {\n            throw new Error(\"Could not split a single-curve boundary for offsetting\");\n        }\n        return new replicad.Blueprint(segments);\n    }\n    function prepare(shape2D) {\n        if (shape2D instanceof replicad.Blueprint) {\n            return splitSingleCurve(shape2D);\n        }\n        if (shape2D instanceof replicad.CompoundBlueprint) {\n            return new replicad.CompoundBlueprint(shape2D.blueprints.map(splitSingleCurve));\n        }\n        if (shape2D instanceof replicad.Blueprints) {\n            return new replicad.Blueprints(shape2D.blueprints.map((region) => {\n                if (region instanceof replicad.CompoundBlueprint) {\n                    return new replicad.CompoundBlueprint(region.blueprints.map(splitSingleCurve));\n                }\n                return splitSingleCurve(region);\n            }));\n        }\n        return shape2D;\n    }\n    return shape.onLeafs((leaf) => {\n        const drawing = leaf.geometry;\n        const innerShape = drawing.innerShape;\n        leaf.geometry = new replicad.Drawing(prepare(innerShape)).offset(distance);\n        return leaf;\n    });\n}\n"
         }
       ],
       "allConnectors": [
@@ -5377,14 +5396,19 @@
           "ap2ID": "id-55284"
         },
         {
-          "ap2Name": "geometry",
-          "ap1ID": "id-55567",
-          "ap2ID": "id-55583"
-        },
-        {
           "ap2Name": "2D_Shape",
           "ap1ID": "id-55609",
           "ap2ID": "id-55567"
+        },
+        {
+          "ap2Name": "shape",
+          "ap1ID": "id-55609",
+          "ap2ID": "id-58699"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-58699",
+          "ap2ID": "id-55583"
         }
       ],
       "fileTypeVersion": 1
