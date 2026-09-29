@@ -5622,14 +5622,14 @@
           "ap2ID": "id-58717"
         },
         {
-          "ap2Name": "shape",
-          "ap1ID": "id-55609",
-          "ap2ID": "id-58699"
-        },
-        {
           "ap2Name": "number or geometry",
           "ap1ID": "id-55609",
           "ap2ID": "id-37884"
+        },
+        {
+          "ap2Name": "shape",
+          "ap1ID": "id-55609",
+          "ap2ID": "id-58699"
         },
         {
           "ap2Name": "geometry",
