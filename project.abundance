@@ -2767,7 +2767,7 @@
         },
         {
           "atomType": "ExtractTag",
-          "x": 0.6,
+          "x": 0.5,
           "y": 0.4,
           "uniqueID": "id-37916",
           "name": "Extract B2",
@@ -2986,6 +2986,36 @@
           "unitsKey": "Unitless",
           "fileTypeVersion": 1,
           "lastReloadedFromGithubAt": 1790639439697
+        },
+        {
+          "atomType": "CutLayout",
+          "x": 0.8,
+          "y": 0.4,
+          "uniqueID": "id-49471",
+          "name": "Cut Layout",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Sheet Width",
+              "ioValue": 2438
+            },
+            {
+              "name": "Sheet Height",
+              "ioValue": 1219
+            },
+            {
+              "name": "Part Padding",
+              "ioValue": 10
+            },
+            {
+              "name": "Orientations",
+              "ioValue": 12
+            }
+          ],
+          "placements": []
         }
       ],
       "allConnectors": [
@@ -2998,6 +3028,16 @@
           "ap2Name": "geometry",
           "ap1ID": "id-37916",
           "ap2ID": "id-46599"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-37916",
+          "ap2ID": "id-49471"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-37938",
+          "ap2ID": "id-37916"
         },
         {
           "ap2Name": "geometry",
@@ -3023,16 +3063,6 @@
           "ap2Name": "geometry",
           "ap1ID": "id-43701",
           "ap2ID": "id-37889"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-43701",
-          "ap2ID": "id-37916"
-        },
-        {
-          "ap2Name": "A",
-          "ap1ID": "id-43701",
-          "ap2ID": "id-37938"
         }
       ],
       "fileTypeVersion": 1
